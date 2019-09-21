@@ -24,7 +24,7 @@ import (
 // channel, channel operations, 当只有spawn channel时, 此时spawn channel deadlock!
 
 // channel, loop read channel, for loop, need break loop
-// channel, loop read channel, for range, , no need break loop , best
+// channel, loop read channel, for range, , will break when chan is close
 // channel, once read channel, select case:  val := <-ch5
 // channel, once read channel, select default: read channel failed
 // channel, once read channel, select timeout: read channel failed
@@ -46,12 +46,19 @@ func squares(ch3 chan int) {
 	close(ch3)
 }
 
+func workers(jobs chan int, results chan string) {
+	for job := range jobs {
+		results <- fmt.Sprintf("worker pools: job: %d, after worker: %d", job, job*job)
+	}
+	close(results)
+}
+
 func getUrl(wg *sync.WaitGroup, url string) {
 	res, err := http.Get(url)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	fmt.Println("read all channel, WaitGroup done: ", res.Status)
+	fmt.Println("waitGroup: read all channel, WaitGroup done: ", res.Status)
 	wg.Done()
 }
 
@@ -75,9 +82,9 @@ func main() {
 	for {
 		val, ok := <-ch3
 		if ok {
-			fmt.Println("for loop read ch3: ", val)
+			fmt.Println("for loop: read ch3: ", val)
 		} else {
-			fmt.Printf("for loop read ch3: break for!, value: %d, ok: %t", val, ok)
+			fmt.Printf("for loop: read ch3: break for!, value: %d, ok: %t", val, ok)
 			break // need a condition to break the loop
 		}
 	}
@@ -85,7 +92,7 @@ func main() {
 	ch4 := make(chan int)
 	go squares(ch4)
 	for value := range ch4 {
-		fmt.Println("for range read ch4:", value)
+		fmt.Println("for range: loop read ch4:", value)
 	}
 
 	// select
@@ -93,22 +100,22 @@ func main() {
 	go squares(ch5)
 	select {
 	case val := <-ch5:
-		fmt.Println("select case and default read ch5: ", val)
+		fmt.Println("select: case and default read ch5: ", val)
 	default:
-		fmt.Println("select default")
+		fmt.Println("select: default")
 	}
 	select {
 	case val := <-ch5:
-		fmt.Println("select case and timeout read ch5:", val)
+		fmt.Println("select: case and timeout read ch5:", val)
 	case <-time.After(time.Millisecond * 20):
-		fmt.Println("select timeout")
+		fmt.Println("select: timeout")
 	}
 	var ch6 chan int
 	select {
 	case val := <-ch6:
-		fmt.Println("select case read nil ch6:", val)
+		fmt.Println("select: case read nil ch6:", val)
 	default:
-		fmt.Println("select case read nil ch6 default")
+		fmt.Println("select: case read nil ch6 default")
 	}
 
 	// WaitGroup: first: init wg
@@ -124,5 +131,14 @@ func main() {
 	wg.Wait()
 
 	// Worker pool
+	jobs := make(chan int)
+	results := make(chan string)
+	go squares(jobs)
+	go workers(jobs, results)
+	for result := range results {
+		fmt.Println(result)
+	}
+
+	// Mutex
 
 }
