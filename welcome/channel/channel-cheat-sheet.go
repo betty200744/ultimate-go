@@ -39,11 +39,15 @@ import (
 // goroutine, main goroutine必须把channel通过参数传入spawn goroutine, 否则会有slide effect
 // goroutine, spawn goroutine必须把数据通过channel传到main goroutine， 否则数据无法到main goroutine
 
+var (
+	g int
+)
+
 func squares(ch3 chan int) {
 	for i := 0; i < 9; i++ {
 		ch3 <- i * i
 	}
-	close(ch3)
+	close(ch3) // must close
 }
 
 func workers(jobs chan int, results chan string) {
@@ -62,6 +66,13 @@ func getUrl(wg *sync.WaitGroup, url string) {
 	wg.Done()
 }
 
+func Add(wg *sync.WaitGroup, m *sync.Mutex) {
+	m.Lock() // acquire lock
+	g = g + 1
+	m.Unlock() // release lock
+	wg.Done()
+}
+
 func main() {
 	// declaring a channel
 	var ch0 chan int
@@ -75,6 +86,18 @@ func main() {
 		ch2 <- 3
 	}(ch2)
 	fmt.Println("read ch2: ", <-ch2)
+
+	// channel as the data type of channel
+	cch7 := make(chan chan string)
+	go func(cc chan chan string) {
+		c := make(chan string)
+		cc <- c
+	}(cch7)
+	ch7 := <-cch7
+	go func(c chan string) {
+		fmt.Println("hello, " + <-c)
+	}(ch7)
+	ch7 <- "betty"
 
 	// for loop: loop read channel, need break loop
 	ch3 := make(chan int)
@@ -96,6 +119,7 @@ func main() {
 	}
 
 	// select
+	// default is faster then ch5
 	ch5 := make(chan int)
 	go squares(ch5)
 	select {
@@ -104,12 +128,14 @@ func main() {
 	default:
 		fmt.Println("select: default")
 	}
+	// ch5 has val, so run case
 	select {
 	case val := <-ch5:
 		fmt.Println("select: case and timeout read ch5:", val)
 	case <-time.After(time.Millisecond * 20):
 		fmt.Println("select: timeout")
 	}
+	// ch6 is nil, so run default
 	var ch6 chan int
 	select {
 	case val := <-ch6:
@@ -130,7 +156,9 @@ func main() {
 	}
 	wg.Wait()
 
-	// Worker pool
+	// Worker pool, one write,  jobs write chan, then close chan
+	// Worker pool, one read, workers read chan and write results chan then close chan
+	// Worker pool, then range results chan
 	jobs := make(chan int)
 	results := make(chan string)
 	go squares(jobs)
@@ -139,6 +167,14 @@ func main() {
 		fmt.Println(result)
 	}
 
-	// Mutex
-
+	// Mutex, before operator, m.Lock()
+	// Mutex, after operator, m.Unlock()
+	wg2 := &sync.WaitGroup{}
+	m := &sync.Mutex{}
+	for i := 0; i < 1000; i++ {
+		wg2.Add(1)
+		go Add(wg2, m)
+	}
+	wg2.Wait()
+	fmt.Println("value of i after 1000 operations is", g)
 }

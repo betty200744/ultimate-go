@@ -26,9 +26,9 @@ func doExpensiveStuff(i int) (int, error) {
 func Do() {
 	resCh := make(chan Res)
 	for i := 1; i < 9; i++ {
-		go func(i int, r chan Res) {
+		go func(i int, resCh chan Res) {
 			result, err := doExpensiveStuff(i)
-			r <- Res{result, err}
+			resCh <- Res{result, err}
 		}(i, resCh)
 	}
 
