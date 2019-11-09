@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
-// panic, 立刻stops execution the current function, then run deferred functions
+// panic, 立刻stops execution the current function, then unwinding the stack, then run deferred functions
 // panic,
 // recover, 恢复control of the goroutine and execution
 // recover, 只在defer function有用, 因为unwinding the stack时只会运行defer function里面的code

@@ -29,7 +29,7 @@ func main() {
 	db.AutoMigrate(&Product{})
 
 	// Create
-	db.Create(&Product{Code: "L1212", Price: 1000})
+	db.Create(&Product{Code: "L1213", Price: 1000})
 
 	// Read
 	var product Product
@@ -40,5 +40,13 @@ func main() {
 	db.Model(&product).Update("Price", 2000)
 
 	// Delete - delete product
-	db.Delete(&product)
+	//db.Delete(&product)
+	type Result struct {
+		Code  string `json:"price"`
+		Total int    `json:"total"`
+	}
+	r := new(Result)
+
+	db.Model(&product).Select("code, sum(price) as total").Group("code").Scan(&r)
+	fmt.Println(r.Code)
 }

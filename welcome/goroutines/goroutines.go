@@ -9,6 +9,7 @@ import (
 import "runtime"
 
 // goroutine, a fun or method concurrently running in background
+// goroutine, a function executing concurrently with other goroutines in the same address space.
 // goroutine, call with go , then goroutine
 // goroutine, not block the current program
 // goroutine, scheduler concurrently,

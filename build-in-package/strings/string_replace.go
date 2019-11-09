@@ -30,4 +30,7 @@ func main() {
 	fmt.Println("nested path:", nestedPath)
 	fmt.Println("sortField:", sortField)
 	fmt.Println("sort order:", ascending)
+
+	s :=
+		strings.ReplaceAll(s, "\"\"", "|")
 }
