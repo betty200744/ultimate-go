@@ -6,6 +6,11 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
+// panic, 立刻stops execution the current function, then run deferred functions
+// panic,
+// recover, 恢复control of the goroutine and execution
+// recover, 只在defer function有用, 因为unwinding the stack时只会运行defer function里面的code
+
 func panic1() {
 	panic("error in panic1")
 }
@@ -15,7 +20,6 @@ func panic2() {
 }
 
 func main() {
-
 	defer func() {
 		if errRecover := recover(); errRecover != nil {
 			var err error
@@ -29,7 +33,8 @@ func main() {
 		}
 	}()
 	panic("error in main")
-	panic1()
-	panic2()
+	recover() // unreachable code
+	panic1()  // unreachable code
+	panic2()  // unreachable code
 
 }
