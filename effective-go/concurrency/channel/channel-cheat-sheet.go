@@ -7,37 +7,23 @@ import (
 	"time"
 )
 
-// channel, goroutines communicate, use channel transport data between goroutine
-// channel, goroutines communicate, one A read , one B write
-// channel, goroutines communicate, A block means wait B
+// channel, 概念, goroutines communicate, use channel transport data between goroutine
+// channel, 概念, goroutines communicate, one A read , one B write
+// channel, 关键字, chan
+// channel, 定义, declaring var, channel is nil, cannot read and write
+// channel, 类型, data write: ch <- data , data read: i <- ch
+// channel, 分配 or 创建, allocated make, channel, unbuffered, capacity 0 ,channel is address, can read and write
+// channel, 分配 or 创建, allocated make, channel, buffered, capacity 0, full then deadlock
 
-// channel, declaring channel, channel is nil, cannot read and write
-// channel, make channel, unbuffered, capacity 0 ,channel is address, can read and write
-// channel, make channel, buffered, capacity 0, full then deadlock
+// channel, 读写方式, chan<- 写,  <-chan读
+// channel, 读写方式, for, loop read channel,need break loop, 一般不用
+// channel, 读写方式, for range, loop read channel, will break when chan is close, 常用, 单chan遍历读写
+// channel, 读写方式, select, (case, timeout, default): once read channel,   val := <-ch5, 常用, 多chan读写, 部分成功就行
+// channel, 读写方式, WaitGroup, read all channel, WaitGroup, wg.add, wg.done, wg.wait,常用,多chan读写, 全部成功才行
+// channel, 读写方式, worker pool, 一般两chan， 一个tasks, 一个results，producer写tasks,  worker读tasks写results, consumers读results， 多chan遍历读写
 
-// channel, data write: ch <- data , data read: i <- ch
-// channel, receive only channel, revoch := make(<-chan int)
-// channel, send only channel, sendoch := make(chan<- int)
-// channel, channel operations,  are blocking by default
-// channel, channel operations,  are tell the scheduler to schedule another goroutine
-// channel, channel operations, 当只有main channel时,  此时main channel deadlock!
-// channel, channel operations, 当只有spawn channel时, 此时spawn channel deadlock!
-
-// channel, loop read channel, for loop, need break loop
-// channel, loop read channel, for range, , will break when chan is close
-// channel, once read channel, select case:  val := <-ch5
-// channel, once read channel, select default: read channel failed
-// channel, once read channel, select timeout: read channel failed
-// channel, once read channel, select empty: deadlock
-
-// channel, read all channel, WaitGroup: init wg , before goroutine wg.add, after goroutine wg.done, last main goroutine wg.wait
-// channel, worker pool,
-// channel, Mutex,
-// channel, closing channel, when no more data te sent
-// channel, present channel, val, ok := <-channel , 判断channel is closed?
-
-// goroutine, main goroutine必须把channel通过参数传入spawn goroutine, 否则会有slide effect
-// goroutine, spawn goroutine必须把数据通过channel传到main goroutine， 否则数据无法到main goroutine
+// channel, 关闭, closing channel, when no more data te sent
+// channel, 判断, present channel, val, ok := <-channel , 判断channel is closed?
 
 var (
 	g int
@@ -72,7 +58,6 @@ func Add(wg *sync.WaitGroup, m *sync.Mutex) {
 	m.Unlock() // release lock
 	wg.Done()
 }
-
 func main() {
 	// declaring a channel
 	var ch0 chan int
@@ -176,5 +161,16 @@ func main() {
 		go Add(wg2, m)
 	}
 	wg2.Wait()
+	//
+	m2 := &sync.Mutex{}
+	for i := 0; i < 1000; i++ {
+		go func() {
+			m2.Lock()
+			g = g + 1
+			m2.Unlock()
+		}()
+	}
+
+	time.Sleep(time.Second * 2)
 	fmt.Println("value of i after 1000 operations is", g)
 }
