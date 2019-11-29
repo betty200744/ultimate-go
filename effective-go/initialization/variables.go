@@ -7,12 +7,14 @@ import (
 	"os"
 )
 
+// init variable
 var (
 	home   = os.Getenv("HOME")
 	user   = os.Getenv("USER")
 	gopath = os.Getenv("GOPATH")
 )
 
+// init function
 func init() {
 	if user == "" {
 		log.Fatal("$USER not set")
