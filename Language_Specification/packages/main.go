@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"                              // import package
-	"gobyexample/welcome/packages/app" // import nested package
+	"fmt"                                             // import package
+	"gobyexample/Language_Specification/packages/app" // import nested package
 )
 
 /*
