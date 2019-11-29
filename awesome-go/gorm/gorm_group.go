@@ -21,20 +21,34 @@ func main() {
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
 
-	// Create
+	/*
+		Create
+	*/
 	db.Create(&Product{Code: "L1212", Price: int(100)})
 	db.Create(&Product{Code: "L1213", Price: int(100)})
-	type Result struct {
-		Code   string  `json:"code"`
-		Prices []uint8 `json:"prices"`
-	}
-	// Read
-	var product Product
-	r := new([]Result)
 
-	db.Model(&product).Select("code, array_agg(price::int) as prices").Group("code").Scan(&r)
-	for _, value := range *r {
-		prices := []int{}
-		fmt.Println(string(value.Prices))
-	}
+	/*
+		Select
+	*/
+	products := make([]Product, 0)
+	db.Select("code, price").Find(&products)
+	fmt.Println(products)
+
+	/*
+		Pluck
+	*/
+	codes := make([]string, 0)
+	db.Model(&Product{}).Pluck("code", &codes)
+	fmt.Println(codes)
+
+	/*
+		Group by code
+	*/
+	groupResult := new([]struct {
+		Code string `json:"code"`
+		Sum  int    `json:"sum"`
+	})
+	db.Table("products").Select("code, sum(price) as sum").Group("code").Scan(groupResult)
+	fmt.Println(groupResult)
+
 }
