@@ -27,6 +27,7 @@ func main() {
 	mm["b"] = "b"
 	fmt.Println(mm["a"])
 
+	// electors
 	ss := struct {
 		A string
 		B string
