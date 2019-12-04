@@ -15,5 +15,25 @@ func main() {
 		case msg := <-ch2:
 			fmt.Println(msg)
 		}
+
+		switch { // no key , then bool
+		case true: // bool
+
+		}
+
+		switch i { // has key, then type of i
+		case 1: // value of i, type string
+
+		}
+
+		var a string
+		select { // always no key
+		case <-ch1: // recvExpr
+		case a = <-ch1: // expressionList
+		case b := <-ch1:
+			{ //IdentifierList
+				fmt.Println(b)
+			}
+		}
 	}
 }
