@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
 	// 3 type if else , this is no ternary in go
@@ -21,4 +24,18 @@ func main() {
 	} else {
 		fmt.Println("this is if else if")
 	}
+
+	// bad code
+	groupsBad, errBad := os.Getgroups()
+	if errBad == nil {
+		fmt.Println(groupsBad)
+	}
+
+	// good code
+	if groups, err := os.Getgroups(); err != nil {
+		for _, g := range groups {
+			fmt.Println(g)
+		}
+	}
+
 }

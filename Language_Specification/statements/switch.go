@@ -16,6 +16,7 @@ func Do(v interface{}) {
 }
 
 func main() {
+	// no default is bed code
 
 	// value switch
 	i := 3

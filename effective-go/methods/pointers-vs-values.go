@@ -11,6 +11,8 @@ type ByteSlice []byte
 // method, value receiver, call by pointer, 不改变receiver本身，需要改变请return, 不需要改变本身的情况下可用
 // method, pointer receiver, call by value, 改变receiver本身
 // method, pointer receiver, call by pointer, 改变receiver本身
+// method, 传value无side effect, 传pointer有
+// method, You should use pointers if you need to mutate the content of the struct, and values otherwise.
 func (p ByteSlice) Append(data []byte) []byte { // this is value methods
 	p = append(p, data...)
 	return p

@@ -16,7 +16,8 @@ func IsPositiveBad(p *Pointer) bool {
 	}
 }
 
-// good code
+// good code, indicate message struct has specific behavior
+// good code, 这样的话， IsPositive名字可以用于其他struct, 而不会重名
 func (p *Pointer) IsPositive() bool {
 	if p.Weight > 0 && p.Height > 0 {
 		return true
