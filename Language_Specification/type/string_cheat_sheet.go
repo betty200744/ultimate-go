@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Student struct {
 	Id           int64
@@ -20,4 +22,5 @@ func main() {
 	fmt.Println("print struct with field: ", fmt.Sprintf("%+v", student))
 	fmt.Println("print struct type of value: ", fmt.Sprintf("%T", student))
 	fmt.Println("print struct type and value: ", fmt.Sprintf("%#v", student))
+	fmt.Println()
 }

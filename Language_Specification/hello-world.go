@@ -30,5 +30,7 @@ func main() {
 	if a == nil || a.B == nil {
 		fmt.Println("err")
 	}
+	fmt.Println(2 / 55)
+	fmt.Println(fmt.Sprintf("success: %0.2f%%", 3/float32(7)))
 
 }

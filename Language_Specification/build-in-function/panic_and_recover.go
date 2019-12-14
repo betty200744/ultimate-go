@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/grpc/grpc-go/status"
-	"google.golang.org/grpc/codes"
+	"gobyexample/Language_Specification/errors"
 )
 
 // panic, 立刻stops execution the current function, then unwinding the stack, then run deferred functions
@@ -25,9 +24,9 @@ func main() {
 			var err error
 			isError, ok := errRecover.(error)
 			if ok {
-				err = status.Error(codes.Aborted, isError.Error())
+				err = isError
 			} else {
-				err = status.Error(codes.Aborted, fmt.Sprintf("%v", errRecover))
+				err = errors.New(1)
 			}
 			fmt.Println(err)
 		}

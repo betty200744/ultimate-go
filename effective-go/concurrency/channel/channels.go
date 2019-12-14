@@ -1,24 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"context"
+	"fmt"
+	"time"
+)
 
+func NormalJobRun() {
+	fmt.Println("enter NormalJobRun")
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel() // cancel when we are finished consuming integers
+	go func(ctx context.Context) {
+		fmt.Println("enter go func")
+
+		for {
+			select {
+			case <-time.After(time.Second * 100):
+				fmt.Println("timeout")
+			case <-ctx.Done():
+				fmt.Println("NormalJobRun return, so for loop return")
+				return
+			}
+		}
+	}(ctx)
+	time.Sleep(time.Second * 3)
+	fmt.Println("exit NormalJobRun")
+
+	return
+}
 func main() {
-	// 新建一个chan int数据类型
-	// 向chan里面写数据
-	// 读chan里面的数据
-	ch1 := make(chan int, 3)
-	fmt.Println(&ch1)
-	ch1 <- 1
-	fmt.Println(<-ch1)
-
-	// 一般用于goroutine写chan , 主线程读取chan
-	ch2 := make(chan string, 2)
-	go func() {
-		ch2 <- "this from goroutine"
-		ch2 <- "this from goroutine 2"
-		ch2 <- "this from goroutine 3"
-	}()
-	fmt.Println(<-ch2)
-	fmt.Println(<-ch2)
-	fmt.Println(<-ch2)
+	go NormalJobRun()
+	select {}
 }
