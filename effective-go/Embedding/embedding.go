@@ -15,26 +15,36 @@ type ReaderWriter interface {
 }
 
 // embed struct
-type ReadWriter struct {
-	reader Reader
-	writer Writer
+type ReadWriterN struct {
+	N int `json:"n"`
 }
 
-func (rw *ReadWriter) Read(p []byte) (n int, err error) {
-	return rw.reader.Read(p)
+func (rw *ReadWriterN) Read(p []byte) (n int, err error) {
+	return rw.N, nil
+}
+func (rw *ReadWriterN) Write(p []byte) (n int, err error) {
+	rw.N = 3
+	return rw.N, nil
 }
 
 // embed struct
-type User struct {
-	Id   int64  `json:"id"`
-	Name string `json:"name"`
-}
 type Job struct {
 	Id   int64 `json:"id"`
 	Type int32 `json:"type"`
-	User User  `json:"user"`
+}
+type User struct {
+	Id   int64  `json:"id"`
+	Name string `json:"name"`
+	Job  Job
 }
 
 func main() {
-	fmt.Println("embedding~")
+	// ReadWriterN implements embed interface ReaderWriter
+	rwN := ReadWriterN{N: 2}
+	rwN.Read([]byte{})
+	rwN.Write([]byte{})
+	fmt.Println(rwN.N)
+	// embed struct
+	job := &User{Id: int64(0), Name: "u1", Job: Job{Type: int32(2)}}
+	fmt.Println(job)
 }
