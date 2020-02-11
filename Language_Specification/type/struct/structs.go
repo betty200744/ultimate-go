@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/jinzhu/copier"
+	"reflect"
 )
 
 type Address struct {
@@ -53,4 +54,12 @@ func main() {
 	fmt.Println(shop2)
 	fmt.Println(string(shop2.Id))
 	fmt.Println(shopC)
+	// iterate struct
+	shop3 := Shop{Id: "id", Name: "n", Owner: "o", Order: []string{"1", "2"}, Address: Address{name: "add"}}
+	shop3Value := reflect.ValueOf(shop3)
+	shop3Values := make([]interface{}, shop3Value.NumField())
+	for i := 0; i < shop3Value.NumField(); i++ {
+		shop3Values[i] = shop3Value.Field(i).Interface()
+	}
+	fmt.Println("iterate struct: ", shop3Values)
 }

@@ -21,7 +21,7 @@ func main() {
 		Code:    1,
 		Message: "ha ha",
 	}
-	fs := (FormatStatus)(s)
+	fs := FormatStatus(s)
 	fmt.Println(x, y, f, z)
 	fmt.Println(fmt.Sprintf("s type is : %v", reflect.TypeOf(s)))
 	fmt.Println(fmt.Sprintf("fs type is : %v", reflect.TypeOf(fs)))
