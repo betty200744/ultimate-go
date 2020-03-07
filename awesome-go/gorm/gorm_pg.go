@@ -7,9 +7,9 @@ import (
 )
 
 var (
-	dbuser = "postgres"
-	dbpwd  = "postgres"
-	dbname = "gobyexample"
+	Dbuser = "postgres"
+	Dbpwd  = "postgres"
+	Dbname = "gobyexample"
 )
 
 type Product struct {
@@ -19,7 +19,7 @@ type Product struct {
 }
 
 func main() {
-	db, err := gorm.Open("postgres", fmt.Sprintf("postgres://%s:%s@localhost/%s?sslmode=disable", dbuser, dbpwd, dbname))
+	db, err := gorm.Open("postgres", fmt.Sprintf("postgres://%s:%s@localhost/%s?sslmode=disable", Dbuser, Dbpwd, Dbname))
 	if err != nil {
 		panic("failed to connect database")
 	}

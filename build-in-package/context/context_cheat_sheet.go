@@ -46,5 +46,6 @@ func main() {
 	ctxWithName := context.WithValue(context.Background(), "name", "betty")
 	// context.Value, get value from ctx
 	fmt.Println("get ctx name: ", ctxWithName.Value("name"))
+	fmt.Println("get ctx age: ", ctxWithName.Value("age"))
 
 }

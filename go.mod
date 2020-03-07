@@ -6,6 +6,7 @@ require (
 	github.com/golang/protobuf v1.3.0
 	github.com/jessevdk/go-flags v1.4.0 // indirect
 	github.com/jinzhu/copier v0.0.0-20180308034124-7e38e58719c3
+	github.com/jinzhu/gorm v1.9.12 // indirect
 	github.com/lib/pq v1.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/theckman/go-securerandom v0.1.1
