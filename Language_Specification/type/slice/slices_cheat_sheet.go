@@ -7,6 +7,9 @@ func main() {
 	s := make([]int, 0, 10)
 	ss := make([]int, 10)
 	sss := make([][]int, 0, 10)
+	s8 := []int{1, 2, 3, 4, 5}
+	s8c := s8[:]
+	fmt.Println("s8c", s8c)
 	s = append(s, 9)
 	s[0] = 1
 	copy(ss, s)
