@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,13 +11,11 @@ type Person struct {
 
 func main() {
 	route := gin.Default()
-	pprof.Register(route)
-	/*	route.GET("/:name/:id", func(c *gin.Context) {
+	route.GET("/publish", func(c *gin.Context) {
 		person := new(Person)
-		if err := c.BindUri(person); err != nil {
-			c.JSON(400, gin.H{"msg": err})
-		}
+		person.Id = "1"
+		person.Name = "betty"
 		c.JSON(200, gin.H{"id": person.Id, "name": person.Name})
-	})*/
-	route.Run(":8080")
+	})
+	route.Run(":8082")
 }

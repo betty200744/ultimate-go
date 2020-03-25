@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/opentracing/basictracer-go"
 	"github.com/opentracing/opentracing-go"
 	"github.com/uber/jaeger-client-go"
 	"github.com/uber/jaeger-client-go/config"
 	"io"
-	"os"
 )
+
+// jaeger:  http://localhost:16686/
 
 // initJaeger returns an instance of Jaeger Tracer that samples 100% of traces and logs all spans to stdout.
 func initJaeger(service string) (opentracing.Tracer, io.Closer) {
@@ -32,12 +32,6 @@ func main() {
 	tracer, closer := initJaeger("hello-world2")
 	defer closer.Close()
 	span := tracer.StartSpan("say-hello")
-	if len(os.Args) != 2 {
-		panic("ERROR: Expecting one argument")
-	}
-	sc, _ := span.Context().(basictracer.SpanContext)
-	fmt.Println("this is span traceid: ", sc.TraceID)
-	who := os.Args[1]
-	println("hello, ", who)
+	println("hello, ", "betty")
 	span.Finish()
 }
