@@ -14,13 +14,13 @@ func StringToInt64(a string) int64 {
 	return int64Val
 }
 
-type Period []int64
+type Int8range []int64
 
-func (d *Period) Scan(src interface{}) error {
+func (d *Int8range) Scan(src interface{}) error {
 	switch src := src.(type) {
 	case []byte:
 		s := strings.Split(strings.Replace(strings.Replace(string(src), "[", "", -1), ")", "", -1), ",")
-		p := make(Period, 2)
+		p := make(Int8range, 2)
 		p[0] = StringToInt64(s[0])
 		p[1] = StringToInt64(s[1])
 		*d = p
@@ -30,7 +30,7 @@ func (d *Period) Scan(src interface{}) error {
 	return nil
 }
 
-func (d Period) Value() (driver.Value, error) {
+func (d Int8range) Value() (driver.Value, error) {
 	return fmt.Sprintf(
 		"[%d, %d)",
 		d[0],
@@ -39,9 +39,15 @@ func (d Period) Value() (driver.Value, error) {
 }
 
 type Booking struct {
-	Id             int64  `gorm:"not null; column:id" json:"id"`
-	ShowcaseRuleId int64  `gorm:"not null; column:showcase_rule_id" json:"showcase_rule_id"`
-	Period         Period `gorm:"not null; type:int8range; column:period" json:"period"`
+	Id             int64     `gorm:"not null; column:id" json:"id"`
+	ShowcaseRuleId int64     `gorm:"not null; column:showcase_rule_id" json:"showcase_rule_id"`
+	Period         Int8range `gorm:"not null; type:int8range; column:period" json:"period"`
+}
+
+type BookingEntity struct {
+	Id             int64     `gorm:"not null; column:id" json:"id"`
+	ShowcaseRuleId int64     `gorm:"not null; column:showcase_rule_id" json:"showcase_rule_id"`
+	Period         Int8range `gorm:"not null; type:int8range; column:period" json:"period"`
 }
 
 func main() {
@@ -63,17 +69,17 @@ func main() {
 	/*	db.Create(&Booking{
 			Id:             1,
 			ShowcaseRuleId: 1,
-			Period:         Period{From: 1, To: 3},
+			Int8range:         Int8range{From: 1, To: 3},
 		})
 		db.Create(&Booking{
 			Id:             2,
 			ShowcaseRuleId: 1,
-			Period:         Period{From: 4, To: 7},
+			Int8range:         Int8range{From: 4, To: 7},
 		})
 		db.Create(&Booking{
 			Id:             3,
 			ShowcaseRuleId: 2,
-			Period:         Period{From: 10, To: 20},
+			Int8range:         Int8range{From: 10, To: 20},
 		})*/
 	res := new([]Booking)
 	// find
