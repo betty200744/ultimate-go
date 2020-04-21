@@ -6,6 +6,7 @@ require (
 	github.com/go-log/log v0.0.0-20181211034820-a514cf01a3eb
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/protobuf v1.3.2
+	github.com/jackc/pgio v1.0.0
 	github.com/jessevdk/go-flags v1.4.0 // indirect
 	github.com/jinzhu/copier v0.0.0-20180308034124-7e38e58719c3
 	github.com/jinzhu/gorm v1.9.12 // indirect
@@ -21,6 +22,7 @@ require (
 	go.uber.org/multierr v0.0.0-20180122172545-ddea229ff1df
 	go.uber.org/zap v0.0.0-20190327195448-badef736563f
 	golang.org/x/crypto v0.0.0-20191219195013-becbf705a915 // indirect
+	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
 	google.golang.org/genproto v0.0.0-20190219182410-082222b4a5c5
 )
 
