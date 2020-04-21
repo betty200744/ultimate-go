@@ -54,31 +54,52 @@ func main() {
 
 	// Migrate the schema
 	//db.AutoMigrate(&Booking{})
-
 	/*
 		Create
 	*/
 	db.Debug()
 	db.LogMode(true)
+
 	/*	db.Create(&Booking{
 			Id:             1,
 			ShowcaseRuleId: 1,
-			Period:         Period{From: 1, To: 3},
+			Period:         Period{1, 3},
 		})
 		db.Create(&Booking{
 			Id:             2,
 			ShowcaseRuleId: 1,
-			Period:         Period{From: 4, To: 7},
+			Period:         Period{4, 7},
 		})
 		db.Create(&Booking{
 			Id:             3,
 			ShowcaseRuleId: 2,
-			Period:         Period{From: 10, To: 20},
+			Period:         Period{10, 20},
 		})*/
+	var isCo bool
+	var num int32
 	res := new([]Booking)
-	// find
+	showcase_rule_ids := make([]int64, 0)
+	rulePeriods := []Period{{1, 20}, {4, 7}}
 
-	//db.Model(&Booking{}).Find(res)
+	qSlice := make([]string, 0)
+	ruleInterface := make([]interface{}, 0)
+	for _, i2 := range rulePeriods {
+		ruleInterface = append(ruleInterface, i2)
+		qSlice = append(qSlice, "(period && ?)")
+	}
+	qs := strings.Join(qSlice, " or ")
+	fmt.Println(qs)
+	db.Model(&Booking{}).Find(res)
+	// 存在冲突的条目
+	db.Model(&Booking{}).Where("period && ?", rulePeriods[0]).Find(res)
+	// 存在冲突的唯一ids
+	db.Model(&Booking{}).Where("period && ?", rulePeriods[0]).Pluck("distinct(showcase_rule_id)", &showcase_rule_ids)
+	// 存在的条数
+	db.Model(&Booking{}).Select("period && ? as collision", rulePeriods[0]).Scan(&isCo)
+
 	db.Model(&Booking{}).Where("lower(period) >= 3::bigint and upper(period) <= 20").Find(res)
-	fmt.Println(res)
+
+	db.Model(&Booking{}).Where("showcase_rule_id = 1").Where(qs, ruleInterface...).Count(&num)
+
+	fmt.Println(res, num, showcase_rule_ids, isCo)
 }
