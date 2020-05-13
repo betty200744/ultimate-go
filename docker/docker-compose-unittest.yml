@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  unit:
+    image: golang:1.11
+    volumes:
+      - .:/usr/src/myapp
+    working_dir: /usr/src/myapp
+    command: bash -c "pwd && go get -d -v && go test --cover -v ./... "
