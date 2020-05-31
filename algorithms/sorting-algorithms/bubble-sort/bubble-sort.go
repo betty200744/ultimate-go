@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"gobyexample/algorithms/utils"
 )
 
 /*
@@ -68,7 +69,7 @@ func bubbleSort4(arr []int) {
 }
 
 func main() {
-	arr := []int{2, 6, 0, 9, 1, 1, 0, 9}
+	arr := utils.GetArrayOfLenAndSize(8, 10)
 	arr1 := append([]int(nil), arr...)
 	arr2 := append([]int(nil), arr...)
 	arr3 := append([]int(nil), arr...)

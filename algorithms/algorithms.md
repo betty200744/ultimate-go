@@ -1,4 +1,7 @@
 
+
+* https://github.com/TheAlgorithms
+* https://github.com/arnauddri/algorithms
 # Algorithms [![Build Status](https://travis-ci.org/arnauddri/algorithms.svg?branch=master)](https://travis-ci.org/arnauddri/algorithms)
 
 
@@ -46,7 +49,7 @@
 
 #### Sorting algorithms
 
-* [Bubble Sort](sorting-algorithms/Bubble-sort/bubble-sort.go) [(wiki)](http://en.wikipedia.org/wiki/Bubble_sort)
+* [Bubble Sort](sorting-algorithms/bubble-sort/bubble-sort.go) [(wiki)](http://en.wikipedia.org/wiki/Bubble_sort)
 
 ![](../img/WX20200530-140733.png)
 ![](../img/WechatIMG881.png)
