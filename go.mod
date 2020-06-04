@@ -1,6 +1,7 @@
 module gobyexample
 
 require (
+	github.com/bwmarrin/snowflake v0.3.0
 	github.com/crgimenes/goconfig v0.0.0-20190307175850-3b829fccb8ce
 	github.com/gin-gonic/gin v1.5.0
 	github.com/go-log/log v0.0.0-20181211034820-a514cf01a3eb
