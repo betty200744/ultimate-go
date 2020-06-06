@@ -41,7 +41,7 @@ func main() {
 	mMap := make(map[string]string)
 	mMap["m"] = "m"
 	nMap := new(map[string]string)
-	(*nMap)["n"] = "n"
+	//(*nMap)["n"] = "n"
 	fmt.Println("mMap: ", mMap)
 	fmt.Println("nMap: ", nMap)
 	delete(mMap, "m")

@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  testredis:
+    image: redis:3.0.4
+    container_name: testredis
+    restart: always
+    ports:
+    - 6379:6379
+
+  testdb:
+    image: postgres:11.2
+    container_name:
+      whale-product
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: product_test
+      POSTGRES_MULTIPLE_DATABASES: sonar
+    ports:
+      - 5432:5432
+    depends_on:
+      - testredis
+  unit:
+    image: golang:1.11
+    volumes:
+      - .:/usr/src/myapp
+      - /tmp/go:/go
+    working_dir: /usr/src/myapp
+    command: bash -c "pwd && go get -d -v && go test --cover -v ./... && go build -v -o go-demo"
