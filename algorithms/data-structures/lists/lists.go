@@ -1,0 +1,18 @@
+package lists
+
+import "gobyexample/algorithms/data-structures/containers"
+
+type List interface {
+	Get(index int) interface{}
+	Set(index int, value interface{})
+	Add(values ...interface{})
+	Remove(index int)
+	Insert(index int, value interface{})
+	Contains(values ...interface{}) bool
+	Swap(index1, index2 int)
+	containers.Container
+	// Empty() bool
+	// Size() int
+	// Clear()
+	// Values() []interface{}
+}
