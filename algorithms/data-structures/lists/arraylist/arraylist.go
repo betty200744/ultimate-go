@@ -1,7 +1,9 @@
-package main
+package arraylist
 
-import "fmt"
-
+// A list is a data structure that stores values and may have repeated values
+// Implements Container interface
+// A list backed by a dynamic array that grows and shrinks implicitl
+// 顺序是根据index定的
 type List struct {
 	elements []interface{}
 	size     int
@@ -92,24 +94,4 @@ func (list *List) Find(f func(index int, value interface{}) bool) (int, interfac
 		}
 	}
 	return -1, nil
-}
-
-func main() {
-	list := New(0, 1, 2)
-	list.Add(1)
-	fmt.Println(list.elements)
-	fmt.Println(list.size)
-	fmt.Println(list.Empty())
-	fmt.Println(list.Values())
-	fmt.Println(list.Contains(1))
-	fmt.Println(list.Contains(5))
-	list.Set(3, 3)
-	list.Set(6, 4)
-	fmt.Println(list.Values())
-	list.Each(func(index int, value interface{}) {
-		fmt.Println(index, value)
-	})
-	fmt.Println(list.Find(func(index int, value interface{}) bool {
-		return true
-	}))
 }
