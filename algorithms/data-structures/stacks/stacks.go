@@ -9,6 +9,9 @@ package stacks
 	Push(value interface{})
 	Pop() ()
 */
+/*
+现实场景， 代码的压栈
+*/
 type Stack struct {
 	stack []interface{}
 	len   int

@@ -11,6 +11,9 @@ enqueue -> | 3 | 2 | 1 | -> dequeue
 	Enqueue(value interface{})
 	Dequeue() interface{}
 */
+/*
+现实场景如： 消息队列，kafka, rabbitmq
+*/
 type Queue struct {
 	queue []interface{}
 	len   int

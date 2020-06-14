@@ -4,6 +4,9 @@ package arraylist
 // Implements Container interface
 // A list backed by a dynamic array that grows and shrinks implicitl
 // 顺序是根据index定的
+/*
+现实场景： slice type
+*/
 type List struct {
 	elements []interface{}
 	size     int

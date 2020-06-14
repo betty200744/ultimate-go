@@ -5,6 +5,9 @@ package hashset
 	Remove(elements ...interface{})
 	Contains(elements ...interface{}) bool
 */
+/*
+现实场景： redis 的set , value不可重复
+*/
 type Set struct {
 	elements map[interface{}]struct{}
 }
