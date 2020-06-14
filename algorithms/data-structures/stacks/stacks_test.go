@@ -6,7 +6,7 @@ import (
 )
 
 func Test_Stacks(t *testing.T) {
-	s := new(Stack)
+	s := New()
 	s.Push("a")
 	s.Push("b")
 	fmt.Println(s)

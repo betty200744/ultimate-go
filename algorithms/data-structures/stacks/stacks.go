@@ -4,6 +4,8 @@ package stacks
 // stacks 如同叠盘子， 先进后出
 
 /*
+	定长
+	last-in, first-out
 	Push(value interface{})
 	Pop() ()
 */
