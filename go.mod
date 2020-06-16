@@ -7,6 +7,7 @@ require (
 	github.com/go-log/log v0.0.0-20181211034820-a514cf01a3eb
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/lint v0.0.0-20180702182130-06c8688daad7 // indirect
+	github.com/golang/mock v1.4.3
 	github.com/golang/protobuf v1.3.3
 	github.com/jackc/pgio v1.0.0
 	github.com/jessevdk/go-flags v1.4.0 // indirect
