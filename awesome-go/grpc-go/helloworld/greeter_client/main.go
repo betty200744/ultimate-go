@@ -23,15 +23,28 @@ func main() {
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
-	defer conn.Close()
 	c := pb.NewGreeterClient(conn)
 
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-	defer cancel()
-	ctxx := metadata.AppendToOutgoingContext(ctx, "go_client_md_1", "c1", "go_client_md_2", "c2")
-	r, err := c.SayHello(ctxx, &pb.HelloRequest{Name: "world"})
-	if err != nil {
-		log.Fatalf("could not greet: %v", err)
+	for i := 0; i < 10000; i++ {
+		ctx, cancel := context.WithTimeout(context.Background(), time.Millisecond*200)
+		defer cancel()
+		ctxx := metadata.AppendToOutgoingContext(ctx, "go_client_md_1", "c1", "go_client_md_2", "c2")
+		r, err := c.SayHello(ctxx, &pb.HelloRequest{Name: "world"})
+		if err != nil {
+			log.Printf("could not greet: %v", err)
+		} else {
+			log.Printf("Greeting: %v, %s", i, r.Message)
+		}
+		time.Sleep(time.Second)
 	}
-	log.Printf("Greeting: %s", r.Message)
+	/*	ctx, cancel := context.WithTimeout(context.Background(), time.Millisecond * 3)
+		defer cancel()
+		ctxx := metadata.AppendToOutgoingContext(ctx, "go_client_md_1", "c1", "go_client_md_2", "c2")
+		r, err := c.SayHello(ctxx, &pb.HelloRequest{Name: "world"})
+		if err != nil {
+			log.Fatalf("could not greet: %v", err)
+		}
+		log.Printf("Greeting: %s", r.Message)*/
+	//conn.Close()
+	time.Sleep(time.Second * 20)
 }
