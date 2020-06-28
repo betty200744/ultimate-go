@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"whgo/product/library/utils"
 )
 
 // Getwd
@@ -11,7 +10,6 @@ import (
 
 func main() {
 	dir := "export"
-	filename := utils.RandomString(8)
 	fmt.Println(os.Getwd()) // 获取当前目录
 	_, err := os.Stat(dir)  // 查看当前目录下是否存在dir文件or文件夹
 	if err != nil {
@@ -21,7 +19,7 @@ func main() {
 		}
 	}
 
-	createFile, _ := os.Create(filename + ".cvs")
+	createFile, _ := os.Create("filename" + ".cvs")
 	defer createFile.Close()
 
 }
