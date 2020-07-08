@@ -6,18 +6,20 @@ import "fmt"
 wiki: https://en.wikipedia.org/wiki/Shellsort
 
 */
-
-func shellSort(ll []int) {
-	// gap 一般len(ll) / 2
-	// gap size一般递减1， 或者 /= 2
-	for gap := len(ll) / 2; gap > 0; gap /= 2 {
-		for i := gap; i < len(ll); i++ {
-			for j := i; j >= gap && ll[j-gap] > ll[j]; j -= gap {
-				ll[j], ll[j-gap] = ll[j-gap], ll[j]
+func shellSort(arr []int) {
+	// gap size，初始一般len(ll) / 2，
+	// gap size一般递减1， 也可 / 2, 递减或者除于，最后一个gap需要为1
+	for gap := len(arr) / 2; gap > 0; gap /= 2 {
+		// i for循环， i 后面的每个都要对比
+		for i := gap; i < len(arr); i++ {
+			// j for循环， ll[j] 与ll[j-gap]对比，注意j>=gap, 否则out of index
+			// j for循环,  注意i > gap很多时， 需要j -= gap, 保证对比不重复
+			for j := i; j >= gap && arr[j-gap] > arr[j]; j -= gap {
+				arr[j], arr[j-gap] = arr[j-gap], arr[j]
 			}
 		}
 	}
-	fmt.Println(ll)
+	fmt.Println(arr)
 }
 
 func main() {
