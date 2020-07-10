@@ -1,5 +1,7 @@
 package singlylinkedlist
 
+import "fmt"
+
 // A list where each element points to the next element in the list.
 
 // 顺序是根据每个对象定的
@@ -109,4 +111,9 @@ func (l *LinkedList) Reverse() {
 		cur = next
 	}
 	l.head = prev
+}
+func (l *LinkedList) Print() {
+	for current := l.head; current != nil; current = current.next {
+		fmt.Println(current)
+	}
 }
