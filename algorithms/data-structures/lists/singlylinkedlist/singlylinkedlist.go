@@ -4,64 +4,109 @@ package singlylinkedlist
 
 // 顺序是根据每个对象定的
 /*
-Get(index int) interface{}
-Set(index int, value interface{})
-Add(values ...interface{})
-Remove(index int)
-Insert(index int, value interface{})
-Contains(values ...interface{}) bool
-Swap(index1, index2 int)
-Prepend(value interface{})
-Append(value interface{})
-Find(node *Node) (int, error)
-Concat(k *List)
+增，删，改，查
+AddFirst or Prepend(value interface{}), O(1)
+Append(value interface{}), O(n) , 后面加,
+AddLast(value interface{}),  O(1), 后面加, 添加
+RemoveFirst(index int) interface{}, O(1)
+RemoveLast(index int) interface{}, O(1)
 reverse()
+Find(node *Node) (int, error), O(n)
+Peek(),  O(n)
+Contains(values ...interface{}) bool,  O(n)
 */
-
 type Node struct {
 	value interface{}
 	next  *Node
 }
-type List struct {
+type LinkedList struct {
 	head *Node
+	tail *Node // 用于addLast
+	size int
 }
 
-func newNode(value interface{}) *Node {
+func NewNode(value interface{}) *Node {
 	return &Node{value: value, next: nil}
 }
-
-func (list *List) Append(value interface{}) {
-	n := newNode(value)
-	if list.head == nil {
-		list.head = n
-		return
-	}
-	cur := list.head
-	for cur.next != nil {
-		cur = cur.next
-	}
-	cur.next = n
+func (l *LinkedList) Size() int {
+	return l.size
 }
-
-// 我在前面， 那么原本的就在我后面
-func (list *List) Prepend(value interface{}) {
-	n := newNode(value)
-	n.next = list.head
-	list.head = n
+func (l *LinkedList) Prepend(value interface{}) {
+	if l.head == nil {
+		l.head = NewNode(value)
+	} else {
+		newNode := NewNode(value)
+		newNode.next = l.head
+		l.head = newNode
+	}
+	l.size += 1
 }
-func (list *List) Reverse() {
-	// 为撒要三个pointer, 因为prev和cur是要换的两个， 另外一个是当前的next 需要存
+func (l *LinkedList) Append(value interface{}) {
+	if l.head == nil {
+		l.head = NewNode(value)
+	} else {
+		tmp := l.head
+		// 因为没有tail， 此时得loop n times查找next是否为最后一个
+		for tmp.next != nil {
+			tmp = tmp.next
+		}
+		tmp.next = NewNode(value)
+	}
+	l.size += 1
+}
+func (l *LinkedList) AddLast(value interface{}) {
+	if l.head == nil {
+		l.head = NewNode(value)
+		l.tail = l.head
+	} else {
+		newNode := NewNode(value)
+		l.tail.next = newNode
+		l.tail = newNode
+	}
+	l.size += 1
+}
+func (l *LinkedList) RemoveFirst() interface{} {
+	// empty
+	if l.head == nil {
+		return nil
+	}
+	tmp := l.head.value
+	// single element
+	if l.head.next == nil {
+		l.head = nil
+		l.tail = nil
+	} else { // multi element
+		l.head = l.head.next
+	}
+	l.size -= 1
+	return tmp
+}
+func (l *LinkedList) RemoveLast() interface{} {
+	if l.head == nil {
+		return nil
+	}
+	if l.head.next == nil {
+		return l.RemoveFirst()
+	}
+	// 找到倒数第二个
+	current := l.head
+	for ; current.next.next != nil; current = current.next {
+	}
+	// 取出倒数第一个的value
+	tmp := current.next.value
+	// 把倒数第二个变成最后一个
+	current.next = nil
+	l.tail = current
+	return tmp
+}
+func (l *LinkedList) Reverse() {
 	var prev, next *Node
-	cur := list.head
+	cur := l.head
 	for cur != nil {
-		// before changing the next of current, store next node
 		next = cur.next
-		// changing the next of current, 每一个的下一个节点都变成前一个节点
-		// 注意此时linked list是断开的， 需要全部都换完才连上
 		cur.next = prev
-		// move prev and next step, 注意先移prev再移cur，
-		prev, cur = cur, next
+		prev = cur
+		cur = next
 	}
-	// head变成原链表的最后一个
-	list.head = prev
+	l.head = prev
 }
