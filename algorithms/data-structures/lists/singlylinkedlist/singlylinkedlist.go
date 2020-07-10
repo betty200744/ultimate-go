@@ -35,7 +35,9 @@ func (l *LinkedList) Size() int {
 }
 func (l *LinkedList) Prepend(value interface{}) {
 	if l.head == nil {
-		l.head = NewNode(value)
+		newNode := NewNode(value)
+		l.head = newNode
+		l.tail = newNode
 	} else {
 		newNode := NewNode(value)
 		newNode.next = l.head
@@ -44,15 +46,18 @@ func (l *LinkedList) Prepend(value interface{}) {
 	l.size += 1
 }
 func (l *LinkedList) Append(value interface{}) {
+	newNode := NewNode(value)
 	if l.head == nil {
-		l.head = NewNode(value)
+		l.head = newNode
+		l.tail = newNode
 	} else {
 		tmp := l.head
 		// 因为没有tail， 此时得loop n times查找next是否为最后一个
 		for tmp.next != nil {
 			tmp = tmp.next
 		}
-		tmp.next = NewNode(value)
+		tmp.next = newNode
+		l.tail = newNode
 	}
 	l.size += 1
 }
@@ -111,6 +116,27 @@ func (l *LinkedList) Reverse() {
 		cur = next
 	}
 	l.head = prev
+}
+func (l *LinkedList) peekFirst() interface{} {
+	if l.head == nil {
+		return nil
+	}
+	return l.head.value
+}
+func (l *LinkedList) peekLast() interface{} {
+	if l.tail == nil {
+		return nil
+	}
+	return l.tail.value
+}
+func (l *LinkedList) peekLast2() interface{} {
+	if l.tail == nil {
+		return nil
+	}
+	tmp := l.head
+	for ; tmp.next != nil; tmp = tmp.next {
+	}
+	return tmp.value
 }
 func (l *LinkedList) Print() {
 	for current := l.head; current != nil; current = current.next {
