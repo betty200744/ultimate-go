@@ -4,7 +4,7 @@ package stacks
 // stacks 如同叠盘子， 先进后出
 
 /*
-	定长
+	go 语言中就是Array来实现, Slice来实现
 	last-in, first-out
 	Push(value interface{})
 	Pop() ()
