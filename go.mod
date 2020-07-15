@@ -69,10 +69,11 @@ require (
 	go.elastic.co/apm/module/apmgoredisv8 v0.0.0-20200618141751-9f7ef4bcff66
 	go.elastic.co/fastjson v1.1.0 // indirect
 	go.uber.org/zap v1.12.0
-	golang.org/x/crypto v0.0.0-20200204104054-c9f3fb736b72
-	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+	golang.org/x/net v0.0.0-20200625001655-4c5254603344
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
 	golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae // indirect
+	golang.org/x/tools v0.0.0-20200714190737-9048b464a08d // indirect
 	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
 	google.golang.org/appengine v1.5.0 // indirect
 	google.golang.org/genproto v0.0.0-20191108220845-16a3f7862a1a
