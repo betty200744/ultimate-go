@@ -7,8 +7,7 @@ import (
 	"gobyexample/awesome-go/go-redis/redisClient"
 )
 
-func ExampleClient() {
-	var ctx = context.Background()
+func ExampleClient(ctx context.Context) {
 	rdb := redisClient.NewClient()
 	err := rdb.Set(ctx, "key", "value", 0).Err()
 	if err != nil {
