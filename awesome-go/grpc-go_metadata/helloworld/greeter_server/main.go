@@ -5,7 +5,7 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "gobyexample/awesome-go/grpc-go/helloworld/helloworld"
+	pb "gobyexample/awesome-go/grpc-go_metadata/helloworld/helloworld"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"log"
