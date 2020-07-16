@@ -8,6 +8,8 @@ enqueue -> | 3 | 2 | 1 | -> dequeue
            +---+---+---+
 */
 /*
+	IsEmpty() bool
+	Peek() (interface{}, error)
 	Enqueue(value interface{})
 	Dequeue() interface{}
 */
@@ -26,14 +28,19 @@ func New() *Queue {
 	}
 	return queue
 }
-
-func (queue *Queue) Enqueue(value interface{}) {
-	queue.queue = append(queue.queue, value)
-	queue.len++
+func (q *Queue) IsEmpty() bool {
+	return false
 }
-func (queue *Queue) Dequeue() interface{} {
-	el := queue.queue[0]
-	queue.queue = queue.queue[1:]
-	queue.len--
+func (q *Queue) Peek() (interface{}, bool) {
+	return nil, false
+}
+func (q *Queue) Enqueue(value interface{}) {
+	q.queue = append(q.queue, value)
+	q.len++
+}
+func (q *Queue) Dequeue() interface{} {
+	el := q.queue[0]
+	q.queue = q.queue[1:]
+	q.len--
 	return el
 }
