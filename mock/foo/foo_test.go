@@ -10,8 +10,5 @@ func TestFoo(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 	m := mock_foo.NewMockFoo(ctrl)
-	m.
-		EXPECT().
-		Bar(1).
-		AnyTimes()
+	m.EXPECT().Bar(1).AnyTimes()
 }

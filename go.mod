@@ -78,6 +78,7 @@ require (
 	google.golang.org/appengine v1.5.0 // indirect
 	google.golang.org/genproto v0.0.0-20191108220845-16a3f7862a1a
 	google.golang.org/grpc v1.30.0
+	gopkg.in/go-playground/assert.v1 v1.2.1
 	gopkg.in/go-playground/validator.v9 v9.30.0 // indirect
 	howett.net/plist v0.0.0-20200419221736-3b63eb3a43b5 // indirect
 	moul.io/http2curl v1.0.0 // indirect
