@@ -10,11 +10,11 @@ func TestBuildMaxHeap(t *testing.T) {
 	maxHeap := BuildMaxHeap(arr)
 	fmt.Println(maxHeap.Items)
 }
-func TestMaxHeap_Add(t *testing.T) {
+func TestMaxHeap_Insert(t *testing.T) {
 	arr := []int{7, 2, 6, 9, 3, 5, 1, 8}
 	maxHeap := BuildMaxHeap(arr)
 	fmt.Println(maxHeap.Items)
-	maxHeap.Add(88)
+	maxHeap.Insert(88)
 	fmt.Println(maxHeap.Items)
 }
 func TestMaxHeap_ExtractMax(t *testing.T) {

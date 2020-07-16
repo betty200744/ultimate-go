@@ -16,11 +16,11 @@ import (
 * 2^n , n 为level， 2^n为最小size
 
 BuildMaxHeap, 创建MaxHeap
-MaxHeapifyUp, 向上对比，传入childIndex, 递归与parent对比，大的做parent
-MaxHeapifyDown, 向下对比，传入parentIndex, 递归与left and right child对比，大的做parent
-add(item int), 添加，append到最后，因为新增child所有需要MaxHeapifyUp
+MaxHeapifyUp(childIndex int), 向上对比，传入childIndex, 递归与parent对比，大的做parent
+MaxHeapifyDown(parentIndex int), 向下对比，传入parentIndex, 递归与left and right child对比，大的做parent
+Insert(item int), 添加，append到最后，因为新增child所有需要MaxHeapifyUp
 ExtractMax() int, 删除root， 删除前先与last交换，最后删除lastItem, 因为root变了， 所有需要MaxHeapifyDown
-HeapSort(), 排序
+HeapSort(items []int), 排序
 */
 type MaxHeap struct {
 	*heap.Heap
@@ -62,7 +62,7 @@ func (h *MaxHeap) MaxHeapifyUp(childIndex int) {
 }
 
 // 添加，append到最后，因为新增child所有需要MaxHeapifyUp
-func (h *MaxHeap) Add(item int) {
+func (h *MaxHeap) Insert(item int) {
 	h.Items = append(h.Items, item)
 	h.HeapSize += 1
 	h.MaxHeapifyUp(len(h.Items) - 1)
@@ -81,8 +81,8 @@ func (h *MaxHeap) ExtractMax() int {
 	h.MaxHeapifyDown(0)
 	return maxItem
 }
-func HeapSort(arr []int) {
-	h := BuildMaxHeap(arr)
+func HeapSort(items []int) {
+	h := BuildMaxHeap(items)
 	// 从右到左排序， 大的放右边
 	for i := len(h.Items) - 1; i > 0; i-- {
 		// put max item to last item
