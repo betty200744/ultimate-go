@@ -1,4 +1,4 @@
-package stacks
+package stack
 
 // https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29#Array
 // stacks 如同叠盘子， 先进后出
@@ -6,11 +6,11 @@ package stacks
 /*
 	go 语言中就是Array来实现, Slice来实现
 	last-in, first-out
+    Motivation， 代码的压栈
+	IsEmpty() bool
+	Peek() (interface{}, error)
 	Push(value interface{})
 	Pop() ()
-*/
-/*
-现实场景， 代码的压栈
 */
 type Stack struct {
 	stack []interface{}
