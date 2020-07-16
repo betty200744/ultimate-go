@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	pb "gobyexample/awesome-go/grpc-go_metadata/helloworld/helloworld"
+	pb "gobyexample/awesome-go/grpc-go/helloworld/helloworld"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"log"
