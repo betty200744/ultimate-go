@@ -29,10 +29,13 @@ func New() *Queue {
 	return queue
 }
 func (q *Queue) IsEmpty() bool {
-	return false
+	return len(q.queue) == 0
 }
 func (q *Queue) Peek() (interface{}, bool) {
-	return nil, false
+	if len(q.queue) == 0 {
+		return nil, false
+	}
+	return q.queue[0], true
 }
 func (q *Queue) Enqueue(value interface{}) {
 	q.queue = append(q.queue, value)

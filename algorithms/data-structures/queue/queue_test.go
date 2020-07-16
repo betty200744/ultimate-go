@@ -12,4 +12,6 @@ func Test_Queue(t *testing.T) {
 	fmt.Println(queue.queue)
 	queue.Dequeue()
 	fmt.Println(queue.queue)
+	fmt.Println(queue.IsEmpty())
+	fmt.Println(queue.Peek())
 }
