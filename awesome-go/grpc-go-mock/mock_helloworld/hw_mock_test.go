@@ -21,13 +21,11 @@ package mock_helloworld_test
 import (
 	"context"
 	"fmt"
-	"testing"
-	"time"
-
 	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/proto"
-	helloworld "google.golang.org/grpc/examples/helloworld/helloworld"
-	hwmock "google.golang.org/grpc/examples/helloworld/mock_helloworld"
+	"gobyexample/awesome-go/grpc-go-mock/helloworld"
+	"gobyexample/awesome-go/grpc-go-mock/mock_helloworld"
+	"testing"
 )
 
 /*type s struct {
@@ -58,21 +56,22 @@ func (r *rpcMsg) String() string {
 func TestSayHello(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
-	mockGreeterClient := hwmock.NewMockGreeterClient(ctrl)
+	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
 	req := &helloworld.HelloRequest{Name: "unit_test"}
 	mockGreeterClient.EXPECT().SayHello(
 		gomock.Any(),
 		&rpcMsg{msg: req},
 	).Return(&helloworld.HelloReply{Message: "Mocked Interface"}, nil)
-	testSayHello(t, mockGreeterClient)
+	r, err := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "unit_test"})
+	fmt.Println(r, err)
 }
-
-func testSayHello(t *testing.T, client helloworld.GreeterClient) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-	defer cancel()
-	r, err := client.SayHello(ctx, &helloworld.HelloRequest{Name: "unit_test"})
-	if err != nil || r.Message != "Mocked Interface" {
-		t.Errorf("mocking failed")
-	}
-	t.Log("Reply : ", r.Message)
+func TestMockGreeterServer_SayHello(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
+	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any()).Do(func(a interface{}, b interface{}) {
+		fmt.Println("SayHello arg1", a)
+		fmt.Println("SayHello arg2", b)
+	})
+	mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "betty"})
 }
