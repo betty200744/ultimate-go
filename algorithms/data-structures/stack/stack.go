@@ -24,13 +24,22 @@ func New() *Stack {
 	}
 	return s
 }
-func (stack *Stack) Push(value interface{}) {
-	stack.stack = append([]interface{}{value}, stack.stack...)
-	stack.len++
+func (s *Stack) IsEmpty() bool {
+	return len(s.stack) == 0
 }
-func (stack *Stack) Pop() interface{} {
-	el := stack.stack[0]
-	stack.stack = stack.stack[1:]
-	stack.len--
+func (s *Stack) Peek() (interface{}, bool) {
+	if len(s.stack) == 0 {
+		return nil, false
+	}
+	return s.stack[0], true
+}
+func (s *Stack) Push(value interface{}) {
+	s.stack = append([]interface{}{value}, s.stack...)
+	s.len++
+}
+func (s *Stack) Pop() interface{} {
+	el := s.stack[0]
+	s.stack = s.stack[1:]
+	s.len--
 	return el
 }
