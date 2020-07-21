@@ -1,6 +1,8 @@
 package minheap
 
-import "gobyexample/algorithms/data-structures/heap"
+import (
+	"gobyexample/algorithms/data-structures/heap"
+)
 
 /*
 * the largest is on the top
@@ -28,23 +30,49 @@ func BuildMinHeap(arr []int) MinHeap {
 		Items:    arr,
 		HeapSize: len(arr),
 	}}
-	if len(arr) > 0 {
-
+	for i := len(arr) / 2; i >= 0; i-- {
+		// 最每个小heap进行max heapify
+		h.MinHeapifyDown(i)
 	}
 	return h
 }
 func (h *MinHeap) MinHeapifyDown(parentIndex int) {
-
+	l, r := h.GetLeftChildIndex(parentIndex), h.GetRightChildIndex(parentIndex)
+	min := parentIndex
+	if l < len(h.Items) && h.Items[l] < h.Items[min] {
+		min = l
+	}
+	if r < len(h.Items) && h.Items[r] < h.Items[min] {
+		min = r
+	}
+	if min != parentIndex {
+		h.Items[parentIndex], h.Items[min] = h.Items[min], h.Items[parentIndex]
+		h.MinHeapifyDown(min)
+	}
 }
 func (h *MinHeap) MinHeapifyUp(childIndex int) {
-
+	parentIndex := h.GetParentIndex(childIndex)
+	if parentIndex >= 0 && h.Items[childIndex] < h.Items[parentIndex] {
+		h.Items[childIndex], h.Items[parentIndex] = h.Items[parentIndex], h.Items[childIndex]
+		h.MinHeapifyUp(parentIndex)
+	}
 }
 func (h *MinHeap) Insert(item int) {
-
+	h.Items = append(h.Items, item)
+	h.HeapSize++
+	h.MinHeapifyUp(len(h.Items) - 1)
 }
 func (h *MinHeap) ExtractMin() int {
-	return 0
+	if len(h.Items) == 0 {
+		panic("no items")
+	}
+	min := h.Items[0]
+	h.Items[0] = h.Items[len(h.Items)-1]
+	h.HeapSize--
+	h.Items = h.Items[:len(h.Items)-1]
+	h.MinHeapifyDown(0)
+	return min
 }
-func (h *MinHeap) HeapSort(items []int) {
+func HeapSort(items []int) {
 
 }
