@@ -1,6 +1,7 @@
 package minheap
 
 import (
+	"fmt"
 	"gobyexample/algorithms/data-structures/heap"
 )
 
@@ -26,23 +27,23 @@ type MinHeap struct {
 }
 
 func BuildMinHeap(arr []int) MinHeap {
-	h := MinHeap{&heap.Heap{
-		Items:    arr,
-		HeapSize: len(arr),
-	}}
+	h := MinHeap{&heap.Heap{Items: arr, HeapSize: len(arr)}}
+	// len(arr) / 2, 即从倒数第二层开始heapify, 除于2是为了减少heapify，从最下面的node开始往上比较
 	for i := len(arr) / 2; i >= 0; i-- {
-		// 最每个小heap进行max heapify
+		// i 与 i的left and right child对比
 		h.MinHeapifyDown(i)
 	}
 	return h
 }
+
+// 向下对比，传入parentIndex, 递归与left and right child对比，小的做parent
 func (h *MinHeap) MinHeapifyDown(parentIndex int) {
 	l, r := h.GetLeftChildIndex(parentIndex), h.GetRightChildIndex(parentIndex)
 	min := parentIndex
-	if l < len(h.Items) && h.Items[l] < h.Items[min] {
+	if l < h.HeapSize && h.Items[l] < h.Items[min] {
 		min = l
 	}
-	if r < len(h.Items) && h.Items[r] < h.Items[min] {
+	if r < h.HeapSize && h.Items[r] < h.Items[min] {
 		min = r
 	}
 	if min != parentIndex {
@@ -50,6 +51,8 @@ func (h *MinHeap) MinHeapifyDown(parentIndex int) {
 		h.MinHeapifyDown(min)
 	}
 }
+
+// 向上对比，传入childIndex, 递归与parent对比，小的做parent
 func (h *MinHeap) MinHeapifyUp(childIndex int) {
 	parentIndex := h.GetParentIndex(childIndex)
 	if parentIndex >= 0 && h.Items[childIndex] < h.Items[parentIndex] {
@@ -60,19 +63,33 @@ func (h *MinHeap) MinHeapifyUp(childIndex int) {
 func (h *MinHeap) Insert(item int) {
 	h.Items = append(h.Items, item)
 	h.HeapSize++
-	h.MinHeapifyUp(len(h.Items) - 1)
+	h.MinHeapifyUp(h.HeapSize - 1)
 }
+
+// 删除root， 删除前先与last交换，最后删除lastItem, 因为root变了， 所有需要MaxHeapifyDown
 func (h *MinHeap) ExtractMin() int {
-	if len(h.Items) == 0 {
+	if h.HeapSize == 0 {
 		panic("no items")
 	}
+	// 取出最小的，即最顶端的
 	min := h.Items[0]
-	h.Items[0] = h.Items[len(h.Items)-1]
+	// 用最后的child填充h.Items[0]
+	h.Items[0] = h.Items[h.HeapSize-1]
+	// 删除最后的child
+	h.Items = h.Items[:h.HeapSize-1]
+	// 删除最后的child，此时HeapSize - 1
 	h.HeapSize--
-	h.Items = h.Items[:len(h.Items)-1]
+	// 重排index 0
 	h.MinHeapifyDown(0)
 	return min
 }
 func HeapSort(items []int) {
-
+	minHeap := BuildMinHeap(items)
+	fmt.Println(minHeap.Items)
+	for i := len(minHeap.Items) - 1; i > 0; i-- {
+		minHeap.Items[0], minHeap.Items[i] = minHeap.Items[i], minHeap.Items[0]
+		minHeap.HeapSize--
+		minHeap.MinHeapifyDown(0)
+	}
+	fmt.Println(minHeap.Items)
 }
