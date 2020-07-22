@@ -81,10 +81,7 @@ func TestMockGreeterServer_SayHello_Do(t *testing.T) {
 	defer ctrl.Finish()
 	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
 	// Do, 注入动作，但无返回
-	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any()).Do(func(a interface{}, b interface{}) {
-		fmt.Println("SayHello arg1", a)
-		fmt.Println("SayHello arg2", b)
-	})
+	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any()).Do(func(arg1, arg2 interface{}) { fmt.Println("SayHello arg1", arg1) })
 	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "betty"})
 	assert.Equal(t, r, nil)
 }
