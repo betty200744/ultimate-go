@@ -25,6 +25,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	"gobyexample/awesome-go/grpc-go-mock/helloworld"
 	"gobyexample/awesome-go/grpc-go-mock/mock_helloworld"
+	"gopkg.in/go-playground/assert.v1"
 	"testing"
 )
 
@@ -52,26 +53,42 @@ func (r *rpcMsg) Matches(msg interface{}) bool {
 func (r *rpcMsg) String() string {
 	return fmt.Sprintf("is %s", r.msg)
 }
-
-func TestSayHello(t *testing.T) {
+func TestMockGreeterServer_SayHello_Do(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
-	req := &helloworld.HelloRequest{Name: "unit_test"}
-	mockGreeterClient.EXPECT().SayHello(
-		gomock.Any(),
-		&rpcMsg{msg: req},
-	).Return(&helloworld.HelloReply{Message: "Mocked Interface"}, nil)
-	r, err := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "unit_test"})
-	fmt.Println(r, err)
-}
-func TestMockGreeterServer_SayHello(t *testing.T) {
-	ctrl := gomock.NewController(t)
-	defer ctrl.Finish()
-	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
+	// Do, 注入执行，但无返回
 	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any()).Do(func(a interface{}, b interface{}) {
 		fmt.Println("SayHello arg1", a)
 		fmt.Println("SayHello arg2", b)
 	})
-	mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "betty"})
+	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "betty"})
+	assert.Equal(t, r, nil)
+}
+func TestMockGreeterServer_SayHello_Return(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
+	req := &helloworld.HelloRequest{Name: "unit_test"}
+	// Return, 即注入返回
+	mockGreeterClient.EXPECT().SayHello(
+		gomock.Any(),
+		&rpcMsg{msg: req},
+	).Return(&helloworld.HelloReply{Message: "Mocked Interface"}, nil)
+	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "unit_test"})
+	assert.Equal(t, r.Message, "Mocked Interface")
+}
+
+func TestMockGreeterServer_SayHello_DoAndReturn(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
+	// Do, 注入执行，但无返回
+	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any()).DoAndReturn(func(a interface{}, b interface{}) (*helloworld.HelloReply, error) {
+		fmt.Println("SayHello arg1", a)
+		fmt.Println("SayHello arg2", b)
+		return &helloworld.HelloReply{Message: "Mocked Interface"}, nil
+	})
+	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "betty"})
+	assert.Equal(t, r.Message, "Mocked Interface")
 }
