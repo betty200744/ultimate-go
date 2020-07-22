@@ -63,11 +63,23 @@ func TestMockGreeterServer_SayHello(t *testing.T) {
 	assert.Equal(t, r, nil)
 }
 
+func TestMockGreeterServer_SayHello_Expect(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
+	ctx := context.Background()
+	req := &helloworld.HelloRequest{Name: "unit_test"}
+	// ctx, req注入
+	mockGreeterClient.EXPECT().SayHello(ctx, req)
+	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "unit_test"})
+	assert.Equal(t, r, nil)
+}
+
 func TestMockGreeterServer_SayHello_Do(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
-	// Do, 注入执行，但无返回
+	// Do, 注入动作，但无返回
 	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any()).Do(func(a interface{}, b interface{}) {
 		fmt.Println("SayHello arg1", a)
 		fmt.Println("SayHello arg2", b)
@@ -80,12 +92,10 @@ func TestMockGreeterServer_SayHello_Return(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
+	ctx := context.Background()
 	req := &helloworld.HelloRequest{Name: "unit_test"}
-	// Return, 即注入返回
-	mockGreeterClient.EXPECT().SayHello(
-		gomock.Any(),
-		&rpcMsg{msg: req},
-	).Return(&helloworld.HelloReply{Message: "Mocked Interface"}, nil)
+	// Return, 注入返回
+	mockGreeterClient.EXPECT().SayHello(ctx, req).Return(&helloworld.HelloReply{Message: "Mocked Interface"}, nil)
 	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "unit_test"})
 	assert.Equal(t, r.Message, "Mocked Interface")
 }
@@ -94,7 +104,7 @@ func TestMockGreeterServer_SayHello_DoAndReturn(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
-	// Do, 注入执行，但无返回
+	// DoAndReturn, 注入动作及返回
 	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any()).DoAndReturn(func(a interface{}, b interface{}) (*helloworld.HelloReply, error) {
 		fmt.Println("SayHello arg1", a)
 		fmt.Println("SayHello arg2", b)
