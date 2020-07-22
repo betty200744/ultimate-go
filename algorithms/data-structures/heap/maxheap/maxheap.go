@@ -28,9 +28,9 @@ type MaxHeap struct {
 
 func BuildMaxHeap(arr []int) MaxHeap {
 	h := MaxHeap{&heap.Heap{Items: arr, HeapSize: len(arr)}}
-	// 整个heap有(len(arr) / 2) 个小heap， 从最下面的node开始往上比较
+	// len(arr) / 2, 即从倒数第二层开始heapify, 除于2是为了减少heapify，从最下面的node开始往上比较
 	for i := len(arr) / 2; i >= 0; i-- {
-		// 最每个小heap进行max heapify
+		// i 与 i的left and right child对比
 		h.MaxHeapifyDown(i)
 	}
 	return h
@@ -54,37 +54,42 @@ func (h *MaxHeap) MaxHeapifyDown(parentIndex int) { // parentIndex is array inde
 
 // 向上对比，传入childIndex, 递归与parent对比，大的做parent
 func (h *MaxHeap) MaxHeapifyUp(childIndex int) {
-	parent := h.GetParentIndex(childIndex)
-	if parent >= 0 && h.Items[childIndex] > h.Items[parent] {
-		h.Items[childIndex], h.Items[parent] = h.Items[parent], h.Items[childIndex]
-		h.MaxHeapifyUp(parent)
+	parentIndex := h.GetParentIndex(childIndex)
+	if parentIndex >= 0 && h.Items[childIndex] > h.Items[parentIndex] {
+		h.Items[childIndex], h.Items[parentIndex] = h.Items[parentIndex], h.Items[childIndex]
+		h.MaxHeapifyUp(parentIndex)
 	}
 }
 
 // 添加，append到最后，因为新增child所有需要MaxHeapifyUp
 func (h *MaxHeap) Insert(item int) {
 	h.Items = append(h.Items, item)
-	h.HeapSize += 1
-	h.MaxHeapifyUp(len(h.Items) - 1)
+	h.HeapSize++
+	h.MaxHeapifyUp(h.HeapSize - 1)
 }
 
 // 删除root， 删除前先与last交换，最后删除lastItem, 因为root变了， 所有需要MaxHeapifyDown
 func (h *MaxHeap) ExtractMax() int {
-	if len(h.Items) == 0 {
+	if h.HeapSize == 0 {
 		log.Fatal("no items in the heap")
 	}
+	// 取出最大的，即最顶端的
 	maxItem := h.Items[0]
-	lastItemIndex := len(h.Items) - 1
-	h.Items[0] = h.Items[lastItemIndex]
-	h.Items = h.Items[:len(h.Items)-1]
-	h.HeapSize -= 1
+	// 用最后的child填充h.Items[0]
+	h.Items[0] = h.Items[h.HeapSize-1]
+	// 删除最后的child
+	h.Items = h.Items[:h.HeapSize-1]
+	// 删除最后的child，此时HeapSize - 1
+	h.HeapSize--
+	// 重排index 0
 	h.MaxHeapifyDown(0)
 	return maxItem
 }
 func HeapSort(items []int) {
 	h := BuildMaxHeap(items)
-	// 从右到左排序， 大的放右边
-	for i := len(h.Items) - 1; i > 0; i-- {
+	// BuildMaxHeap后h.Items[0]最大， 最大放最后面
+	// 从后到前即从右到左排序， 大的放右边
+	for i := h.HeapSize - 1; i > 0; i-- {
 		// put max item to last item
 		h.Items[0], h.Items[i] = h.Items[i], h.Items[0]
 		// rm last item from h, 最大的放最后面，且是sorted partition
