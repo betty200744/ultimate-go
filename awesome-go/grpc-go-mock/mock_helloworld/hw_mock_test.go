@@ -53,6 +53,16 @@ func (r *rpcMsg) Matches(msg interface{}) bool {
 func (r *rpcMsg) String() string {
 	return fmt.Sprintf("is %s", r.msg)
 }
+func TestMockGreeterServer_SayHello(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+	mockGreeterClient := mock_helloworld.NewMockGreeterClient(ctrl)
+	// 单纯mock调用
+	mockGreeterClient.EXPECT().SayHello(gomock.Any(), gomock.Any())
+	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "betty"})
+	assert.Equal(t, r, nil)
+}
+
 func TestMockGreeterServer_SayHello_Do(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
@@ -65,6 +75,7 @@ func TestMockGreeterServer_SayHello_Do(t *testing.T) {
 	r, _ := mockGreeterClient.SayHello(context.Background(), &helloworld.HelloRequest{Name: "betty"})
 	assert.Equal(t, r, nil)
 }
+
 func TestMockGreeterServer_SayHello_Return(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
