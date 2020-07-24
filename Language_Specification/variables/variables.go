@@ -14,6 +14,12 @@ func (ai *AI) Foo() {
 	fmt.Println(ai.Id)
 }
 
+const (
+	co1 string = "co1"
+	co2 int    = 2
+	co3        = true
+)
+
 var (
 	d   bool              // false
 	bp  *bool             // nil
@@ -30,6 +36,8 @@ var (
 )
 
 func main() {
+	// const
+	fmt.Println(co1, co2, co3)
 	// Declare and initialize
 	// Zero value concept
 	fmt.Printf("a int:  %T , value is : [%v]\n", a, a)
