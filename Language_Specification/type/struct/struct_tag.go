@@ -4,64 +4,86 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+	"time"
 )
 
-type TTTT1 struct {
-	X int     `json:"xx, ,string"` // json name: xx  , int to string
-	Y int     `json:"yy"`
-	U float32 `json:"uu"`
-	A *[]int  `json:"aa"`
+/*
+1. only exported Fields can be json output
+2. use tag name when has struct tag name
+*/
+// struct with no tag
+type User struct {
+	Name      string
+	Password  string
+	Phone     int64
+	CreatedAt time.Time
+	Ignoring  int64
 }
 
-func (TTTT1) Do(event string) {
-	fmt.Println(event)
+// struct with json tag
+type User1 struct {
+	Name      string    `json:"name"`
+	Password  string    `json:"password"`
+	Phone     int64     `json:"phone, omitempty"`
+	CreatedAt time.Time `json:"created_at"`
+	Ignoring  int64     `json:"-"`
 }
 
-type TTTT2 struct {
-	x int `json:"x"`
-	y int
-	u float32
-	A *[]int
+// Get Tags
+func PrintTags(s interface{}) {
+	t := reflect.TypeOf(s).Elem()
+	v := reflect.ValueOf(s).Elem()
+	for i := 0; i < t.NumField(); i++ {
+		f := t.Field(i)
+		vf := v.Field(i)
+		fmt.Printf("Sturct PrintTags index: %v, field: %v, value: %v, type: %v, tag: %v \n", i, f.Name, vf.Interface(), vf.Type().Name(), f.Tag.Get("json"))
+	}
 }
 
-type TTTTT struct {
-	TTTT1
-	TTTT2
-}
+// Depopulate to map
+func Depopulate(s interface{}, values map[string]string) {
+	st := reflect.TypeOf(s).Elem()
+	v := reflect.ValueOf(s).Elem()
 
-type TT struct {
-	f1     string `one:"1" two:"2" blank:""` // 3 tag
-	f2     string ``
-	f3     string `f three`
-	f4, f5 int    `f four and five`
+	for i := 0; i < st.NumField(); i++ {
+		f := st.Field(i)
+		key := f.Tag.Get("json")
+		values[key] = v.Field(i).String()
+	}
 }
-
-func (TT) Do(event string) {
-	fmt.Println(event)
-}
-
 func main() {
-	t1 := &TTTT1{X: 444, Y: 22, U: 3.3, A: &[]int{1, 2, 3}}
-	b, _ := json.Marshal(t1)
-	fmt.Println(string(b))
+	user := &User{
+		Name:      "n",
+		Password:  "p",
+		Phone:     11,
+		CreatedAt: time.Time{},
+	}
+	user1 := &User1{
+		Name:      "n",
+		Password:  "p",
+		Phone:     11,
+		CreatedAt: time.Time{},
+	}
+	// json.Marshal Tags
+	out, _ := json.Marshal(user)
+	out1, _ := json.Marshal(user1)
+	fmt.Println("user marshal: ", string(out))
+	fmt.Println("user1 with json tag marshal: ", string(out1))
 
-	t := reflect.TypeOf(TT{"1", "2", "3", 4, 5})
-	fmt.Println(t.Name())
-	fmt.Println(t.Field(0))
-	fmt.Println(t.Field(0).Name)
-	fmt.Println(t.FieldByName("f1"))
-
-	method, _ := t.MethodByName("Do")
-	fmt.Println(method.Name)
-	f := method.Func
-	in := make([]reflect.Value, 2)
-	in[0] = reflect.ValueOf(TT.Do)
-	in[1] = reflect.ValueOf("a")
-	fmt.Println(f.Call(in))
-
-	f1 := t.Field(0)
-	fmt.Println(f1.Tag)
-	f1v, _ := f1.Tag.Lookup("one")
-	fmt.Println(f1v)
-
+	// json.Unmarshal Tags, 如name小写，对应json tag name
+	userUm := `
+{
+  	"name":      "n",
+	"password":  "p",
+	"phone":     11
+}
+`
+	user2 := &User1{}
+	_ = json.Unmarshal([]byte(userUm), user2)
+	fmt.Printf("json.Unmarshal Tags: %#v \n", user2)
+	// Print json Tags
+	PrintTags(user1)
+	userMap := make(map[string]string)
+	Depopulate(user1, userMap)
+	fmt.Printf("Struct Populate: %v \n", userMap)
 }
