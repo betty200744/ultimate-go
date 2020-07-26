@@ -2,6 +2,20 @@ package main
 
 import "fmt"
 
+/*
+
+function
+func()
+func(x int) int
+func(a, _ int, z float32) bool
+func(a, b int, z float32) (bool)
+func(prefix string, values ...int)
+func(a, b int, z float64, opt ...interface{}) (success bool)
+func(int, int, float64) (float64, *[]int)
+func(int, int, float64) (*[]int， error)
+func(n int) func(p *T)
+*/
+
 func returnOne(a, b int) int {
 	return a + b
 }
