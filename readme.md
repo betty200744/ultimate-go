@@ -21,8 +21,7 @@ In the mix, I also include links to other articles that I find helpful.
     [Field | Field Function| Iterate Field Name And Value | Selector and Promoted](Language_Specification/reference-type/struct/struct_field.go)  [Method Set](Language_Specification/reference-type/struct/struct_method_set.go) 
     - Struct Tags: [Wiki](https://github.com/golang/go/wiki/Well-known-struct-tags) [Code](Language_Specification/reference-type/struct/struct_tag.go) [Tag Doc](Language_Specification/reference-type/struct/struct_tags.md)
     - Pointer: 
-      - [Passing by value | Escape analysis | Stack space | Garbage Collection](pointer.go)
-      - [Golang's Code Review Receiver Type](https://github.com/golang/go/wiki/CodeReviewComments#receiver-type)
+      - [Passing by value | Escape analysis | Stack space ](./Language_Specification/build-in-type/pointers/pointers.go)
     - Function: [Initialization](function.go)
     - Build-in types: [Built-in types](Language_Specification/build-in-type)
   - **Data Structures**
@@ -32,7 +31,7 @@ In the mix, I also include links to other articles that I find helpful.
     - Map: [Initialization | Iteration | Deleting | Finding | Restriction ](map.go)
   - **Decoupling**
     - Method: 
-      - [Value and Pointer Receiver Call](Language_Specification/reference-type/method/methods_receiver.go)
+      - [Value and Pointer Receiver Call](Language_Specification/reference-type/method/methods_receiver.go) [wiki](https://github.com/golang/go/wiki/CodeReviewComments#receiver-type)
       - [Value and Pointer Semantics](Language_Specification/reference-type/method/methods_receiver.go)
       - [Methods are just functions | Function variable](Language_Specification/reference-type/struct/struct_method_set.go)
       - [closures](./Language_Specification/closures/closures.go)
