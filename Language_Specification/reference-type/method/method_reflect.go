@@ -6,6 +6,7 @@ import (
 )
 
 type T struct {
+	F func() bool
 }
 
 func (t T) M1(text string, number int) {

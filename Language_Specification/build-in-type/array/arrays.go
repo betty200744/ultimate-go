@@ -34,4 +34,22 @@ func main() {
 	greett.Greet()
 
 	fmt.Println(a, a[0], aa, aa[0][0], len(a), aaa, aaaa, aaaaa, aaaaaa, aaaaaaa, aaaaaaaa, a == aaaaaa)
+
+	// array
+	var a [2]string
+	a[0] = "hello"
+	a[1] = "world"
+	fmt.Println(a)
+	b := [6]int{1, 2, 3, 4, 5, 6}
+	reviews := [2]Review{{1, "r1"}}
+	fmt.Println(b)
+	fmt.Println(reviews)
+
+	// multi array , 类型为[]string的array[]
+	arrays := [][]string{
+		[]string{"1", "11"},
+		[]string{"2", "22"},
+	}
+	fmt.Println(arrays)
+
 }
