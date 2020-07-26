@@ -5,6 +5,20 @@ import (
 	"github.com/lib/pq"
 )
 
+type Bootstrap struct {
+	Address string
+	PeerID  string
+}
+
+func dupInSlice(item Bootstrap, list []Bootstrap) bool {
+	for _, v := range list {
+		if v.PeerID == item.PeerID && v.Address == item.Address {
+			return true
+		}
+	}
+	return false
+}
+
 func unique(stringSlice []string) []string {
 	keys := make(map[string]bool)
 	list := []string{}
@@ -43,4 +57,31 @@ func main() {
 	su := UniqueStringArray(sa)
 	fmt.Println(su)
 
+	duplicateList := []Bootstrap{
+		{
+			Address: "1",
+			PeerID:  "1",
+		},
+		{
+			Address: "2",
+			PeerID:  "2",
+		},
+		{
+			Address: "1",
+			PeerID:  "1",
+		},
+		{
+			Address: "2",
+			PeerID:  "3",
+		},
+	}
+	uniqueList := []Bootstrap{}
+
+	for _, value := range duplicateList {
+		if !dupInSlice(value, uniqueList) {
+			uniqueList = append(uniqueList, value)
+		}
+	}
+
+	fmt.Println(uniqueList)
 }

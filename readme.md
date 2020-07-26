@@ -22,12 +22,12 @@ In the mix, I also include links to other articles that I find helpful.
     - Struct Tags: [Wiki](https://github.com/golang/go/wiki/Well-known-struct-tags) [Code](Language_Specification/reference-type/struct/struct_tag.go) [Tag Doc](Language_Specification/reference-type/struct/struct_tags.md)
     - Pointer: 
       - [Passing by value | Escape analysis | Stack space ](./Language_Specification/build-in-type/pointers/pointers.go)
-    - Function: [Initialization](function.go)
+    - Function: [Initialization | argument | multiple returns | named return ](./Language_Specification/reference-type/function/functions.go)
     - Build-in types: [Built-in types](Language_Specification/build-in-type)
   - **Data Structures**
     - Enum: [Enum](./Language_Specification/enum/enum.go)
-    - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](array.go)
-    - Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice | Copy of Slice | UTF-8](slice.go)
+    - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](Language_Specification/reference-type/array/arrays.go)
+    - Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice](./Language_Specification/reference-type/slice/slices_cheat_sheet.go) [Map | Reduce | Filter | Include | All|Any ](./Language_Specification/reference-type/slice/slice_collection_function.go)
     - Map: [Initialization | Iteration | Deleting | Finding | Restriction ](map.go)
   - **Decoupling**
     - Method: 

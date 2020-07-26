@@ -2,11 +2,21 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"strings"
 )
 
-func Index(vs []string, t string) int {
-	for i, v := range vs {
+func GetItems(vs interface{}) []interface{} {
+	v := reflect.ValueOf(vs)
+	var items []interface{}
+	for i := 0; i < v.Len(); i++ {
+		items = append(items, v.Index(i).Interface())
+	}
+	return items
+}
+func Index(vs interface{}, t interface{}) int {
+	items := GetItems(vs)
+	for i, v := range items {
 		if v == t {
 			return i
 		}
@@ -14,12 +24,13 @@ func Index(vs []string, t string) int {
 	return -1
 }
 
-func Include(vs []string, t string) bool {
+func Include(vs interface{}, t interface{}) bool {
 	return Index(vs, t) >= 0
 }
 
-func Any(vs []string, f func(string) bool) bool {
-	for _, v := range vs {
+func Any(vs interface{}, f func(interface{}) bool) bool {
+	items := GetItems(vs)
+	for _, v := range items {
 		if f(v) {
 			return true
 		}
@@ -27,8 +38,9 @@ func Any(vs []string, f func(string) bool) bool {
 	return false
 }
 
-func All(vs []string, f func(string) bool) bool {
-	for _, v := range vs {
+func All(vs interface{}, f func(interface{}) bool) bool {
+	items := GetItems(vs)
+	for _, v := range items {
 		if !f(v) {
 			return false
 		}
@@ -36,9 +48,10 @@ func All(vs []string, f func(string) bool) bool {
 	return true
 }
 
-func Filter(vs []string, f func(string) bool) []string {
-	vsf := make([]string, 0)
-	for _, v := range vs {
+func Filter(vs interface{}, f func(interface{}) bool) []interface{} {
+	vsf := make([]interface{}, 0)
+	items := GetItems(vs)
+	for _, v := range items {
 		if f(v) {
 			vsf = append(vsf, v)
 		}
@@ -46,9 +59,10 @@ func Filter(vs []string, f func(string) bool) []string {
 	return vsf
 }
 
-func Map(vs []string, f func(string) string) []string {
-	vsm := make([]string, len(vs))
-	for i, v := range vs {
+func Map(vs interface{}, f func(interface{}) interface{}) []interface{} {
+	items := GetItems(vs)
+	vsm := make([]interface{}, len(items))
+	for i, v := range items {
 		vsm[i] = f(v)
 	}
 	return vsm
@@ -62,18 +76,15 @@ func main() {
 
 	fmt.Println(Include(strs, "grape"))
 
-	fmt.Println(Any(strs, func(v string) bool {
-		return strings.HasPrefix(v, "p")
+	fmt.Println(Any(strs, func(v interface{}) bool {
+		return strings.HasPrefix(v.(string), "p")
 	}))
 
-	fmt.Println(All(strs, func(v string) bool {
-		return strings.HasPrefix(v, "p")
+	fmt.Println(All(strs, func(v interface{}) bool {
+		return strings.HasPrefix(v.(string), "p")
 	}))
 
-	fmt.Println(Filter(strs, func(v string) bool {
-		return strings.Contains(v, "e")
+	fmt.Println(Filter(strs, func(v interface{}) bool {
+		return strings.Contains(v.(string), "e")
 	}))
-
-	fmt.Println(Map(strs, strings.ToUpper))
-
 }
