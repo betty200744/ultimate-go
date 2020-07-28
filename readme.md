@@ -36,20 +36,18 @@ In the mix, I also include links to other articles that I find helpful.
       - [Methods are just functions | Function variable](Language_Specification/reference-type/struct/struct_method_set.go)
       - [closures](./Language_Specification/closures/closures.go)
     - Interface: 
-      - [Valueless type | Concrete type vs Interface type | Relationship | Polymorphic function](interface_1.go)
-      - [Interface via Pointer Receiver | Method set | Slice of Interface](interface_2.go)
+      - [Declaring |Type assertions| Concrete type vs Interface type| Polymorphic function](./Language_Specification/reference-type/interfaces/interfaces_cheat_sheet.go)
     - Embedding: 
-      - [Declaring fields, NOT Embedding](embedding_1.go)
-      - [Embedding type | Inner type promotion](embedding_2.go)
-      - [Embedded type and Interface](embedding_3.go)
-      - [Outer and inner type implementing the same Interface](embedding_4.go)
+      - [Declaring fields, NOT Embedding](Language_Specification/reference-type/struct_embedding/slice_embedding.go)
+      - [Embedding type | Inner type promotion](Language_Specification/reference-type/struct_embedding/slice_embedding.go)
+      - [Embedded type and Interface](Language_Specification/reference-type/struct_embedding/slice_embedding.go)
+      - [Outer and inner type implementing the same Interface](Language_Specification/reference-type/struct_embedding/slice_embedding.go)
     - Exporting:
-      - [Guideline](exporting/README.md)
-      - [Exported identifier](exporting/exporting_1)
-      - [Accessing a value of an unexported identifier](exporting/exporting_2)
-      - [Unexported fields from an exported struct](exporting/exporting_3)
-      - [Exported types with embedded unexported types](exporting/exporting_4)
+      - [Exported identifier](./Language_Specification/exporting/exporting.go)
+      - [Accessing a value of an unexported identifier](./Language_Specification/exporting/exporting.go)
+      - [Unexported fields from an exported struct](./Language_Specification/exporting/exporting.go)
 - **Software Design**
+  - 7.29
   - Composition:
     [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#interface-and-composition-design)
     - Grouping types: 
@@ -78,9 +76,38 @@ In the mix, I also include links to other articles that I find helpful.
     - [Wrapping Errors](error_6.go)
   - Packaging: [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/packaging/README.md)
   - Dependency management: [Go Modules](https://blog.golang.org/using-go-modules)
-- **Design Pattern**
-  - xxx: 
+- **Design Pattern** [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
+  - SOLID: [SOLID](https://en.wikipedia.org/wiki/SOLID) 
+  - Creational
+    - Simple Factory: [wiki](https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)) | [code](./design-pattern/creational/simple_factory) | [best practices](./awesome-go/go-redis/main.go)
+    - Abstract factory: [wiki](https://en.wikipedia.org/wiki/Abstract_factory_pattern) | [code](./design-pattern/creational/abstract_factory/abstract_factory.go) | [best practices]()
+    - Builder: [wiki](https://en.wikipedia.org/wiki/Builder_pattern) | [code1](./design-pattern/creational/builder/builder.go) | [code2](./design-pattern/creational/builder/builder2.go) | [best practices orm query build](./awesome-go/gorm/gorm_query_build.go) | [best practices es query build](https://github.com/olivere/elastic/wiki/Search)
+    - Factory method: [wiki](https://en.wikipedia.org/wiki/Factory_method_pattern) | [code](./design-pattern/creational/factory_method/factory_method.go) | [best practices](./awesome-go/kafkaSarama/sarama_comsumer_group.go)
+    - Prototype: [wiki]() | [code]() | [best practices]() 
+    - Object Pool Pattern: [wiki](https://golangbyexample.com/golang-object-pool/) | [code]() | [best practices]() 
+    - Singleton: [wiki]() | [code]() | [best practices]() 
+  - Structual
+    - Adapter: [wiki]() | [code]() | [best practices]() 
+    - Bridge: [wiki]() | [code]() | [best practices]() 
+    - Composite: [wiki]() | [code]() | [best practices]() 
+    - Decorator: [wiki]() | [code]() | [best practices]() 
+    - Facade: [wiki]() | [code]() | [best practices]() 
+    - Flyweight: [wiki]() | [code]() | [best practices]() 
+    - Proxy: [wiki]() | [code]() | [best practices]() 
+  - Behavioral
+    - Chain of responsibility: [wiki]() | [code]() | [best practices]() 
+    - Command: [wiki]() | [code]() | [best practices]() 
+    - Interpreter: [wiki]() | [code]() | [best practices]() 
+    - Iterator: [wiki]() | [code]() | [best practices]() 
+    - Mediator: [wiki]() | [code]() | [best practices]() 
+    - Memento: [wiki]() | [code]() | [best practices]() 
+    - Observer: [wiki]() | [code]() | [best practices]() 
+    - State: [wiki]() | [code]() | [best practices]() 
+    - Strategy: [wiki]() | [code]() | [best practices]() 
+    - Template method : [wiki]() | [code]() | [best practices]() 
+    - Visitor: [wiki]() | [code]() | [best practices]() 
 - **Concurrency**
+  - 7.28
   - **Mechanics**
     - Goroutine: 
       - [Go Scheduler Internals](goroutine_1.go)
@@ -111,6 +138,7 @@ In the mix, I also include links to other articles that I find helpful.
       - Task
       - Logger
 - **Testing and Profiling**
+  - 7.29
   - Testing: 
     - [Basic Unit Test](basic_test.go)
     - [Table Test](table_test.go)
@@ -184,4 +212,5 @@ In the mix, I also include links to other articles that I find helpful.
    
     
 - **Awesome Go**
+  - 7.30
   - [bazel]() 
