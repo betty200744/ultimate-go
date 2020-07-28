@@ -88,8 +88,8 @@ In the mix, I also include links to other articles that I find helpful.
     - Singleton: [wiki](https://en.wikipedia.org/wiki/Singleton_pattern) | [code](./design-pattern/creational/singleton) | [best practices]() 
   - Structual
     - Adapter: [wiki](https://en.wikipedia.org/wiki/Adapter_pattern) | [code](./design-pattern/structual/adapter/adapter.go) | [best practices](./awesome-go/go-redis/redisClient/redis.go) 
-    - Bridge: [wiki]() | [code]() | [best practices]() 
-    - Composite: [wiki]() | [code]() | [best practices]() 
+    - Bridge: [wiki](https://en.wikipedia.org/wiki/Bridge_pattern) | [code](./design-pattern/structual/bridge/bridge.go) | [best practices]() 
+    - Composite: [wiki](https://en.wikipedia.org/wiki/Composite_pattern) | [code](./design-pattern/structual/bridge/bridge.go) | [best practices](./algorithms/data-structures/tree/binary_search_tree/binary_search_tree.go) 
     - Decorator: [wiki]() | [code]() | [best practices]() 
     - Facade: [wiki]() | [code]() | [best practices]() 
     - Flyweight: [wiki]() | [code]() | [best practices]() 
