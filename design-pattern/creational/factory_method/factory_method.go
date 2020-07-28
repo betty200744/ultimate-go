@@ -3,6 +3,9 @@ package factory_method
 import "fmt"
 
 /*
+
+ 更灵活的创建对象的方法
+
 The Factory Method pattern is a design pattern used to define a runtime interface for creating an object. It’s called a factory because it creates various types of objects without necessarily knowing what kind of object it creates or how to create it.
 
 Purpose

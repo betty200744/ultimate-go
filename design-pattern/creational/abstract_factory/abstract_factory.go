@@ -2,6 +2,9 @@ package abstract_factory
 
 import "fmt"
 
+/*
+ 更灵活的创建对象的方法
+*/
 type Shape interface {
 	Draw()
 }

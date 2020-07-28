@@ -87,7 +87,7 @@ In the mix, I also include links to other articles that I find helpful.
     - Prototype: [wiki](https://en.wikipedia.org/wiki/Prototype_pattern) | [code](./design-pattern/creational/prototype/prototype.go) | [best practices](./awesome-go/grpc-go/helloworld/greeter_client/main.go) 
     - Singleton: [wiki](https://en.wikipedia.org/wiki/Singleton_pattern) | [code](./design-pattern/creational/singleton) | [best practices]() 
   - Structual
-    - Adapter: [wiki]() | [code]() | [best practices]() 
+    - Adapter: [wiki](https://en.wikipedia.org/wiki/Adapter_pattern) | [code](./design-pattern/structual/adapter/adapter.go) | [best practices](./awesome-go/go-redis/redisClient/redis.go) 
     - Bridge: [wiki]() | [code]() | [best practices]() 
     - Composite: [wiki]() | [code]() | [best practices]() 
     - Decorator: [wiki]() | [code]() | [best practices]() 
