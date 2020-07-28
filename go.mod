@@ -44,6 +44,7 @@ require (
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
+	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/opentracing/opentracing-go v1.1.1-0.20190913142402-a7454ce5950e
 	github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5
 	github.com/pkg/errors v0.9.1 // indirect
@@ -66,7 +67,7 @@ require (
 	github.com/yudai/pp v2.0.1+incompatible // indirect
 	go.elastic.co/apm/module/apmgoredisv8 v0.0.0-20200618141751-9f7ef4bcff66
 	go.elastic.co/fastjson v1.1.0 // indirect
-	go.uber.org/zap v1.12.0
+	go.uber.org/zap v1.15.0
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	golang.org/x/net v0.0.0-20200625001655-4c5254603344
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
