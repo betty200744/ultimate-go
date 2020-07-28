@@ -27,6 +27,14 @@ func main() {
 	db.Create(&Product{Code: "L1212", Price: int(100)})
 	db.Create(&Product{Code: "L1213", Price: int(100)})
 
+	// Read
+	var product Product
+	db.First(&product, 1)                   // find product with id 1
+	db.First(&product, "code = ?", "L1212") // find product with code l1212
+
+	// Update - update product's price to 2000
+	db.Model(&product).Update("Price", 2000)
+
 	/*
 		Select
 	*/
@@ -50,5 +58,6 @@ func main() {
 	})
 	db.Table("products").Select("code, sum(price) as sum").Group("code").Scan(groupResult)
 	fmt.Println(groupResult)
-
+	// Delete - delete product
+	db.Delete(&product)
 }

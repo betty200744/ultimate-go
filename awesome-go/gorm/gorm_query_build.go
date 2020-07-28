@@ -18,35 +18,30 @@ type Product struct {
 	Price uint
 }
 
+func Find(db *gorm.DB, code string, price int, order string) *gorm.DB {
+	q := db.Model(&Product{})
+	if code != "" {
+		q = q.Where("code = ?", code)
+	}
+	if price != 0 {
+		q = q.Where("price = ?", price)
+	}
+	if order != "" {
+		q = q.Order(order)
+	}
+	return q
+}
+
 func main() {
 	db, err := gorm.Open("postgres", fmt.Sprintf("postgres://%s:%s@localhost/%s?sslmode=disable", Dbuser, Dbpwd, Dbname))
 	if err != nil {
 		panic("failed to connect database")
 	}
 	defer db.Close()
-
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
-
 	// Create
 	db.Create(&Product{Code: "L1213", Price: 1000})
-
-	// Read
-	var product Product
-	db.First(&product, 1)                   // find product with id 1
-	db.First(&product, "code = ?", "L1212") // find product with code l1212
-
-	// Update - update product's price to 2000
-	db.Model(&product).Update("Price", 2000)
-
-	// Delete - delete product
-	//db.Delete(&product)
-	type Result struct {
-		Code  string `json:"price"`
-		Total int    `json:"total"`
-	}
-	r := new(Result)
-
-	db.Model(&product).Select("code, sum(price) as total").Group("code").Scan(&r)
-	fmt.Println(r.Code)
+	// Find, Builder Pattern
+	Find(db, "L1213", 1000, "code DESC")
 }

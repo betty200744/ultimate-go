@@ -19,8 +19,7 @@ require (
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20200529170236-5abacdfa4915 // indirect
 	github.com/gavv/monotime v0.0.0-20190418164738-30dba4353424 // indirect
-	github.com/gin-gonic/gin v1.5.0
-	github.com/go-playground/locales v0.13.0 // indirect
+	github.com/gin-gonic/gin v1.6.3
 	github.com/go-redis/redis/v8 v8.0.0-beta.6
 	github.com/golang/mock v1.4.3
 	github.com/golang/protobuf v1.4.2
@@ -34,14 +33,13 @@ require (
 	github.com/jackc/pgio v1.0.0
 	github.com/jessevdk/go-flags v1.4.0
 	github.com/jinzhu/copier v0.0.0-20180308034124-7e38e58719c3
-	github.com/jinzhu/gorm v1.9.12
-	github.com/json-iterator/go v1.1.8 // indirect
+	github.com/jinzhu/gorm v1.9.15
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/kataras/golog v0.0.18 // indirect
 	github.com/kataras/iris v11.1.1+incompatible
-	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/lib/pq v1.7.1
 	github.com/mattn/go-colorable v0.1.7 // indirect
+	github.com/mattn/go-sqlite3 v2.0.1+incompatible // indirect
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
