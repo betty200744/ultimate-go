@@ -7,6 +7,16 @@ import (
 	apmgoredis "go.elastic.co/apm/module/apmgoredisv8"
 )
 
+type Redis struct {
+	Config *redis.Options
+	Client *redis.Client
+}
+
+func RedisAdapter(config *redis.Options) *Redis {
+	conn := NewClient()
+	return &Redis{Config: config, Client: conn}
+}
+
 func NewClient() *redis.Client {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
