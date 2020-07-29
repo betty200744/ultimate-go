@@ -23,7 +23,7 @@ func WebCall2() error {
 }
 
 // ---------------
-// Type as context
+// Type as context, Custom Error
 // ---------------
 type UnmarshalTypeError struct {
 	Value string       // description of JSON value
@@ -39,10 +39,6 @@ type InvalidUnmarshalError struct {
 }
 
 func (e *InvalidUnmarshalError) Error() string {
-	if e.Type == nil {
-		return "json: Unmarshal(nil)"
-	}
-
 	if e.Type.Kind() != reflect.Ptr {
 		return "json: Unmarshal(non-pointer " + e.Type.String() + ")"
 	}
@@ -56,7 +52,3 @@ func Unmarshal(data []byte, v interface{}) error {
 
 	return &UnmarshalTypeError{"string", reflect.TypeOf(v)}
 }
-
-// ---------------
-// Wrapping Errors
-// ---------------

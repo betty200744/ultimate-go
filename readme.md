@@ -50,7 +50,7 @@ This repo contains my notes on work with Go and computer systems
     - [Default error values](./design-pattern/go-design/error_handling/error_handling.go)
     - [Error variables](./design-pattern/go-design/error_handling/error_handling.go)
     - [Type as context](./design-pattern/go-design/error_handling/error_handling.go)
-    - [Wrapping Errors](./design-pattern/go-design/error_handling/error_handling.go)
+    - [Wrapping Errors](./design-pattern/go-design/error_wrapping/error_wrapping.go)
     - [bilibili Errors]()
   - Packaging: [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/packaging/README.md)
   - Dependency management: [Go Modules](https://blog.golang.org/using-go-modules)
