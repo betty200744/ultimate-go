@@ -1,14 +1,7 @@
 
 ## Motivation
 
-This repo contains my notes on learning Go and computer systems. Different people have different
-learning style. For me, I learn best by doing and walking through examples. Hence, I am trying to
-take notes carefully and comment directly on the source code, rather than writing up Markdown
-files. That way, I can understand every single line of code as I am reading and also be mindful of
-the theories behind the scene.
-
-In the mix, I also include links to other articles that I find helpful.
-
+This repo contains my notes on work with Go and computer systems
 
 ## Table of Contents 
 
