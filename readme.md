@@ -80,30 +80,30 @@ In the mix, I also include links to other articles that I find helpful.
   - SOLID: [SOLID](https://en.wikipedia.org/wiki/SOLID) 
   - Creational
     - Simple Factory: [wiki](https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)) | [code](./design-pattern/creational/simple_factory) | [best practices](./awesome-go/go-redis/main.go)
-    - Abstract factory: [wiki](https://en.wikipedia.org/wiki/Abstract_factory_pattern) | [code](./design-pattern/creational/abstract_factory/abstract_factory.go) | [best practices]()
-    - Builder: [wiki](https://en.wikipedia.org/wiki/Builder_pattern) | [code1](./design-pattern/creational/builder/builder.go) | [code2](./design-pattern/creational/builder/builder2.go) | [best practices orm query build](./awesome-go/gorm/gorm_query_build.go) | [best practices es query build](https://github.com/olivere/elastic/wiki/Search)
+    - *Abstract factory: [wiki](https://en.wikipedia.org/wiki/Abstract_factory_pattern) | [code](./design-pattern/creational/abstract_factory/abstract_factory.go) | [best practices]()
+    - *Builder: [wiki](https://en.wikipedia.org/wiki/Builder_pattern) | [code1](./design-pattern/creational/builder/builder.go) | [code2](./design-pattern/creational/builder/builder2.go) | [best practices orm query build](./awesome-go/gorm/gorm_query_build.go) | [best practices es query build](https://github.com/olivere/elastic/wiki/Search)
     - Factory method: [wiki](https://en.wikipedia.org/wiki/Factory_method_pattern) | [code](./design-pattern/creational/factory_method/factory_method.go) | [best practices](./awesome-go/kafkaSarama/sarama_comsumer_group.go)
-    - Object Pool Pattern: [wiki](https://golangbyexample.com/golang-object-pool/) | [code](./design-pattern/creational/object_pool/object_pool.go) | [best practices bilibili redis pool](https://github.com/whjstc/openbilibili-go-common-1/tree/master/library/cache/redis) 
-    - Prototype: [wiki](https://en.wikipedia.org/wiki/Prototype_pattern) | [code](./design-pattern/creational/prototype/prototype.go) | [best practices](./awesome-go/grpc-go/helloworld/greeter_client/main.go) 
-    - Singleton: [wiki](https://en.wikipedia.org/wiki/Singleton_pattern) | [code](./design-pattern/creational/singleton) | [best practices]() 
+    - *Object Pool Pattern: [wiki](https://golangbyexample.com/golang-object-pool/) | [code](./design-pattern/creational/object_pool/object_pool.go) | [best practices bilibili redis pool](https://github.com/whjstc/openbilibili-go-common-1/tree/master/library/cache/redis) 
+    - *Prototype: [wiki](https://en.wikipedia.org/wiki/Prototype_pattern) | [code](./design-pattern/creational/prototype/prototype.go) | [best practices](./awesome-go/grpc-go/helloworld/greeter_client/main.go) 
+    - *Singleton: [wiki](https://en.wikipedia.org/wiki/Singleton_pattern) | [code](./design-pattern/creational/singleton) | [best practices]() 
   - Structual
     - Adapter: [wiki](https://en.wikipedia.org/wiki/Adapter_pattern) | [code](./design-pattern/structual/adapter/adapter.go) | [best practices](./awesome-go/go-redis/redisClient/redis.go) 
-    - Bridge: [wiki](https://en.wikipedia.org/wiki/Bridge_pattern) | [code](./design-pattern/structual/bridge/bridge.go) | [best practices]() 
+    - *Bridge: [wiki](https://en.wikipedia.org/wiki/Bridge_pattern) | [code](./design-pattern/structual/bridge/bridge.go) | [best practices]() 
     - Composite: [wiki](https://en.wikipedia.org/wiki/Composite_pattern) | [code](./design-pattern/structual/bridge/bridge.go) | [best practices](./algorithms/data-structures/tree/binary_search_tree/binary_search_tree.go) 
-    - Decorator: [wiki](https://en.wikipedia.org/wiki/Decorator_pattern) | [code](./design-pattern/structual/decorator/decorator.go) | [best practices](https://github.com/avast/retry-go) 
+    - *Decorator: [wiki](https://en.wikipedia.org/wiki/Decorator_pattern) | [code](./design-pattern/structual/decorator/decorator.go) | [best practices](https://github.com/avast/retry-go) 
     - Facade: [wiki](https://en.wikipedia.org/wiki/Facade_pattern) | [code](./design-pattern/structual/facade/facade.go) | [best practices]() 
     - Flyweight: [wiki]() | [code]() | [best practices]() 
     - Proxy: [wiki]() | [code]() | [best practices]() 
   - Behavioral
-    - Chain of responsibility: [wiki]() | [code]() | [best practices]() 
+    - *Chain of responsibility: [wiki](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) | [code](./design-pattern/behavioral/chain_of_responsibility/chain_of_responsibility.go) | [best practices](./awesome-go/gin/gin.go) 
     - Command: [wiki]() | [code]() | [best practices]() 
-    - Interpreter: [wiki]() | [code]() | [best practices]() 
-    - Iterator: [wiki]() | [code]() | [best practices]() 
+    - *Interpreter: [wiki]() | [code]() | [best practices]() 
+    - *Iterator: [wiki]() | [code]() | [best practices]() 
     - Mediator: [wiki]() | [code]() | [best practices]() 
     - Memento: [wiki]() | [code]() | [best practices]() 
     - Observer: [wiki]() | [code]() | [best practices]() 
     - State: [wiki]() | [code]() | [best practices]() 
-    - Strategy: [wiki](https://en.wikipedia.org/wiki/Strategy_pattern) | [code]() | [best practices](./awesome-go/kafkaSarama/sarama_comsumer_group.go) 
+    - *Strategy: [wiki](https://en.wikipedia.org/wiki/Strategy_pattern) | [code]() | [best practices](./awesome-go/kafkaSarama/sarama_comsumer_group.go) 
     - Template method : [wiki]() | [code]() | [best practices]() 
     - Visitor: [wiki]() | [code]() | [best practices]() 
 - **Concurrency**
@@ -129,10 +129,10 @@ In the mix, I also include links to other articles that I find helpful.
       - [Select](channel_6.go)
   - **Patterns**
     - Context: 
-      - [Store and retrieve values from a context](context_1.go)
-      - [WithCancel](context_2.go)
-      - [WithDeadline](context_3.go)
-      - [WithTimeout](context_4.go)
+      - [Store and retrieve values from a context](./build-in-package/context/context_cheat_sheet.go)
+      - [WithCancel](./build-in-package/context/context_cheat_sheet.go)
+      - [WithDeadline](./build-in-package/context/context_cheat_sheet.go)
+      - [WithTimeout](./build-in-package/context/context_cheat_sheet.go)
       - [Request/Response](context_5.go)
     - Pattern
       - Task
@@ -144,7 +144,7 @@ In the mix, I also include links to other articles that I find helpful.
     - [Table Test](table_test.go)
     - [Sub Test](sub_test.go)
     - [Web Server](web_server)
-    - [Mock Server](web_test.go)
+    - [Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
     - [Test Coverage](README.md)
   - Benchmarking
     - [Basic Benchmark](basic_test.go)
@@ -197,10 +197,6 @@ In the mix, I also include links to other articles that I find helpful.
    
    - Sorting algorithms
      - [Bubble Sort](sorting-algorithms/bubble-sort/bubble-sort.go) [(wiki)](http://en.wikipedia.org/wiki/Bubble_sort)
-   
-   ![](./img/WX20200530-140733.png)
-   ![](./img/WechatIMG881.png)
-   
      - [Heap Sort](sorting-algorithms/heap-sort/heap-sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec04.pdf) [(wiki)](http://en.wikipedia.org/wiki/Heapsort)
      - [Quick Sort](sorting-algorithms/quick_sort/quick_sort.go)[(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Quicksort)
      - [Merge Sort](sorting-algorithms/merge_sort/merge_sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec03.pdf) [(wiki)](http://en.wikipedia.org/wiki/Merge_sort)

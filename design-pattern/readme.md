@@ -53,7 +53,7 @@ These concern class and object composition. They use inheritance to compose inte
 类行为型模式：类的行为型模式使用继承关系在几个类之间分配行为，类行为型模式主要通过多态等方式来分配父类与子类的职责。
 对象行为型模式：对象的行为型模式则使用对象的聚合关联关系来分配行为，对象行为型模式主要是通过对象关联等方式来分配两个或多个类的职责。根据“合成复用原则”，系统中要尽量使用关联关系来取代继承关系，因此大部分行为型设计模式都属于对象行为型设计模式。
 
-* 职责链模式(Chain of Responsibility)
+* 职责链模式(Chain of Responsibility) , 即middleware中间件的感觉
 * 命令模式(Command)
 * 解释器模式(Interpreter)
 * 迭代器模式(Iterator)
