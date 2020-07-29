@@ -90,8 +90,8 @@ In the mix, I also include links to other articles that I find helpful.
     - Adapter: [wiki](https://en.wikipedia.org/wiki/Adapter_pattern) | [code](./design-pattern/structual/adapter/adapter.go) | [best practices](./awesome-go/go-redis/redisClient/redis.go) 
     - Bridge: [wiki](https://en.wikipedia.org/wiki/Bridge_pattern) | [code](./design-pattern/structual/bridge/bridge.go) | [best practices]() 
     - Composite: [wiki](https://en.wikipedia.org/wiki/Composite_pattern) | [code](./design-pattern/structual/bridge/bridge.go) | [best practices](./algorithms/data-structures/tree/binary_search_tree/binary_search_tree.go) 
-    - Decorator: [wiki]() | [code]() | [best practices]() 
-    - Facade: [wiki]() | [code]() | [best practices]() 
+    - Decorator: [wiki](https://en.wikipedia.org/wiki/Decorator_pattern) | [code](./design-pattern/structual/decorator/decorator.go) | [best practices](https://github.com/avast/retry-go) 
+    - Facade: [wiki](https://en.wikipedia.org/wiki/Facade_pattern) | [code](./design-pattern/structual/facade/facade.go) | [best practices]() 
     - Flyweight: [wiki]() | [code]() | [best practices]() 
     - Proxy: [wiki]() | [code]() | [best practices]() 
   - Behavioral
@@ -107,7 +107,7 @@ In the mix, I also include links to other articles that I find helpful.
     - Template method : [wiki]() | [code]() | [best practices]() 
     - Visitor: [wiki]() | [code]() | [best practices]() 
 - **Concurrency**
-  - 7.28
+  - 7.30
   - **Mechanics**
     - Goroutine: 
       - [Go Scheduler Internals](goroutine_1.go)
@@ -138,7 +138,7 @@ In the mix, I also include links to other articles that I find helpful.
       - Task
       - Logger
 - **Testing and Profiling**
-  - 7.29
+  - 7.31
   - Testing: 
     - [Basic Unit Test](basic_test.go)
     - [Table Test](table_test.go)
@@ -156,6 +156,7 @@ In the mix, I also include links to other articles that I find helpful.
     - GODEBUG: [Memory Tracing](memory_tracing.go)
     
 - **Algorithms** [Algorithms](./algorithms/algorithms.md)
+   - 8.2 
    - Data Structures
      - [Binary Search Tree](./algorithms/data-structures/tree/binary_search_tree) [(wiki)](https://en.wikipedia.org/wiki/Binary_search_tree) [(mit)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec05.pdf)
      - [Binary Tree](./algorithms/data-structures/tree/binary_tree) [(wiki)](http://en.wikipedia.org/wiki/Binary_tree)
@@ -212,5 +213,5 @@ In the mix, I also include links to other articles that I find helpful.
    
     
 - **Awesome Go**
-  - 7.30
+  - 8.1
   - [bazel]() 

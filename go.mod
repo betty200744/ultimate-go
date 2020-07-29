@@ -8,6 +8,7 @@ require (
 	github.com/Shopify/sarama v1.26.4
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/astaxie/beego v1.12.1
+	github.com/avast/retry-go v2.6.0+incompatible
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
 	github.com/bazelbuild/bazel-gazelle v0.21.1 // indirect
 	github.com/bwmarrin/snowflake v0.3.0
