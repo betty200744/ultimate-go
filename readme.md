@@ -45,7 +45,7 @@ This repo contains my notes on work with Go and computer systems
     [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#interface-and-composition-design)
     - Conversion: 
       - [Interface Conversions | Type Assertion](./design-pattern/go-design/conversion/conversion.go)
-      - [Runtime Type Assertion](conversion_2.go)
+      - [Runtime Type Assertion](./design-pattern/go-design/runtime_type_assertion/runtime_type_assertion.go)
     - Interface Pollution: 
       - [Interface Pollution](pollution_1.go)
       - [Remove Interface Pollution](pollution_2.go)
