@@ -61,6 +61,6 @@ These concern class and object composition. They use inheritance to compose inte
 * 备忘录模式(Memento)
 * 观察者模式(Observer)
 * 状态模式(State)
-* 策略模式(Strategy)
+* 策略模式(Strategy), 登录用不同的账号登录， 即策略， 付款用不同的方式付款，也是策略， kafka消费数据用不同的策略
 * 模板方法模式(Template Method)
 * 访问者模式(Visitor)

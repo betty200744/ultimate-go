@@ -103,7 +103,7 @@ In the mix, I also include links to other articles that I find helpful.
     - Memento: [wiki]() | [code]() | [best practices]() 
     - Observer: [wiki]() | [code]() | [best practices]() 
     - State: [wiki]() | [code]() | [best practices]() 
-    - Strategy: [wiki]() | [code]() | [best practices]() 
+    - Strategy: [wiki](https://en.wikipedia.org/wiki/Strategy_pattern) | [code]() | [best practices](./awesome-go/kafkaSarama/sarama_comsumer_group.go) 
     - Template method : [wiki]() | [code]() | [best practices]() 
     - Visitor: [wiki]() | [code]() | [best practices]() 
 - **Concurrency**

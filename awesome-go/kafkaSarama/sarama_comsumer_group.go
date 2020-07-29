@@ -27,6 +27,7 @@ func main() {
 	config := sarama.NewConfig()
 	config.Version = sarama.V1_0_0_0
 	config.Consumer.Return.Errors = true
+	config.Consumer.Group.Rebalance.Strategy = sarama.BalanceStrategyRoundRobin
 
 	client, err := sarama.NewClient([]string{"localhost:9092"}, config)
 	if err != nil {
