@@ -43,16 +43,8 @@ This repo contains my notes on work with Go and computer systems
   - 7.29
   - Composition:
     [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#interface-and-composition-design)
-    - Grouping types: 
-      - [Grouping By State](grouping_types_1.go)
-      - [Grouping By Behavior](grouping_types_2.go)
-    - Decoupling: 
-      - [Struct Composition](decoupling_1.go)
-      - [Decoupling With Interface](decoupling_2.go)
-      - [Interface Composition](decoupling_3.go)
-      - [Decoupling With Interface Composition](decoupling_4.go)
     - Conversion: 
-      - [Interface Conversions | Type Assertion](conversion_1.go)
+      - [Interface Conversions | Type Assertion](./design-pattern/go-design/conversion/conversion.go)
       - [Runtime Type Assertion](conversion_2.go)
     - Interface Pollution: 
       - [Interface Pollution](pollution_1.go)
