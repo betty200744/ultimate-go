@@ -46,19 +46,12 @@ This repo contains my notes on work with Go and computer systems
     - Conversion: 
       - [Interface Conversions | Type Assertion](./design-pattern/go-design/conversion/conversion.go)
       - [Runtime Type Assertion](./design-pattern/go-design/runtime_type_assertion/runtime_type_assertion.go)
-    - Interface Pollution: 
-      - [Interface Pollution](pollution_1.go)
-      - [Remove Interface Pollution](pollution_2.go)
-    - Mocking: 
-      - [Package To Mock](mocking_1.go)
-      - [Sample Client](mocking_2.go)
   - Error Handling: 
-    - [Default error values](error_1.go)
-    - [Error variables](error_2.go)
-    - [Type as context](error_3.go)
-    - [Behavior as context](error_4.go)
-    - [Finding the bug/pitfall of nil value of error interface](error_5.go)
-    - [Wrapping Errors](error_6.go)
+    - [Default error values](./design-pattern/go-design/error_handling/error_handling.go)
+    - [Error variables](./design-pattern/go-design/error_handling/error_handling.go)
+    - [Type as context](./design-pattern/go-design/error_handling/error_handling.go)
+    - [Wrapping Errors](./design-pattern/go-design/error_handling/error_handling.go)
+    - [bilibili Errors]()
   - Packaging: [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/packaging/README.md)
   - Dependency management: [Go Modules](https://blog.golang.org/using-go-modules)
 - **Design Pattern** [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) | [javatpoint](https://www.javatpoint.com/prototype-design-pattern)
