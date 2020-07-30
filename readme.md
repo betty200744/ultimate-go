@@ -48,10 +48,9 @@ This repo contains my notes on work with Go and computer systems
       - [Runtime Type Assertion](./design-pattern/go-design/runtime_type_assertion/runtime_type_assertion.go)
   - Error Handling: 
     - [Default error values](./design-pattern/go-design/error_handling/error_handling.go)
-    - [Error variables](./design-pattern/go-design/error_handling/error_handling.go)
+    - [Error variables](./design-pattern/go-design/error_handling/error_handling.go) [best practices](https://github.com/grpc/grpc-go/blob/master/codes/codes.go)
     - [Type as context](./design-pattern/go-design/error_handling/error_handling.go)
-    - [Wrapping Errors](./design-pattern/go-design/error_wrapping/error_wrapping.go)
-    - [bilibili Errors]()
+    - [Wrapping Errors](./design-pattern/go-design/grpc_go_error_handling)
   - Packaging: [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/packaging/README.md)
   - Dependency management: [Go Modules](https://blog.golang.org/using-go-modules)
 - **Design Pattern** [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) | [javatpoint](https://www.javatpoint.com/prototype-design-pattern)

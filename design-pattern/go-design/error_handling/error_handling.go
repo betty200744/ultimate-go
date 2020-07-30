@@ -12,14 +12,15 @@ var (
 	ErrArgs = errors.New("args error")
 )
 
+func WebCall2() error {
+	return ErrArgs
+}
+
 // ---------------
 // default Error
 // ---------------
 func WebCall1() error {
 	return errors.New("default error")
-}
-func WebCall2() error {
-	return ErrArgs
 }
 
 // ---------------
