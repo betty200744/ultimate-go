@@ -39,13 +39,13 @@ This repo contains my notes on work with Go and computer systems
       - [Exported identifier](./Language_Specification/exporting/exporting.go)
       - [Accessing a value of an unexported identifier](./Language_Specification/exporting/exporting.go)
       - [Unexported fields from an exported struct](./Language_Specification/exporting/exporting.go)
-  - Dependency management: [Go Modules](./go_module.md)
-  - Error Handling: 
+  - **Dependency management** [Go Modules](./go_module.md)
+  - **Error Handling** 
     - [Default error values](./design-pattern/go-design/error_handling/error_handling.go)
     - [Error variables](./design-pattern/go-design/error_handling/error_handling.go) [best practices](https://github.com/grpc/grpc-go/blob/master/codes/codes.go)
     - [Type as context](./design-pattern/go-design/error_handling/error_handling.go)
     - [Wrapping Errors](./design-pattern/go-design/grpc_go_error_handling)
-  - Context: 
+  - **Context** 
     - [Store and retrieve values from a context](./build-in-package/context/context_cheat_sheet.go)
     - [WithCancel](./build-in-package/context/context_cheat_sheet.go)
     - [WithDeadline](./build-in-package/context/context_cheat_sheet.go)
