@@ -112,7 +112,7 @@ This repo contains my notes on work with Go and computer systems
     - Pattern
       - Task
       - Logger
-- **Testing and Profiling**
+- **Testing**
   - 7.31
   - Testing: 
     - [Basic Unit Test](basic_test.go)
@@ -126,11 +126,11 @@ This repo contains my notes on work with Go and computer systems
     - [Sub Benchmark](sub_test.go)
   - Fuzzing
     - [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/fuzzing/README.md)
+ - **Diagnostics Profiling**
   - Diagnostics [Diagnostics ](./diagnostics/profiling/profiling.md)
-    - Profiling [code](./diagnostics/profiling/pprof)
-    - Stack Trace: [Review](stack_trace_1.go) | [Packing](stack_trace_2.go)
-    - GODEBUG: [Memory Tracing](memory_tracing.go)
-    - GoLand Debug: [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/)
+  - Profiling [code](./diagnostics/profiling/pprof)
+  - Stack Trace: [Review](./diagnostics/profiling/pprof)
+  - GoLand Debug: [GoLand Debug](./diagnostics/goland_debug/goland_debug.go) | [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/)
     
 - **Algorithms** [Algorithms](./algorithms/algorithms.md)
    - 8.2 
