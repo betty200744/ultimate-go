@@ -82,7 +82,7 @@ This repo contains my notes on work with Go and computer systems
     - [Table Test](table_test.go)
     - [Sub Test](sub_test.go)
     - [Web Server](web_server)
-    - [Mock](./golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
+    - [Mock](mock/golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
     - [Test Coverage](README.md)
   - Benchmarking
     - [Basic Benchmark](basic_test.go)

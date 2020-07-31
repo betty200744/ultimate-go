@@ -2,7 +2,7 @@ package demo
 
 import (
 	"github.com/golang/mock/gomock"
-	mock_demo "gobyexample/golang/mock/mock"
+	mock_demo "gobyexample/mock/golang/mock/mock"
 	"os"
 	"testing"
 )
