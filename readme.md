@@ -126,10 +126,11 @@ This repo contains my notes on work with Go and computer systems
     - [Sub Benchmark](sub_test.go)
   - Fuzzing
     - [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/fuzzing/README.md)
-  - Profiling
+  - Diagnostics [Diagnostics ](./diagnostics/profiling/profiling.md)
+    - Profiling [code](./diagnostics/profiling/pprof)
     - Stack Trace: [Review](stack_trace_1.go) | [Packing](stack_trace_2.go)
     - GODEBUG: [Memory Tracing](memory_tracing.go)
-    - GoLand Debug: [code]() | [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/)
+    - GoLand Debug: [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/)
     
 - **Algorithms** [Algorithms](./algorithms/algorithms.md)
    - 8.2 
