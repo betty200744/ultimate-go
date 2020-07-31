@@ -9,6 +9,8 @@ func main() {
 	ch1 <- "hello"
 	ch2 <- 1
 	for i := 1; i < 3; i++ {
+		// always no key
+		// 只case send Channel or receive Channel
 		select {
 		case msg := <-ch1:
 			fmt.Println("this from ch1" + msg)
@@ -16,18 +18,8 @@ func main() {
 			fmt.Println(msg)
 		}
 
-		switch { // no key , then bool
-		case true: // bool
-
-		}
-
-		switch i { // has key, then type of i
-		case 1: // value of i, type string
-
-		}
-
 		var a string
-		select { // always no key
+		select {
 		case <-ch1: // recvExpr
 		case a = <-ch1: // expressionList
 		case b := <-ch1:
