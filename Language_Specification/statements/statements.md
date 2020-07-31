@@ -1,6 +1,4 @@
-package main
 
-func main() {
 	/*
 
 	   * A "return" or "goto" statement.
@@ -22,5 +20,3 @@ func main() {
 	   * A labeled statement labeling a terminating statement.
 
 	*/
-
-}

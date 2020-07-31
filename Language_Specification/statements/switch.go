@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+	"time"
+)
 
 func Do(v interface{}) {
 	switch v.(type) {
@@ -15,26 +19,26 @@ func Do(v interface{}) {
 	}
 }
 
-func main() {
-	// no default is bed code
-
-	// value switch
-	i := 3
-	switch i {
-	case 1, 2:
-		fmt.Println("this is 1 or 2")
-	case 3:
-		fmt.Println("this is 3")
+func Switch() {
+	// switch variable
+	os := runtime.GOOS
+	switch os {
+	case "darwin":
+		fmt.Println("OS X")
+	case "linux":
+		fmt.Println("linux")
 	default:
-		fmt.Println("this is defalut")
-		break
+		fmt.Printf("%s", os)
 	}
-
+	// switch true
+	h := time.Now().Hour()
 	switch {
-	case i < 1:
-		fmt.Println(" i < 1")
+	case h < 12:
+		fmt.Println("good morning")
+	case h < 17:
+		fmt.Println("good afternoon")
 	default:
-		fmt.Println("i < 1")
+		fmt.Println("good eventing")
 	}
 
 	// value switch
