@@ -4,7 +4,6 @@
 This repo contains my notes on work with Go and computer systems
 
 ## Table of Contents 
-
 - **Language Specification**
   - **Syntax**
     - Variables: [Zero value concept | Initialization | Const](./Language_Specification/variables/variables.go)
@@ -40,18 +39,56 @@ This repo contains my notes on work with Go and computer systems
       - [Exported identifier](./Language_Specification/exporting/exporting.go)
       - [Accessing a value of an unexported identifier](./Language_Specification/exporting/exporting.go)
       - [Unexported fields from an exported struct](./Language_Specification/exporting/exporting.go)
-- **Software Design**
-  - Composition:
-    [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#interface-and-composition-design)
-    - Conversion: 
-      - [Interface Conversions | Type Assertion](./design-pattern/go-design/conversion/conversion.go)
-      - [Runtime Type Assertion](./design-pattern/go-design/runtime_type_assertion/runtime_type_assertion.go)
+  - Dependency management: [Go Modules](./go_module.md)
   - Error Handling: 
     - [Default error values](./design-pattern/go-design/error_handling/error_handling.go)
     - [Error variables](./design-pattern/go-design/error_handling/error_handling.go) [best practices](https://github.com/grpc/grpc-go/blob/master/codes/codes.go)
     - [Type as context](./design-pattern/go-design/error_handling/error_handling.go)
     - [Wrapping Errors](./design-pattern/go-design/grpc_go_error_handling)
-  - Dependency management: [Go Modules](./go_module.md)
+  - Context: 
+    - [Store and retrieve values from a context](./build-in-package/context/context_cheat_sheet.go)
+    - [WithCancel](./build-in-package/context/context_cheat_sheet.go)
+    - [WithDeadline](./build-in-package/context/context_cheat_sheet.go)
+    - [WithTimeout](./build-in-package/context/context_cheat_sheet.go)
+    - [Request/Response](context_5.go)
+- **Concurrency** [LearnConcurrency](https://github.com/golang/go/wiki/LearnConcurrency)
+  - Goroutine: 
+    - [Go Scheduler Internals](goroutine_1.go)
+    - [Language Mechanics](goroutine_2.go)
+    - [Goroutine time slicing](goroutine_3.go)
+    - [Goroutines and parallelism](goroutine_4.go)
+  - Data race: 
+    - [Race Detection](data_race_1.go)
+    - [Atomic Functions](data_race_2.go)
+    - [Mutexes](data_race_3.go)
+    - [Read/Write Mutex](data_race_4.go)
+  - Channel: 
+    - [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#concurrent-software-design)
+    - [Language Mechanics | Unbuffered channel: Signaling with(out) data](channel_1.go)
+    - [Unbuffered channel: Double signal | Buffered channel: Close and range | Unbuffered channel: select and receive | Unbuffered channel: select and send | Buffered channel: Select and drop](channel_2.go)
+    - [Unbuffered channel (Tennis match)](channel_3.go)
+    - [Unbuffered channel (Replay race)](channel_4.go)
+    - [Buffered channel: Fan Out](channel_5.go)
+    - [Select](channel_6.go)
+- **Diagnostics Profiling**
+  - Diagnostics [Diagnostics ](./diagnostics/profiling/profiling.md)
+  - Profiling [code](./diagnostics/profiling/pprof)
+  - Stack Trace: [Review](./diagnostics/profiling/pprof)
+  - GoLand Debug: [GoLand Debug](./diagnostics/goland_debug/goland_debug.go) | [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/) 
+- **Testing**
+  - 7.31
+  - Testing: 
+    - [Basic Unit Test](basic_test.go)
+    - [Table Test](table_test.go)
+    - [Sub Test](sub_test.go)
+    - [Web Server](web_server)
+    - [Mock](./golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
+    - [Test Coverage](README.md)
+  - Benchmarking
+    - [Basic Benchmark](basic_test.go)
+    - [Sub Benchmark](sub_test.go)
+  - Fuzzing
+    - [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/fuzzing/README.md)
 - **Design Pattern** [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) | [javatpoint](https://www.javatpoint.com/prototype-design-pattern)
   - SOLID: [SOLID](https://en.wikipedia.org/wiki/SOLID) 
   - Creational
@@ -82,57 +119,11 @@ This repo contains my notes on work with Go and computer systems
     - *Strategy: [wiki](https://en.wikipedia.org/wiki/Strategy_pattern) | [code]() | [best practices](./awesome-go/kafkaSarama/sarama_comsumer_group.go) 
     - Template method : todo[wiki]() | [code]() | [best practices]() 
     - Visitor: todo[wiki]() | [code]() | [best practices]() 
-- **Concurrency**
-  - 7.30
-  - **Mechanics**
-    - Goroutine: 
-      - [Go Scheduler Internals](goroutine_1.go)
-      - [Language Mechanics](goroutine_2.go)
-      - [Goroutine time slicing](goroutine_3.go)
-      - [Goroutines and parallelism](goroutine_4.go)
-    - Data race: 
-      - [Race Detection](data_race_1.go)
-      - [Atomic Functions](data_race_2.go)
-      - [Mutexes](data_race_3.go)
-      - [Read/Write Mutex](data_race_4.go)
-    - Channel: 
-      - [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#concurrent-software-design)
-      - [Language Mechanics | Unbuffered channel: Signaling with(out) data](channel_1.go)
-      - [Unbuffered channel: Double signal | Buffered channel: Close and range | Unbuffered channel: select and receive | Unbuffered channel: select and send | Buffered channel: Select and drop](channel_2.go)
-      - [Unbuffered channel (Tennis match)](channel_3.go)
-      - [Unbuffered channel (Replay race)](channel_4.go)
-      - [Buffered channel: Fan Out](channel_5.go)
-      - [Select](channel_6.go)
-  - **Patterns**
-    - Context: 
-      - [Store and retrieve values from a context](./build-in-package/context/context_cheat_sheet.go)
-      - [WithCancel](./build-in-package/context/context_cheat_sheet.go)
-      - [WithDeadline](./build-in-package/context/context_cheat_sheet.go)
-      - [WithTimeout](./build-in-package/context/context_cheat_sheet.go)
-      - [Request/Response](context_5.go)
-    - Pattern
-      - Task
-      - Logger
-- **Testing**
-  - 7.31
-  - Testing: 
-    - [Basic Unit Test](basic_test.go)
-    - [Table Test](table_test.go)
-    - [Sub Test](sub_test.go)
-    - [Web Server](web_server)
-    - [Mock](./golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
-    - [Test Coverage](README.md)
-  - Benchmarking
-    - [Basic Benchmark](basic_test.go)
-    - [Sub Benchmark](sub_test.go)
-  - Fuzzing
-    - [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/fuzzing/README.md)
- - **Diagnostics Profiling**
-  - Diagnostics [Diagnostics ](./diagnostics/profiling/profiling.md)
-  - Profiling [code](./diagnostics/profiling/pprof)
-  - Stack Trace: [Review](./diagnostics/profiling/pprof)
-  - GoLand Debug: [GoLand Debug](./diagnostics/goland_debug/goland_debug.go) | [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/)
-    
+  - Composition:
+    [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#interface-and-composition-design)
+    - Conversion: 
+      - [Interface Conversions | Type Assertion](./design-pattern/go-design/conversion/conversion.go)
+      - [Runtime Type Assertion](./design-pattern/go-design/runtime_type_assertion/runtime_type_assertion.go)    
 - **Algorithms** [Algorithms](./algorithms/algorithms.md)
    - 8.2 
    - Data Structures
@@ -149,15 +140,12 @@ This repo contains my notes on work with Go and computer systems
      - [Priority Queue](./algorithms/data-structures/queue/queue.go) [(wiki)](http://en.wikipedia.org/wiki/Priority_queue)
      - [Queue](./algorithms/data-structures/queue/queue.go)[(wiki)](http://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29)
      - [Stack](./algorithms/data-structures/stack/stack.go)[(wiki)](http://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29)
-   
    - Graph algorithms
      - Searching:
        - [Depth First Search]() [(wiki)](http://en.wikipedia.org/wiki/Depth-first_search)
        - [Breadth First Search]() [(wiki)](http://en.wikipedia.org/wiki/Breadth-first_search)
-   
    - hortest path:
      - [Dijkstra]()[(wiki)](http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-   
    - Sorting:
      - [Topological Sort]() [(wiki)](http://en.wikipedia.org/wiki/Topological_sorting)
    - Maths algorithms
@@ -172,7 +160,6 @@ This repo contains my notes on work with Go and computer systems
      - [Newton's Squarenewton-sqrt]() [(wiki)](http://en.wikipedia.org/wiki/Newton%27s_method)
      - [Permutations Count]()
      - [Strassen's matrixstrassen]() [(wiki)](http://en.wikipedia.org/wiki/Strassen_algorithm)
-   
    - Sorting algorithms
      - [Bubble Sort](sorting-algorithms/bubble-sort/bubble-sort.go) [(wiki)](http://en.wikipedia.org/wiki/Bubble_sort)
      - [Heap Sort](sorting-algorithms/heap-sort/heap-sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec04.pdf) [(wiki)](http://en.wikipedia.org/wiki/Heapsort)
@@ -181,11 +168,8 @@ This repo contains my notes on work with Go and computer systems
      - [Insertion Sort](sorting-algorithms/insertion-sort/insertion-sort.go)[(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec03.pdf) [(wiki)](http://en.wikipedia.org/wiki/Insertion_sort)
      - [Shell Sort](sorting-algorithms/shell-sort/shell-sort.go)[(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Shellsort)
      - [Selection Sort](sorting-algorithms/select_sort/select_sort.go) [(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Selection_sort)
-   
    - Searching algorithms
      - [Binary Search]() [(wiki)](http://en.wikipedia.org/wiki/Binary_search_algorithm)
-   
-    
 - **Awesome Go**
   - 8.1
   - [bazel]() 
