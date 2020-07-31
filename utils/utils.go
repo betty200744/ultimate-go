@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"crypto/md5"
 	"encoding/hex"
-	"fmt"
 	"math/rand"
 	"net"
 	"reflect"
@@ -94,11 +93,5 @@ func InArray(val interface{}, array interface{}) bool {
 }
 
 func main() {
-	fmt.Println(RandInt(1, 20))
-	fmt.Println(RandomString(5))
-	fmt.Println(EscapeHttpHeader("https://stackoverflow.com/questions/2032149/optional-parameters"))
-	fmt.Println(GetIp())
-	fmt.Println(Md5([]byte("abc")))
-	fmt.Println([]byte("abcd"))
-	fmt.Println(InArray("a", []string{"a", "b"}))
+
 }
