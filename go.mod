@@ -20,6 +20,7 @@ require (
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20200529170236-5abacdfa4915 // indirect
 	github.com/gavv/monotime v0.0.0-20190418164738-30dba4353424 // indirect
+	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-redis/redis/v8 v8.0.0-beta.6
 	github.com/golang/mock v1.4.3
@@ -44,7 +45,7 @@ require (
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
-	github.com/opentracing-contrib/go-gin v0.0.0-20190301172248-2e18f8b9c7d4 // indirect
+	github.com/opentracing-contrib/go-gin v0.0.0-20190301172248-2e18f8b9c7d4
 	github.com/opentracing/opentracing-go v1.1.1-0.20190913142402-a7454ce5950e
 	github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5
 	github.com/pkg/errors v0.9.1
@@ -65,7 +66,7 @@ require (
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
 	github.com/yudai/pp v2.0.1+incompatible // indirect
-	go.elastic.co/apm/module/apmgin v1.8.0 // indirect
+	go.elastic.co/apm/module/apmgin v1.8.0
 	go.elastic.co/apm/module/apmgoredisv8 v0.0.0-20200618141751-9f7ef4bcff66
 	go.elastic.co/fastjson v1.1.0 // indirect
 	go.uber.org/zap v1.15.0

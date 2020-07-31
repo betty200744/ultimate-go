@@ -40,7 +40,6 @@ This repo contains my notes on work with Go and computer systems
       - [Accessing a value of an unexported identifier](./Language_Specification/exporting/exporting.go)
       - [Unexported fields from an exported struct](./Language_Specification/exporting/exporting.go)
 - **Software Design**
-  - 7.29
   - Composition:
     [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#interface-and-composition-design)
     - Conversion: 
@@ -51,8 +50,7 @@ This repo contains my notes on work with Go and computer systems
     - [Error variables](./design-pattern/go-design/error_handling/error_handling.go) [best practices](https://github.com/grpc/grpc-go/blob/master/codes/codes.go)
     - [Type as context](./design-pattern/go-design/error_handling/error_handling.go)
     - [Wrapping Errors](./design-pattern/go-design/grpc_go_error_handling)
-  - Packaging: [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/packaging/README.md)
-  - Dependency management: [Go Modules](https://blog.golang.org/using-go-modules)
+  - Dependency management: [Go Modules](./go_module.md)
 - **Design Pattern** [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) | [javatpoint](https://www.javatpoint.com/prototype-design-pattern)
   - SOLID: [SOLID](https://en.wikipedia.org/wiki/SOLID) 
   - Creational
@@ -121,7 +119,7 @@ This repo contains my notes on work with Go and computer systems
     - [Table Test](table_test.go)
     - [Sub Test](sub_test.go)
     - [Web Server](web_server)
-    - [Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
+    - [Mock](./golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
     - [Test Coverage](README.md)
   - Benchmarking
     - [Basic Benchmark](basic_test.go)
@@ -131,6 +129,7 @@ This repo contains my notes on work with Go and computer systems
   - Profiling
     - Stack Trace: [Review](stack_trace_1.go) | [Packing](stack_trace_2.go)
     - GODEBUG: [Memory Tracing](memory_tracing.go)
+    - GoLand Debug: [code]() | [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/)
     
 - **Algorithms** [Algorithms](./algorithms/algorithms.md)
    - 8.2 
