@@ -17,6 +17,7 @@ This repo contains my notes on work with Go and computer systems
       - [Passing by value | Escape analysis | Stack space ](./Language_Specification/build-in-type/pointers/pointers.go)
     - Function: [Initialization | argument | multiple returns | named return ](./Language_Specification/reference-type/function/functions.go)
     - Build-in types: [Built-in types](Language_Specification/build-in-type)
+    - statement: [statement](./Language_Specification/statements/statements.md) | [if else](./Language_Specification/statements/if_else.go) | [for](./Language_Specification/statements/for.go)| [switch](./Language_Specification/statements/switch.go)| [select](./Language_Specification/statements/select.go) | [go](https://golang.org/ref/spec#Go_statements)
   - **Data Structures**
     - Enum: [Enum](./Language_Specification/enum/enum.go)
     - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](Language_Specification/reference-type/array/arrays.go)
