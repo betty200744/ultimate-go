@@ -18,7 +18,7 @@ type configTest struct {
 
 func main() {
 	config := configTest{}
-	err := goconfig.Parse(config)
+	err := goconfig.Parse(&config)
 
 	if err != nil {
 		fmt.Println(err)
