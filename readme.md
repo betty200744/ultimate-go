@@ -169,6 +169,7 @@ This repo contains my notes on work with Go and computer systems
   - 8.1
   - [bazel](./awesome-go/bazel) 
   - [bazel go](./awesome-go/bazel/go-tutorial) 
+  - [config](./awesome-go/myconfig/myconfig.go) 
   - [beego](./awesome-go/beego)
   - [go-redis](./awesome-go/go-redis)
   - [gorm](./awesome-go/gorm)

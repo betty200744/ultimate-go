@@ -1,0 +1,5 @@
+{
+  "datasource": "postgres://postgres:postgres@127.0.0.1:5432/test?sslmode=disable",
+  "service": "test",
+  "company_service_addr": "localhost:50051"
+}
