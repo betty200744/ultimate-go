@@ -78,17 +78,10 @@ This repo contains my notes on work with Go and computer systems
   - Stack Trace: [Review](./diagnostics/profiling/pprof)
   - GoLand Debug: [GoLand Debug](./diagnostics/goland_debug/goland_debug.go) | [blog](https://blog.jetbrains.com/go/2020/03/03/how-to-find-goroutines-during-debugging/) 
 - **Testing**
-  - 7.31
   - Testing: 
-    - [Basic Unit Test](basic_test.go)
-    - [Table Test](table_test.go)
-    - [Sub Test](sub_test.go)
-    - [Web Server](web_server)
+    - [Basic Unit Test](./main_test.go)
+    - [Web Server](./awesome-go/gin/test/publish_test.go)
     - [Mock](mock/golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
-    - [Test Coverage](README.md)
-  - Benchmarking
-    - [Basic Benchmark](basic_test.go)
-    - [Sub Benchmark](sub_test.go)
   - Fuzzing
     - [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/fuzzing/README.md)
 - **Design Pattern** [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) | [javatpoint](https://www.javatpoint.com/prototype-design-pattern)
@@ -175,3 +168,30 @@ This repo contains my notes on work with Go and computer systems
 - **Awesome Go**
   - 8.1
   - [bazel]() 
+- *Interview*
+  - defer的顺序，先进后出， 即压栈的顺序
+  - defer与panic的运行，先defer, 后panic 
+  - range, key, value, 注意key , value地址都是固定的， value才变
+  - new(), make()区别， new返回pointer, 一般struct,  make 返回type, 一般make slice, map, channel
+  - append(), 能传入pointer吗， 不能
+  - go run order, ![](./img/go_run_order.png)
+  - 全局变量能用short declaration吗， 不能
+  - 传value和传pointer的区别是？ 传value创建副本， 传pointer就是传本身
+  - str := "hello", str[1] = 'a' 能修改吗， 不能， 因为"hello"是常量
+  - ...int, 可变函数 
+  - x, y := f(), 单赋值时， 不可以赋值给已经赋值的， 多赋值时， 可赋值给已经赋值的
+  - string 类型能赋值为nil吗， 不能
+  - slice， slice时共享底层内存 , ![](./img/slice_1.png)
+  - if else, 块作用域，是整个if else
+  - map range 是无序的吗？ 是
+  - iota, 常量计数， iota 在 const 关键字出现时将被重置为0，const中每新增一行常量声明将使 iota 计数一次
+  - map[string]*Math{"foo": &Math{2, 3}}, value类型是pointer才可以m["foo"].x
+  - slice能==比较吗？不能
+  - range slice,  循环次数在循环开始前就已经确定，循环内改变切片的长度，不影响循环次数
+  - 给nil channel发送or接收数据， 会永久阻塞
+  - 给close channel发送数据， 会panic
+  - 给close channel接收数据, 如果无数据则返回0
+  - panic, nil解析， index out of range, panic()
+  - 有方向的 channel 不可以被关闭
+  - 指针不支持索引
+  - Go 语言中，大括号不能放在单独的一行, 除非是code block

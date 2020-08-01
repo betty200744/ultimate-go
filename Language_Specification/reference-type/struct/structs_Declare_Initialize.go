@@ -13,6 +13,9 @@ type Address struct {
 }
 
 func main() {
+	type User struct{}
+	type User1 User   // new type User1
+	type User2 = User // User2 是User类型的别名
 	// Defining Name type, 相同结构不可=
 	type Shop struct {
 		Id      string `json:"id"`
