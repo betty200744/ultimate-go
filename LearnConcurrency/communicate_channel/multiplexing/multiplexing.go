@@ -7,8 +7,8 @@ func FanIn(inputs ...<-chan string) <-chan string {
 	out := make(chan string)
 	for _, i2 := range inputs {
 		go func(ch <-chan string) {
-			for {
-				out <- fmt.Sprintf("receive %s, send pong!", <-ch)
+			for i3 := range ch {
+				out <- fmt.Sprintf("receive %s, send pong!", i3)
 			}
 		}(i2)
 	}
