@@ -1,11 +1,10 @@
-package main
+package routers
 
 import (
 	"github.com/astaxie/beego"
-	"gobyexample/awesome-go/beego/test/controllers"
+	"gobyexample/awesome-go/beego/controllers"
 )
 
-func main() {
+func init() {
 	beego.Router("/", &controllers.MainController{})
-	beego.Run()
 }
