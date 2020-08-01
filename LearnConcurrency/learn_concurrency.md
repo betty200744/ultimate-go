@@ -38,6 +38,7 @@
 * Go runtime Create threads when needed, keey them around for reuse 
 * An OS thread is typically assigned with multiple goroutines
 * My Mac:  6 Cores, 12 virtual cores and 12 logical processor, I can execute 12 OS threads in parallel., Hyper-Threading
+
 ### Goroutine states
 * Waiting
 * Runnable
@@ -51,4 +52,27 @@
     * the number of cpu cores
     * too many , too much contention
     * too few,  won't use all the cpu cores
-    * 
+
+### communicate channel
+* `traditional for`, loop read channel, need break loop， // 遍历chan
+* `for range`, loop read channel, will break when chan is close,  // 遍历chan
+* `select`, (case, timeout, default, ): once read channel, // Quit Channel, 如读的时候需要timeout终止， 写的时候需要quit bool手动终止
+* `WaitGroup`, read all channel, WaitGroup, wg.add, wg.done, wg.wait, 等带多chan
+* `worker pool`, 一般两chan， 一个tasks, 一个results，producer写tasks,  worker读tasks写results, consumers读results， 多chan遍历读写
+
+
+### [go_concurrency_visualize](https://divan.dev/posts/go_concurrency_visualize)
+
+
+### ping_pong, 一写一读 
+
+### select, 读多chan中的一个
+
+### waitGroup， 读多chan
+
+### multiplexing,  读多chan，写入一个chan
+
+### mutex , 多chan 加锁写全局遍历 
+
+
+
