@@ -170,7 +170,14 @@ This repo contains my notes on work with Go and computer systems
   - [bazel](./awesome-go/bazel) 
   - [bazel go](./awesome-go/bazel/go-tutorial) 
   - [beego](./awesome-go/beego)
-  - []()
+  - [go-redis](./awesome-go/go-redis)
+  - [gorm](./awesome-go/gorm)
+  - [iris](./awesome-go/iris)
+  - [kafkaSarama](./awesome-go/kafkaSarama)
+  - [mapstructure](./awesome-go/mapstructure)
+  - [grpc](./awesome-go/grpc-go)
+  - [grpc mock](./awesome-go/grpc-go-mock)
+  - [zipkin](./awesome-go/zipkin)
 - *Interview*
   - defer的顺序，先进后出， 即压栈的顺序
   - defer与panic的运行，先defer, 后panic 
