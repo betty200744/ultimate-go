@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gobyexample/awesome-go/gin/service"
+	"gobyexample/awesome-go/bazel/go-tutorial/service"
 )
 
 func main() {

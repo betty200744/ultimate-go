@@ -3,7 +3,7 @@ package test
 import (
 	"bytes"
 	"github.com/gin-gonic/gin"
-	"gobyexample/awesome-go/gin/service"
+	"gobyexample/awesome-go/bazel/go-tutorial/service"
 	"net/http"
 	"net/http/httptest"
 	"sync"

@@ -4,10 +4,11 @@ require (
 	cloud.google.com/go v0.38.0 // indirect
 	github.com/BurntSushi/toml v0.3.1
 	github.com/Joker/jade v1.0.0 // indirect
+	github.com/OwnLocal/goes v1.0.0 // indirect
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect
 	github.com/Shopify/sarama v1.26.4
 	github.com/ajg/form v1.5.1 // indirect
-	github.com/astaxie/beego v1.12.1
+	github.com/astaxie/beego v1.12.2
 	github.com/avast/retry-go v2.6.0+incompatible
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
 	github.com/bazelbuild/bazel-gazelle v0.21.1 // indirect
@@ -41,7 +42,6 @@ require (
 	github.com/kataras/iris v11.1.1+incompatible
 	github.com/lib/pq v1.7.1
 	github.com/mattn/go-colorable v0.1.7 // indirect
-	github.com/mattn/go-sqlite3 v2.0.1+incompatible // indirect
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
@@ -49,11 +49,11 @@ require (
 	github.com/opentracing/opentracing-go v1.1.1-0.20190913142402-a7454ce5950e
 	github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5
 	github.com/pkg/errors v0.9.1
-	github.com/prometheus/procfs v0.1.3 // indirect
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/sergi/go-diff v1.0.0 // indirect
-	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/siddontang/go v0.0.0-20180604090527-bdc77568d726 // indirect
+	github.com/siddontang/ledisdb v0.0.0-20181029004158-becf5f38d373 // indirect
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/stretchr/testify v1.6.1
 	github.com/uber/jaeger-client-go v2.22.1+incompatible

@@ -80,7 +80,7 @@ This repo contains my notes on work with Go and computer systems
 - **Testing**
   - Testing: 
     - [Basic Unit Test](./main_test.go)
-    - [Web Server](./awesome-go/gin/test/publish_test.go)
+    - [Web Server](awesome-go/bazel/go-tutorial/test/publish_test.go)
     - [Mock](mock/golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
   - Fuzzing
     - [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/fuzzing/README.md)
@@ -167,7 +167,10 @@ This repo contains my notes on work with Go and computer systems
      - [Binary Search]() [(wiki)](http://en.wikipedia.org/wiki/Binary_search_algorithm)
 - **Awesome Go**
   - 8.1
-  - [bazel]() 
+  - [bazel](./awesome-go/bazel) 
+  - [bazel go](./awesome-go/bazel/go-tutorial) 
+  - [beego](./awesome-go/beego)
+  - []()
 - *Interview*
   - defer的顺序，先进后出， 即压栈的顺序
   - defer与panic的运行，先defer, 后panic 
