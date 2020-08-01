@@ -64,15 +64,19 @@
 ### [go_concurrency_visualize](https://divan.dev/posts/go_concurrency_visualize)
 
 
-### ping_pong, 一写一读 
+### ping_pong, 一写一读
+- [ping_pong](./communicate_channel/ping_pong/ping_pong.go) 
 
 ### select, 读多chan中的一个
+- [select](./communicate_channel/ping_pong/ping_pong.go)
 
 ### waitGroup， 读多chan
+- [waitgroup](./communicate_channel/waitgroup/waitgroup.go)
 
 ### multiplexing,  读多chan，写入一个chan
-
-### mutex , 多chan 加锁写全局遍历 
+- [multiplexing](./communicate_channel/multiplexing/multiplexing.go)
+### mutex , 多chan 加锁写全局遍历
+- [mutex](./communicate_channel/mutex/mutex.go)
 
 
 

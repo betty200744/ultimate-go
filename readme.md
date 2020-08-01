@@ -22,6 +22,7 @@ This repo contains my notes on work with Go and computer systems
     - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](Language_Specification/reference-type/array/arrays.go)
     - Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice](./Language_Specification/reference-type/slice/slices_cheat_sheet.go) [Map | Reduce | Filter | Include | All|Any ](./Language_Specification/reference-type/slice/slice_collection_function.go)
     - Map: [Initialization | Iteration | Deleting | Finding | Restriction ](./Language_Specification/reference-type/map/maps.go)
+    - Channel: [Declare | Iteration | Exit | send statements |receive operations](./Language_Specification/reference-type/channel/channel_test.go)
   - **Decoupling**
     - Method: 
       - [Value and Pointer Receiver Call](Language_Specification/reference-type/method/methods_receiver.go) [wiki](https://github.com/golang/go/wiki/CodeReviewComments#receiver-type)
@@ -52,25 +53,25 @@ This repo contains my notes on work with Go and computer systems
     - [WithTimeout](./build-in-package/context/context_cheat_sheet.go)
     - [Request/Response](context_5.go)
 - **Concurrency** [LearnConcurrency](https://github.com/golang/go/wiki/LearnConcurrency)
-  - Goroutine: 
+  - Goroutine
     - [asynchronous network IO](./LearnConcurrency/basics/basics.go)
     - [Go Scheduler Internals](goroutine_1.go)
     - [Language Mechanics](goroutine_2.go)
     - [Goroutine time slicing](goroutine_3.go)
     - [Goroutines and parallelism](goroutine_4.go)
-  - Data race: 
+  - Data race
     - [Race Detection](data_race_1.go)
     - [Atomic Functions](data_race_2.go)
     - [Mutexes](data_race_3.go)
     - [Read/Write Mutex](data_race_4.go)
-  - Channel: 
+  - [Channel](./LearnConcurrency/learn_concurrency.md) 
     - [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#concurrent-software-design)
-    - [Language Mechanics | Unbuffered channel: Signaling with(out) data](channel_1.go)
-    - [Unbuffered channel: Double signal | Buffered channel: Close and range | Unbuffered channel: select and receive | Unbuffered channel: select and send | Buffered channel: Select and drop](channel_2.go)
-    - [Unbuffered channel (Tennis match)](channel_3.go)
-    - [Unbuffered channel (Replay race)](channel_4.go)
-    - [Buffered channel: Fan Out](channel_5.go)
-    - [Select](channel_6.go)
+    - [ping_pong](./LearnConcurrency/communicate_channel/ping_pong/ping_pong.go)
+    - [multiplexing](./LearnConcurrency/communicate_channel/multiplexing/multiplexing.go)
+    - [waitgroup](./LearnConcurrency/communicate_channel/waitgroup/waitgroup.go)
+    - [mutex](./LearnConcurrency/communicate_channel/mutex/mutex.go)
+    - [worker_pool](./LearnConcurrency/communicate_channel/worker_pool/worker_pool.go)
+    - [Select](./LearnConcurrency/communicate_channel/ping_pong/ping_pong.go)
 - **Diagnostics Profiling**
   - Diagnostics [Diagnostics ](./diagnostics/profiling/profiling.md)
   - Profiling [code](./diagnostics/profiling/pprof)
