@@ -9,5 +9,5 @@ import (
 func NewSha1() {
 	h := sha1.New()
 	io.WriteString(h, "abc")
-	fmt.Println(string(h.Sum(nil)))
+	fmt.Printf("%x \n", string(h.Sum(nil)))
 }
