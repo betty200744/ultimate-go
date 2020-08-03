@@ -51,19 +51,9 @@ This repo contains my notes on work with Go and computer systems
     - [WithCancel](./build-in-package/context/context_cheat_sheet.go)
     - [WithDeadline](./build-in-package/context/context_cheat_sheet.go)
     - [WithTimeout](./build-in-package/context/context_cheat_sheet.go)
-    - [Request/Response](context_5.go)
 - **Concurrency** [LearnConcurrency](https://github.com/golang/go/wiki/LearnConcurrency)
-  - Goroutine
+  - [Goroutine](./LearnConcurrency/learn_concurrency.md) 
     - [asynchronous network IO](./LearnConcurrency/basics/basics.go)
-    - [Go Scheduler Internals](goroutine_1.go)
-    - [Language Mechanics](goroutine_2.go)
-    - [Goroutine time slicing](goroutine_3.go)
-    - [Goroutines and parallelism](goroutine_4.go)
-  - Data race
-    - [Race Detection](data_race_1.go)
-    - [Atomic Functions](data_race_2.go)
-    - [Mutexes](data_race_3.go)
-    - [Read/Write Mutex](data_race_4.go)
   - [Channel](./LearnConcurrency/learn_concurrency.md) 
     - [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#concurrent-software-design)
     - [ping_pong](./LearnConcurrency/communicate_channel/ping_pong/ping_pong.go)
@@ -182,19 +172,19 @@ This repo contains my notes on work with Go and computer systems
    - **Encoding**
       - base64, [code](./build-in-package/encoding/base64/base64.go)
 - **Awesome Go**
-  - [bazel](./awesome-go/bazel) 
+  - [bazel_cpp](./awesome-go/bazel/cpp-tutorial) 
   - [bazel go](./awesome-go/bazel/go-tutorial) 
   - [config](./awesome-go/myconfig/myconfig.go) 
-  - [beego](./awesome-go/beego)
-  - [go-redis](./awesome-go/go-redis)
-  - [gorm](./awesome-go/gorm)
+  - [beego](./awesome-go/beego/main.go)
+  - [go-redis](./awesome-go/go-redis/main.go)
+  - [gorm](./awesome-go/gorm/)
   - [iris](./awesome-go/iris)
   - [kafkaSarama](./awesome-go/kafkaSarama)
   - [mapstructure](./awesome-go/mapstructure)
   - [grpc](./awesome-go/grpc-go)
   - [grpc mock](./awesome-go/grpc-go-mock)
   - [zipkin](./awesome-go/zipkin)
-- *Interview*
+- **Interview**
   - defer的顺序，先进后出， 即压栈的顺序
   - defer与panic的运行，先defer, 后panic 
   - range, key, value, 注意key , value地址都是固定的， value才变
