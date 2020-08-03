@@ -156,15 +156,31 @@ This repo contains my notes on work with Go and computer systems
      - [Permutations Count]()
      - [Strassen's matrixstrassen]() [(wiki)](http://en.wikipedia.org/wiki/Strassen_algorithm)
    - Sorting algorithms
-     - [Bubble Sort](sorting-algorithms/bubble-sort/bubble-sort.go) [(wiki)](http://en.wikipedia.org/wiki/Bubble_sort)
-     - [Heap Sort](sorting-algorithms/heap-sort/heap-sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec04.pdf) [(wiki)](http://en.wikipedia.org/wiki/Heapsort)
-     - [Quick Sort](sorting-algorithms/quick_sort/quick_sort.go)[(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Quicksort)
-     - [Merge Sort](sorting-algorithms/merge_sort/merge_sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec03.pdf) [(wiki)](http://en.wikipedia.org/wiki/Merge_sort)
-     - [Insertion Sort](sorting-algorithms/insertion-sort/insertion-sort.go)[(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec03.pdf) [(wiki)](http://en.wikipedia.org/wiki/Insertion_sort)
-     - [Shell Sort](sorting-algorithms/shell-sort/shell-sort.go)[(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Shellsort)
-     - [Selection Sort](sorting-algorithms/select_sort/select_sort.go) [(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Selection_sort)
+     - [Bubble Sort](algorithms/sorting-algorithms/bubble-sort/bubble-sort.go) [(wiki)](http://en.wikipedia.org/wiki/Bubble_sort)
+     - [Heap Sort](algorithms/sorting-algorithms/heap-sort/heap-sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec04.pdf) [(wiki)](http://en.wikipedia.org/wiki/Heapsort)
+     - [Quick Sort](algorithms/sorting-algorithms/quick_sort/quick_sort.go)[(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Quicksort)
+     - [Merge Sort](algorithms/sorting-algorithms/merge_sort/merge_sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec03.pdf) [(wiki)](http://en.wikipedia.org/wiki/Merge_sort)
+     - [Insertion Sort](algorithms/sorting-algorithms/insertion-sort/insertion-sort.go)[(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec03.pdf) [(wiki)](http://en.wikipedia.org/wiki/Insertion_sort)
+     - [Shell Sort](algorithms/sorting-algorithms/shell-sort/shell-sort.go)[(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Shellsort)
+     - [Selection Sort](algorithms/sorting-algorithms/select_sort/select_sort.go) [(mit notes)]() [(wiki)](http://en.wikipedia.org/wiki/Selection_sort)
    - Searching algorithms
      - [Binary Search]() [(wiki)](http://en.wikipedia.org/wiki/Binary_search_algorithm)
+- **Crypto**
+   - **Hashing** [wiki](https://en.wikipedia.org/wiki/Cryptographic_hash_function) [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-notes/MIT6_046JS15_lec21.pdf)
+     - md5, [wiki](https://en.wikipedia.org/wiki/MD5) |  [code](./build-in-package/crypto/hashing/md5/md5.go)
+     - sha1, [wiki](./build-in-package/crypto/hashing/sha1) |[code](./build-in-package/crypto/hashing/sha1/sha1.go)
+     - sha256, [wiki](https://en.wikipedia.org/wiki/Cryptographic_hash_function) |[code](./build-in-package/crypto/hashing/sha256/sha256.go)
+     - sha512, [wiki](https://en.wikipedia.org/wiki/Cryptographic_hash_function) |[code](./build-in-package/crypto/hashing/sha512/sha512.go)
+     - hmac, [wiki](https://en.wikipedia.org/wiki/HMAC)  |[code](./build-in-package/crypto/hashing/hmac/hmac.go)
+     - bcrypt, [wiki](https://en.wikipedia.org/wiki/Bcrypt)  |[code](./build-in-package/crypto/hashing/hmac/hmac.go)
+   - **Encryption or Ciphers** [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-notes/MIT6_046JS15_lec22.pdf)
+      - aes, [code](./build-in-package/crypto/encryption_cipher/aes/aes.go)
+      - cipher, [code](./build-in-package/crypto/encryption_cipher/cipher/cipher.go)  
+      - des, [code](./build-in-package/crypto/encryption_cipher) 
+      - rc4, [code](./build-in-package/crypto/encryption_cipher)
+      - rsa, [code](./build-in-package/crypto/encryption_cipher)
+   - **Encoding**
+      - base64, [code](./build-in-package/encoding/base64/base64.go)
 - **Awesome Go**
   - 8.1
   - [bazel](./awesome-go/bazel) 
