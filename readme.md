@@ -11,12 +11,12 @@ This repo contains my notes on work with Go and computer systems
     - Conversions: [Conversion](./Language_Specification/conversions/conversions.go)
     - Struct: [Declare_Initialize | Name And Anonymous type](Language_Specification/reference-type/struct/structs_Declare_Initialize.go) 
     [Field | Field Function| Iterate Field Name And Value | Selector and Promoted](Language_Specification/reference-type/struct/struct_field.go) | [Method Set](Language_Specification/reference-type/struct/struct_method_set.go) 
-    - Struct Tags: [Wiki](https://github.com/golang/go/wiki/Well-known-struct-tags) | [Code](Language_Specification/reference-type/struct/struct_tag.go)| [Tag Doc](Language_Specification/reference-type/struct/struct_tags.md)
+    - Struct Tags: [Wiki](https://github.com/golang/go/wiki/Well-known-struct-tags) | [Code](Language_Specification/reference-type/struct/struct_tag.go) | [Tag-Doc](Language_Specification/reference-type/struct/struct_tags.md)
     - Pointer: 
       - [Passing by value | Escape analysis | Stack space ](./Language_Specification/build-in-type/pointers/pointers.go)
     - Function: [Initialization | argument | multiple returns | named return ](./Language_Specification/reference-type/function/functions.go)
     - Build-in types: [Built-in types](Language_Specification/build-in-type)
-    - statement: [statement](./Language_Specification/statements/statements.md) | [if else](./Language_Specification/statements/if_else.go) | [for](./Language_Specification/statements/for.go)| [switch](./Language_Specification/statements/switch.go)| [select](./Language_Specification/statements/select.go) | [go](https://golang.org/ref/spec#Go_statements)
+    - statement: [statement](./Language_Specification/statements/statements.md) | [if else](./Language_Specification/statements/if_else.go) | [for](./Language_Specification/statements/for.go) | [switch](./Language_Specification/statements/switch.go) | [select](./Language_Specification/statements/select.go) | [go](https://golang.org/ref/spec#Go_statements)
   - **Data Structures**
     - Enum: [Enum](./Language_Specification/enum/enum.go)
     - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](Language_Specification/reference-type/array/arrays.go)
@@ -81,7 +81,7 @@ This repo contains my notes on work with Go and computer systems
   - Testing: 
     - [Basic Unit Test](./main_test.go)
     - [Web Server](awesome-go/bazel/go-tutorial/test/publish_test.go)
-    - [Mock](mock/golang/mock/)[Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
+    - [Mock](mock/golang/mock/) | [Mock Server](./awesome-go/grpc-go-mock/mock_helloworld/hw_mock.go)
   - Fuzzing
     - [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/fuzzing/README.md)
 - **Design Pattern** [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) | [javatpoint](https://www.javatpoint.com/prototype-design-pattern)
@@ -127,8 +127,8 @@ This repo contains my notes on work with Go and computer systems
      - [Graph]()[(wiki)](http://en.wikipedia.org/wiki/Graph_%28abstract_data_type)
      - [Hash Tables](./algorithms/data-structures/hashing)   | [(wiki)](http://en.wikipedia.org/wiki/Hash_table)
      - [Linked List](./algorithms/data-structures/lists/lists.go)   | [(wiki)](http://en.wikipedia.org/wiki/Linked_list)
-         - [Singly Linked List](./algorithms/data-structures/lists/singlylinkedlist/singlylinkedlist.go)   | [(wiki)](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)
-         - [Doubly linked list](./algorithms/data-structures/lists/doublelinkedlist/doublelinkedlist.go)   | [(wiki)](https://en.wikipedia.org/wiki/Doubly_linked_list)
+         - [Singly Linked List](./algorithms/data-structures/lists/singlylinkedlist/singlylinkedlist.go)   |  [(wiki)](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)
+         - [Doubly linked list](./algorithms/data-structures/lists/doublelinkedlist/doublelinkedlist.go)   |  [(wiki)](https://en.wikipedia.org/wiki/Doubly_linked_list)
      - [Matrix]()  | [(wiki)](http://en.wikipedia.org/wiki/Matrix_(mathematics))
      - [Max Heap](./algorithms/data-structures/heap/maxheap/maxheap.go)   | [(wiki)](http://en.wikipedia.org/wiki/Heap_%28data_structure%29)
      - [Min Heap](./algorithms/data-structures/heap/minheap/minheap.go)   | [(wiki)](http://en.wikipedia.org/wiki/Heap_%28data_structure%29)
@@ -137,24 +137,24 @@ This repo contains my notes on work with Go and computer systems
      - [Stack](./algorithms/data-structures/stack/stack.go)  | [(wiki)](http://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29)
    - Graph algorithms
      - Searching:
-       - [Depth First Search]()   | [(wiki)](http://en.wikipedia.org/wiki/Depth-first_search)
-       - [Breadth First Search]()   | [(wiki)](http://en.wikipedia.org/wiki/Breadth-first_search)
+       - [Depth First Search]()   |  [(wiki)](http://en.wikipedia.org/wiki/Depth-first_search)
+       - [Breadth First Search]()   |  [(wiki)](http://en.wikipedia.org/wiki/Breadth-first_search)
    - hortest path:
      - [Dijkstra]()  | [(wiki)](http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
    - Sorting:
-     - [Topological Sort]()   | [(wiki)](http://en.wikipedia.org/wiki/Topological_sorting)
+     - [Topological Sort]()   |  [(wiki)](http://en.wikipedia.org/wiki/Topological_sorting)
    - Maths algorithms
-     - [Binary GCD algorithm]()   | [(wiki)](https://en.wikipedia.org/wiki/Binary_GCD_algorithm)
+     - [Binary GCD algorithm]()   |  [(wiki)](https://en.wikipedia.org/wiki/Binary_GCD_algorithm)
      - [Closest pairs]()   | [(wiki)](http://en.wikipedia.org/wiki/Closest_pair_of_points_problem)
      - [FastPower]()  | [(wiki)](http://en.wikipedia.org/wiki/Exponentiation_by_squaring)
      - [Fibonacci]()  | [(wiki)](http://en.wikipedia.org/wiki/Fibonacci_number)
-     - [Fisher-Yates Shuffle-yates]()   | [(wiki)](http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
-     - [Erastothenes Sieve]()   | [(wiki)](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
-     - [Extented GCD algorithm]()   | [(wiki)](http://en.wikipedia.org/wiki/Extended_Euclidean_algorithm)
-     - [Karatsuba's Multiplication]()   | [(wiki)](http://en.wikipedia.org/wiki/Karatsuba_algorithm)
-     - [Newton's Squarenewton-sqrt]()   | [(wiki)](http://en.wikipedia.org/wiki/Newton%27s_method)
+     - [Fisher-Yates Shuffle-yates]()   |  [(wiki)](http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+     - [Erastothenes Sieve]()   |  [(wiki)](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+     - [Extented GCD algorithm]()   |  [(wiki)](http://en.wikipedia.org/wiki/Extended_Euclidean_algorithm)
+     - [Karatsuba's Multiplication]()   |  [(wiki)](http://en.wikipedia.org/wiki/Karatsuba_algorithm)
+     - [Newton's Squarenewton-sqrt]()   |  [(wiki)](http://en.wikipedia.org/wiki/Newton%27s_method)
      - [Permutations Count]()
-     - [Strassen's matrixstrassen]() | [(wiki)](http://en.wikipedia.org/wiki/Strassen_algorithm)
+     - [Strassen's matrixstrassen]() |  [(wiki)](http://en.wikipedia.org/wiki/Strassen_algorithm)
    - Sorting algorithms
      - [Bubble Sort](algorithms/sorting-algorithms/bubble-sort/bubble-sort.go) | [(wiki)](http://en.wikipedia.org/wiki/Bubble_sort)
      - [Heap Sort](algorithms/sorting-algorithms/heap-sort/heap-sort.go) [(mit notes)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec04.pdf) | [(wiki)](http://en.wikipedia.org/wiki/Heapsort)
