@@ -7,7 +7,7 @@ import (
 
 func main() {
 	b, _ := aes.NewCipher([]byte("qwertyuiopasdfgd"))
-	in := []byte("fdaserearewrearf")
+	in := []byte("fdaserearewrearfd")
 	out := make([]byte, len(in))
 	b.Encrypt(out, in)
 	fmt.Printf("%x \n", out)
