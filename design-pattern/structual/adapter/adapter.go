@@ -2,8 +2,15 @@ package adapter
 
 import "fmt"
 
+// Converts one interface to another so that it matches what the client is expecting
+// allows classes with incompatible interfaces to work together by wrapping its own interface around that of an already existing class.
+// 封装一个新的类成一个原有的类， 以便兼容
 type computer interface {
 	insertInSquarePort()
+}
+
+func InsertSquareUsbInComputer(com computer) {
+	com.insertInSquarePort()
 }
 
 type mac struct {
@@ -26,11 +33,4 @@ type windowsAdapter struct {
 
 func (w *windowsAdapter) insertInSquarePort() {
 	w.windows.insertInCirclePort()
-}
-
-type client struct {
-}
-
-func (c *client) insertSquareUsbInComputer(com computer) {
-	com.insertInSquarePort()
 }

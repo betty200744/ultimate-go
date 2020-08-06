@@ -21,6 +21,9 @@
   - 创建一个单例， 无论new多少次， 确保值创建一次
 ### structual
 - 适配器模式(Adapter)
+  - Converts one interface to another so that it matches what the client is expecting
+  - allows classes with incompatible interfaces to work together by wrapping its own interface around that of an already existing class.
+  - 封装一个新的类成一个原有的类， 以便兼容
 - 桥接模式(Bridge)
 - 组合模式(Composite)
 - 装饰模式(Decorator)
