@@ -20,10 +20,9 @@ func QuickSort(arr []int) []int {
 			highPart = append(highPart, arr[i])
 		}
 	}
-	sorted := QuickSort(lowPart)
-	sorted = append(sorted, pivot)
-	sorted = append(sorted, QuickSort(highPart)...)
-	return sorted
+	lowPart = QuickSort(lowPart)
+	highPart = QuickSort(highPart)
+	return append(append(lowPart, pivot), highPart...)
 }
 func main() {
 	arr := []int{7, 2, 6, 9, 3, 5, 1, 8}
