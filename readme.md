@@ -91,7 +91,7 @@ This repo contains my notes on work with Go and computer systems
     - *Decorator: [wiki](https://en.wikipedia.org/wiki/Decorator_pattern) | [code](./design-pattern/structual/decorator/decorator.go) | [best practices](https://github.com/avast/retry-go) 
     - Facade: [wiki](https://en.wikipedia.org/wiki/Facade_pattern) | [code](./design-pattern/structual/facade/facade.go) | [best practices]() 
     - Flyweight: todo[wiki]() | [code]() | [best practices]() 
-    - Proxy: todo[wiki]() | [code]() | [best practices]() 
+    - Proxy (network proxy): [wiki](https://en.wikipedia.org/wiki/Proxy_pattern) | [code](./design-pattern/structual/proxy/proxy.go) | [best practices]() 
   - Behavioral
     - *Chain of responsibility: [wiki](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) | [code](./design-pattern/behavioral/chain_of_responsibility/chain_of_responsibility.go) | [best practices](./awesome-go/gin/gin.go) 
     - Command: todo [wiki]() | [code]() | [best practices]() 
