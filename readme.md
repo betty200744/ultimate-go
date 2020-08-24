@@ -128,7 +128,7 @@ This repo contains my notes on work with Go and computer systems
      - Searching:
        - [Depth First Search]()   |  [(wiki)](http://en.wikipedia.org/wiki/Depth-first_search)
        - [Breadth First Search]()   |  [(wiki)](http://en.wikipedia.org/wiki/Breadth-first_search)
-   - hortest path:
+   - shortest path:
      - [Dijkstra]()  | [(wiki)](http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
    - Sorting:
      - [Topological Sort]()   |  [(wiki)](http://en.wikipedia.org/wiki/Topological_sorting)
