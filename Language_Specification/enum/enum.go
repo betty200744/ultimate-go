@@ -37,7 +37,7 @@ func (x ACTION) String() string {
 func main() {
 	fmt.Println("by const:", PICKUP)
 	fmt.Println("by key:", ACTION(3))
-	fmt.Println("by value", ACTION_value["ACTION_PICKUP"])
+	fmt.Println("by value", ACTION_value["PICKUP"])
 	fmt.Printf("enum:  %d \n", PICKUP)
 	fmt.Printf("enum string:  %s \n", PICKUP)
 }
