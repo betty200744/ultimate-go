@@ -171,6 +171,11 @@ This repo contains my notes on work with Go and computer systems
       - rsa, [code](./build-in-package/crypto/encryption_cipher)
    - **Encoding**
       - base64, [code](./build-in-package/encoding/base64/base64.go)
+- **databases**
+  - [PostgreSQL](https://github.com/betty200744/ultimate-postgresql-mysql)
+  - [MongoDB](https://github.com/betty200744/ultimate-postgresql-mysql)
+  - [MySQL](https://github.com/betty200744/ultimate-postgresql-mysql)
+  - [redis](https://github.com/betty200744/ultimate-postgresql-mysql)     
 - **Awesome Go**
   - [bazel_cpp](./awesome-go/bazel/cpp-tutorial) 
   - [bazel go](./awesome-go/bazel/go-tutorial) 
@@ -184,6 +189,11 @@ This repo contains my notes on work with Go and computer systems
   - [grpc](./awesome-go/grpc-go)
   - [grpc mock](./awesome-go/grpc-go-mock)
   - [zipkin](./awesome-go/zipkin)
+
+- **Docs**  
+  - [elasticsearch](https://github.com/betty200744/ultimate-js/blob/master/docs/elasticsearch.md) 
+  - [kafka](https://github.com/betty200744/ultimate-js/blob/master/docs/kafka.md) 
+  - [rabbitmq](https://github.com/betty200744/ultimate-js/blob/master/docs/rabbitmq.md) 
 - **Interview**
   - defer的顺序，先进后出， 即压栈的顺序
   - defer与panic的运行，先defer, 后panic 
