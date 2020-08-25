@@ -3,12 +3,11 @@ package main
 import "fmt"
 
 func fibonacci() func() int {
-	num1 := 0
-	num2 := 1
+	f1, f2 := 1, 1
 	return func() int {
-		num := num1
-		num1, num2 = num2, num+num2
-		return num
+		tmp := f1
+		f1, f2 = f2, tmp+f2
+		return tmp
 	}
 }
 
