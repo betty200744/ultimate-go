@@ -133,7 +133,7 @@ This repo contains my notes on work with Go and computer systems
    - Sorting:
      - [Topological Sort](./readme.md) |  [(wiki)](http://en.wikipedia.org/wiki/Topological_sorting)
    - Maths algorithms
-     - [Binary GCD algorithm](./readme.md)   |  [(wiki)](https://en.wikipedia.org/wiki/Binary_GCD_algorithm)
+     - [Binary GCD algorithm](./algorithms/maths_algorithms/GCD/gcd.go)   |  [(wiki)](https://en.wikipedia.org/wiki/Binary_GCD_algorithm)
      - [Closest pairs](./readme.md)   | [(wiki)](http://en.wikipedia.org/wiki/Closest_pair_of_points_problem)
      - [FastPower](./readme.md)  | [(wiki)](http://en.wikipedia.org/wiki/Exponentiation_by_squaring)
      - [Fibonacci](./algorithms/maths_algorithms/fibonacci/fibonacci.go)  | [(wiki)](http://en.wikipedia.org/wiki/Fibonacci_number)
@@ -153,7 +153,7 @@ This repo contains my notes on work with Go and computer systems
      - [Shell Sort](algorithms/sorting-algorithms/shell-sort/shell-sort.go) | [(wiki)](http://en.wikipedia.org/wiki/Shellsort)
      - [Selection Sort](algorithms/sorting-algorithms/select_sort/select_sort.go)  | [(wiki)](http://en.wikipedia.org/wiki/Selection_sort)
    - Searching algorithms
-     - [Binary Search]() | [(wiki)](http://en.wikipedia.org/wiki/Binary_search_algorithm)-
+     - [Binary Search]() | [wiki](http://en.wikipedia.org/wiki/Binary_search_algorithm)
 - **Crypto**
    - **Hashing** [wiki](https://en.wikipedia.org/wiki/Cryptographic_hash_function) | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-notes/MIT6_046JS15_lec21.pdf)
      - md5, [wiki](https://en.wikipedia.org/wiki/MD5) |  [code](./build-in-package/crypto/hashing/md5/md5.go)
