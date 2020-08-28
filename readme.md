@@ -192,7 +192,7 @@ This repo contains my notes on work with Go and computer systems
 - **Docs**  
   - [elasticsearch](https://github.com/betty200744/ultimate-js/blob/master/docs/elasticsearch.md) 
   - [kafka](https://github.com/betty200744/ultimate-js/blob/master/docs/kafka.md) 
-  - [rabbitmq](https://github.com/betty200744/ultimate-js/blob/master/docs/rabbitmq.md) 
+  - [rabbitmq](https://github.com/betty200744/ultimate-js/blob/master/docs/rabbitmq.md)     
 - **Interview**
   - defer的顺序，先进后出， 即压栈的顺序
   - defer与panic的运行，先defer, 后panic 
