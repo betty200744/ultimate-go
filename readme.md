@@ -217,6 +217,6 @@ This repo contains my notes on work with Go and computer systems
   - 给close channel发送数据， 会panic
   - 给close channel接收数据, 如果无数据则返回0
   - panic, nil解析， index out of range, panic()
-  - 有方向的 channel 不可以被关闭
+  - [receive only channel 不能 close，直接编译错误。但 send only channel 是可以被正常 close 的](./Language_Specification/reference-type/channel/channel.go)
   - 指针不支持索引
   - Go 语言中，大括号不能放在单独的一行, 除非是code block

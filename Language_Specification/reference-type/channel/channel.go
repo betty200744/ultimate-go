@@ -46,3 +46,18 @@ func Channel3() {
 		}
 	}(ctx)
 }
+
+// receive only channel 不能 close，直接编译错误。但 send only channel 是可以被正常 close 的
+func Channel4() {
+	sendOnly := make(chan<- int, 3)
+	for i := 0; i < 3; i++ {
+		sendOnly <- i
+	}
+	close(sendOnly)
+
+	receiveOnly := make(<-chan int, 3)
+	for i := 0; i < 3; i++ {
+		fmt.Println(<-receiveOnly)
+	}
+	//close(receiveOnly) error
+}
