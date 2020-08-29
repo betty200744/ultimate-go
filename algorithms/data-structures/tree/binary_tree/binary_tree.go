@@ -74,11 +74,10 @@ func PostOrder(node *Node) {
 // Breadth-first search
 func BreadthFirst(root *Node) {
 	var q []*Node // queue
-	var n *Node   // temporary node
-
 	q = append(q, root)
 	for len(q) != 0 {
-		n, q = q[0], q[1:]
+		n := q[0]
+		q = q[1:]
 		fmt.Print(n.Data, " ")
 		if n.Left != nil {
 			q = append(q, n.Left)
