@@ -49,3 +49,14 @@ func KthSmallest(root *Node, k int) int {
 		return KthSmallest(root.Right, k-leftCount-1)
 	}
 }
+func KthBiggest(root *Node, k int) int {
+	rightCount := CountNode(root.Right)
+	if k == rightCount+1 {
+		return root.Data
+	}
+	if k <= rightCount {
+		return KthBiggest(root.Right, k)
+	} else {
+		return KthBiggest(root.Left, k-rightCount-1)
+	}
+}
