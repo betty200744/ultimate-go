@@ -181,6 +181,7 @@ This repo contains my notes on work with Go and computer systems
   - [config](./awesome-go/myconfig/myconfig.go) 
   - [beego](./awesome-go/beego/main.go)
   - [go-redis](./awesome-go/go-redis/main.go)
+  - [freecache](./awesome-go/freecache/example) | [localcache |best practices](./awesome-go/freecache/localcache/localcache.go)
   - [gorm](./awesome-go/gorm/)
   - [iris](./awesome-go/iris)
   - [kafkaSarama](./awesome-go/kafkaSarama)
