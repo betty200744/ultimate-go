@@ -12,6 +12,13 @@ func TestPreOrder(t *testing.T) {
 	res := PreOrder(root)
 	assert.Equal(t, []int{1, 2, 3}, res)
 }
+func TestPreOrder2(t *testing.T) {
+	root := NewTreeNode(1)
+	root.Right = NewTreeNode(2)
+	root.Right.Left = NewTreeNode(3)
+	res := PreOrderIterative(root)
+	assert.Equal(t, []int{1, 2, 3}, res)
+}
 func TestPostOrder(t *testing.T) {
 	root := NewTreeNode(1)
 	root.Right = NewTreeNode(2)
