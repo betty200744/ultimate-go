@@ -28,6 +28,17 @@ func TestGivenLevelOrder(t *testing.T) {
 	res = GivenLevelOrder(root, 1)
 	fmt.Println(res)
 }
+func TestGivenLevelOrderFromRight(t *testing.T) {
+	root := NewNode(3)
+	root.Left = NewNode(9)
+	root.Left.Left = NewNode(8)
+	root.Left.Right = NewNode(10)
+	root.Right = NewNode(20)
+	root.Right.Left = NewNode(15)
+	root.Right.Right = NewNode(7)
+	res := GivenLevelOrderFromRight(root, 2)
+	fmt.Println(res)
+}
 func TestLevelOrder(t *testing.T) {
 	root := NewNode(3)
 	root.Left = NewNode(9)
