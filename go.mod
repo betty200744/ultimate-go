@@ -23,6 +23,7 @@ require (
 	github.com/gavv/monotime v0.0.0-20190418164738-30dba4353424 // indirect
 	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-gonic/gin v1.6.3
+	github.com/go-playground/assert/v2 v2.0.1
 	github.com/go-redis/redis/v8 v8.0.0-beta.6
 	github.com/golang/mock v1.4.3
 	github.com/golang/protobuf v1.4.2
