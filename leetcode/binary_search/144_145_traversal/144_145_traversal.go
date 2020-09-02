@@ -25,6 +25,25 @@ func PreOrder(root *TreeNode) []int {
 	arr = append(arr, PreOrder(root.Right)...)
 	return arr
 }
+func PreOrderIterative(root *TreeNode) []int {
+	q := make([]*TreeNode, 0)
+	q = append(q, root)
+	n := q[0]
+	for n.Left != nil || n.Right != nil {
+		if n.Left != nil {
+			q = append(q, n.Left)
+		}
+		if n.Right != nil {
+			q = append(q, n.Right)
+		}
+		n = q[len(q)-1]
+	}
+	arr := make([]int, len(q))
+	for i, i2 := range q {
+		arr[i] = i2.Val
+	}
+	return arr
+}
 
 // LNR
 func InOrder(root *TreeNode) []int {
