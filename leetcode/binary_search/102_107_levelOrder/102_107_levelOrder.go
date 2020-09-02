@@ -61,3 +61,17 @@ func GivenLevelOrder(root *TreeNode, level int) []int {
 	}
 	return arr
 }
+func GivenLevelOrderFromRight(root *TreeNode, level int) []int {
+	arr := make([]int, 0)
+	if root == nil {
+		return arr
+	}
+	if level == 0 {
+		return append(arr, root.Val)
+	}
+	if level > 0 {
+		arr = append(arr, GivenLevelOrderFromRight(root.Right, level-1)...)
+		arr = append(arr, GivenLevelOrderFromRight(root.Left, level-1)...)
+	}
+	return arr
+}
