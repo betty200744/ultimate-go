@@ -43,3 +43,9 @@ func TestChannel(t *testing.T) {
 func TestChannel4(t *testing.T) {
 	Channel4()
 }
+func TestChannel5(t *testing.T) {
+	Channel5()
+}
+func TestChannel6(t *testing.T) {
+	Channel6()
+}
