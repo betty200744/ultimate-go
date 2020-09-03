@@ -61,3 +61,17 @@ func Channel4() {
 	}
 	//close(receiveOnly) error
 }
+
+// send to a close channel, then panic
+func Channel5() {
+	ch := make(chan int, 0)
+	close(ch)
+	ch <- 1
+}
+
+// receive a close channel, then default value
+func Channel6() {
+	ch := make(chan int, 0)
+	close(ch)
+	<-ch
+}
