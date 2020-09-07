@@ -25,3 +25,7 @@ func TestRobDP(t *testing.T) {
 	res = RobDP([]int{4, 1, 1, 5})
 	assert.Equal(t, 9, res)
 }
+func TestRobDP2(t *testing.T) {
+	res := RobDP([]int{1})
+	assert.Equal(t, 1, res)
+}
