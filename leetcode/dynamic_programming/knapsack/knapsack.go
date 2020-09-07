@@ -23,8 +23,8 @@ func Knapsack(items []Item, W int) int {
 		arr[i] = make([]int, W+1)
 	}
 	items = append([]Item{{weight: 0, value: 0}}, items...)
-	for i := 1; i <= N; i++ {
-		for w := 1; w <= W; w++ {
+	for w := 1; w <= W; w++ {
+		for i := 1; i <= N; i++ {
 			if items[i].weight > w {
 				arr[i][w] = arr[i-1][w]
 			} else {
