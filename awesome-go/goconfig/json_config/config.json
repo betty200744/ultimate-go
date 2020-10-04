@@ -1,0 +1,7 @@
+{
+  "pg": {
+    "host": "localhostj",
+    "port": 5432,
+    "db": "pgtestj"
+  }
+}
