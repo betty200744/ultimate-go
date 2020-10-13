@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
-func snakeCaseToCamelCase(inputUnderScoreStr string) (camelCase string) {
+func SnakeCaseToCamelCase(inputUnderScoreStr string) (camelCase string) {
 	//snake_case to camelCase
 
 	isToUpper := false
@@ -28,12 +27,4 @@ func snakeCaseToCamelCase(inputUnderScoreStr string) (camelCase string) {
 	}
 	return
 
-}
-
-func main() {
-	snakeCase := "img_snapshot_100"
-	result := snakeCaseToCamelCase(snakeCase)
-
-	fmt.Println(snakeCase)
-	fmt.Println(result)
 }
