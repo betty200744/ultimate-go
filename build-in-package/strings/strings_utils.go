@@ -5,6 +5,6 @@ import (
 	"strings"
 )
 
-func main() {
+func StringTrim() {
 	fmt.Println(strings.Trim(" abcd d ", " "))
 }
