@@ -1,30 +1,19 @@
-package main
+package statements
 
 import (
 	"fmt"
 	"runtime"
+	"testing"
 	"time"
 )
 
-func Do(v interface{}) {
-	switch v.(type) {
-	case string:
-		fmt.Println("i am string")
-	case int:
-		fmt.Println("i am int")
-	case bool:
-		fmt.Println("i am bool")
-	default:
-		fmt.Println("i don't know")
-	}
-}
-
-func Switch() {
+func TestSwitch(t *testing.T) {
 	// switch variable
 	os := runtime.GOOS
 	switch os {
 	case "darwin":
 		fmt.Println("OS X")
+		fallthrough
 	case "linux":
 		fmt.Println("linux")
 	default:
@@ -40,9 +29,4 @@ func Switch() {
 	default:
 		fmt.Println("good eventing")
 	}
-
-	// value switch
-	Do("string")
-	Do(123)
-	Do(true)
 }
