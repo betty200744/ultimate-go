@@ -1,9 +1,10 @@
-package main
+package utils
 
 import (
 	"bytes"
 	"crypto/md5"
 	"encoding/hex"
+	"fmt"
 	"math/rand"
 	"net"
 	"reflect"
@@ -25,7 +26,6 @@ func RandomString(l int) string {
 	return result.String()
 }
 
-//[min, max)
 func RandInt(min int, max int) int {
 	rand.Seed(time.Now().UTC().UnixNano())
 	return min + rand.Intn(max-min)
@@ -92,6 +92,39 @@ func InArray(val interface{}, array interface{}) bool {
 	return false
 }
 
-func main() {
+func ToInt(v interface{}) int {
+	if v == nil {
+		return 0
+	}
+	/*	switch d := v.(type) {
+		case string:
+
+		}*/
+	return 0
+}
+
+func StructToMap(in interface{}) (map[string]interface{}, error) {
+	out := make(map[string]interface{})
+
+	v := reflect.ValueOf(in)
+	if v.Kind() == reflect.Ptr {
+		v = v.Elem()
+	}
+
+	// we only accept structs
+	if v.Kind() != reflect.Struct {
+		return nil, fmt.Errorf("StructToMap only accepts structs; got %T", v)
+	}
+
+	typ := v.Type()
+	for i := 0; i < v.NumField(); i++ {
+		fi := typ.Field(i)
+		if name := fi.Name; name != "" {
+			out[name] = v.Field(i).Interface()
+		}
+	}
+	return out, nil
+}
+func ToMap(v interface{}) {
 
 }
