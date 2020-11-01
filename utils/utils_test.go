@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"fmt"
@@ -23,4 +23,12 @@ func TestRandInt(t *testing.T) {
 }
 func TestRandomString(t *testing.T) {
 	fmt.Println(RandomString(5))
+}
+func TestToInt(t *testing.T) {
+	a := "aaa"
+	ToInt(a)
+}
+func TestString2Byte(t *testing.T) {
+	b := []byte("aa")
+	fmt.Println(b, string(b))
 }
