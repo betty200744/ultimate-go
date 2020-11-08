@@ -1,13 +1,14 @@
-package main
+package hashing
 
 import (
 	"crypto/hmac"
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
+	"testing"
 )
 
-func main() {
+func Test_hmac(t *testing.T) {
 	key, _ := hex.DecodeString("63687373")
 	in := []byte("abc")
 	mac := hmac.New(sha256.New, key)
