@@ -1,4 +1,4 @@
-package main
+package encrypter_decrypter_cipher
 
 import (
 	"crypto/aes"
@@ -7,9 +7,10 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
+	"testing"
 )
 
-func main() {
+func Test_aes(t *testing.T) {
 	key, _ := hex.DecodeString("6368616e676520746869732070617373")
 	//Encryption
 	plaintext := []byte("exampleplaintext")

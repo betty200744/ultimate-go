@@ -21,11 +21,11 @@
 ![](../../img/hashing.png)
 
 - **Encryption or Ciphers** [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-notes/MIT6_046JS15_lec22.pdf)
-   - aes, [code](./encryption_cipher/aes/aes.go)
-   - cipher, [code](./encryption_cipher/cipher/cipher.go)  
-   - des, [code](./encryption_cipher) 
-   - rc4, [code](./encryption_cipher)
-   - rsa, [code](./encryption_cipher)
+   - aes, [code](encrypter_decrypter_cipher/aes/aes.go)
+   - cipher, [code](encrypter_decrypter_cipher/cipher/cipher.go)  
+   - des, [code](encrypter_decrypter_cipher) 
+   - rc4, [code](encrypter_decrypter_cipher)
+   - rsa, [code](encrypter_decrypter_cipher)
 
 ![](../../img/ciphers.png)
 ![](../../img/encryption.png)
