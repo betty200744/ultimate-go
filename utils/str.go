@@ -36,18 +36,58 @@ func String2Byte(s *string) []byte {
 	return *(*[]byte)(unsafe.Pointer((*reflect.SliceHeader)(unsafe.Pointer(s))))
 }
 
+func ToBool(v interface{}) bool {
+	if v == nil {
+		return false
+	}
+	switch d := v.(type) {
+	case bool:
+		return d
+	case string:
+		t, _ := strconv.ParseBool(d)
+		return t
+	case float32, float64:
+		return reflect.ValueOf(d).Float() > 0.0
+	case int, int8, int16, int32, int64:
+		return reflect.ValueOf(d).Int() > 0
+	case uint, uint8, uint16, uint32, uint64:
+		return reflect.ValueOf(d).Uint() > 0
+	}
+	return false
+}
+
 func ToInt(v interface{}) int {
 	if v == nil {
 		return 0
 	}
-	/*	switch d := v.(type) {
-		case string:
-
-		}*/
+	switch d := v.(type) {
+	case string:
+		i, _ := strconv.Atoi(d)
+		return i
+	case int, int8, int16, int32, int64:
+		return int(reflect.ValueOf(d).Int())
+	}
 	return 0
 }
 
-// ToString converts a value to string.
+func ToInt64(value interface{}) int64 {
+	switch value := value.(type) {
+	case string:
+		n, _ := strconv.Atoi(value)
+		return int64(n)
+	case int8:
+		return int64(value)
+	case int16:
+		return int64(value)
+	case int32:
+		return int64(value)
+	case int64:
+		return value
+	default:
+		return value.(int64)
+	}
+}
+
 func ToString(value interface{}) string {
 	switch value := value.(type) {
 	case string:
@@ -76,22 +116,5 @@ func ToString(value interface{}) string {
 		return strconv.FormatBool(value)
 	default:
 		return fmt.Sprintf("%+v", value)
-	}
-}
-func ToInt64(value interface{}) int64 {
-	switch value := value.(type) {
-	case string:
-		n, _ := strconv.Atoi(value)
-		return int64(n)
-	case int8:
-		return int64(value)
-	case int16:
-		return int64(value)
-	case int32:
-		return int64(value)
-	case int64:
-		return value
-	default:
-		return value.(int64)
 	}
 }
