@@ -1,9 +1,10 @@
-package main
+package encoding
 
 import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 	"time"
 )
 
@@ -19,7 +20,7 @@ type FruitBasket struct {
 	Created time.Time `json:"created"`
 }
 
-func main() {
+func test() {
 	// json for  boolean, int, float, string, slice, map, struct
 	mapU := make(map[string]string)
 	b1, _ := json.Marshal(true)
@@ -91,4 +92,76 @@ func main() {
 	basketM := new(map[string]interface{})
 	json.Unmarshal(jsonDataM, basketM)
 	fmt.Println(basketM)
+}
+
+type Dummy struct {
+	Name    string  `json:"name"`
+	Number  int64   `json:"number"`
+	Pointer *string `json:"pointer"`
+}
+
+func test_omitempty() {
+	pointer := "yes"
+
+	dummyComplete := Dummy{
+		Name:    "Mr Dummy",
+		Number:  4,
+		Pointer: &pointer,
+	}
+
+	data, err := json.Marshal(dummyComplete)
+	if err != nil {
+		os.Exit(1)
+	}
+
+	fmt.Println(string(data))
+
+	// ALL of those are considered empty by Go
+	dummyNilPointer := Dummy{
+		Name:    "",
+		Number:  0,
+		Pointer: nil,
+	}
+
+	dataNil, err := json.Marshal(dummyNilPointer)
+	if err != nil {
+		os.Exit(1)
+	}
+
+	fmt.Println(string(dataNil))
+}
+
+type ReturnFormat struct {
+	ErrNo  int64       `json:"errno"`
+	ErrMsg string      `json:"errmsg"`
+	Data   interface{} `json:"data"`
+}
+
+func Marshal() {
+	// data 第一次marshal后存redis
+	data := struct {
+		Sn      string `json:"sn"`
+		Trigger string `json:"trigger"`
+	}{Sn: "sn", Trigger: "trigger"}
+	dataMarshal, _ := json.Marshal(data)
+
+	// marshal的数据转换成string后， 重新封装再次marshal
+	returnUnMarshal := ReturnFormat{}
+	returnUnMarshal.ErrNo = 2
+	returnUnMarshal.ErrMsg = "hello"
+	returnUnMarshal.Data = string(dataMarshal)
+	returnMarshal, _ := json.Marshal(returnUnMarshal)
+
+	// 通用函数， 想一次性unmarshal上面分开marshal的数据，但是报错
+	result := new(struct {
+		ErrNo  int64  `json:"errno"`
+		ErrMsg string `json:"errmsg"`
+		Data   struct {
+			Sn      string `json:"sn"`
+			Trigger string `json:"trigger"`
+		} `json:"data"`
+	})
+	err := json.Unmarshal(returnMarshal, result)
+	fmt.Println(err)
+
 }
