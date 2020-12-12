@@ -14,7 +14,6 @@ func TimeProperty() {
 	p(now.UnixNano())
 	p(now.Year())
 	p(y, m, d)
-
 	// property
 	fmt.Println("this is Time.Year():", now.Year())
 	fmt.Println("this is Time.Month():", now.Month())
