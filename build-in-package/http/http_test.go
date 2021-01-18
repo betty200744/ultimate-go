@@ -21,7 +21,10 @@ func TestGetImage(t *testing.T) {
 	res, _ := GetImage("https://bit.ly/2IRnmVm")
 	fmt.Println(res)
 }
-
+func TestDownload(t *testing.T) {
+	res, _ := Download("http://storage.xiaowugame.com/upload/image/5401ebbeaa94302f60bed3d06409139d.png")
+	fmt.Println(res)
+}
 func TestGetWithHeader(t *testing.T) {
 	url := "http://example.com/"
 	headers := map[string]string{"Authorization": "Basic YWRtaW46QnV6aG9uZ3lhbzEyMw=="}
