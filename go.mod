@@ -43,6 +43,7 @@ require (
 	github.com/kataras/golog v0.0.18 // indirect
 	github.com/kataras/iris v11.1.1+incompatible
 	github.com/lib/pq v1.7.1
+	github.com/lyft/protoc-gen-star v0.5.2
 	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
