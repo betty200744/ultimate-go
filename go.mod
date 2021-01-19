@@ -19,6 +19,7 @@ require (
 	github.com/elastic/go-sysinfo v1.3.0 // indirect
 	github.com/elastic/go-windows v1.0.1 // indirect
 	github.com/flosch/pongo2 v0.0.0-20200529170236-5abacdfa4915 // indirect
+	github.com/flyaways/pool v1.0.1
 	github.com/gavv/monotime v0.0.0-20190418164738-30dba4353424 // indirect
 	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-gonic/gin v1.6.3
