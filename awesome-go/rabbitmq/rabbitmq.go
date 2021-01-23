@@ -1,6 +1,8 @@
 package rabbitmq
 
 import (
+	"fmt"
+
 	"github.com/streadway/amqp"
 )
 
@@ -42,15 +44,42 @@ func (r *RabbitMQ) GetChannel() (channel *amqp.Channel, err error) {
 }
 
 func (r *RabbitMQ) Send(ch *amqp.Channel, exchange, name, route, message string) error {
-	_, err := ch.QueueDeclare(name, true, false, false, false, nil)
-	if err != nil {
-		return err
+	if name != "" {
+		_, err := ch.QueueDeclare(name, true, false, false, false, nil)
+		if err != nil {
+			return err
+		}
 	}
-	err = ch.Publish(exchange, route, false, false, amqp.Publishing{
+	err := ch.Publish(exchange, route, false, false, amqp.Publishing{
 		Body: []byte(message),
 	})
 	if err != nil {
 		return err
 	}
 	return nil
+}
+
+func (r RabbitMQ) Consumer(ch *amqp.Channel, exchange, consumerName, queueName, route string) error {
+	q, err := ch.QueueDeclare(queueName, true, false, false, false, nil)
+	if err != nil {
+		return err
+	}
+	if exchange != "" {
+		err = ch.QueueBind(q.Name, route, exchange, false, nil)
+		if err != nil {
+			return err
+		}
+	}
+	msgs, err := ch.Consume(queueName, consumerName, true, false, false, false, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+	go func() {
+		for msg := range msgs {
+			fmt.Println(fmt.Sprintf("consumer: %v, exchange: %v, routing_key: %v, msg: %v", consumerName, msg.Exchange, msg.RoutingKey, string(msg.Body[:])))
+		}
+	}()
+	for {
+
+	}
 }
