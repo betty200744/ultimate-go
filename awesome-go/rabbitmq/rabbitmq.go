@@ -41,6 +41,16 @@ func (r *RabbitMQ) GetChannel() (channel *amqp.Channel, err error) {
 	return channel, nil
 }
 
-func (r *RabbitMQ) send(channel *amqp.Channel, name string, route string, message []byte) error {
+func (r *RabbitMQ) Send(ch *amqp.Channel, exchange, name, route, message string) error {
+	_, err := ch.QueueDeclare(name, true, false, false, false, nil)
+	if err != nil {
+		return err
+	}
+	err = ch.Publish(exchange, route, false, false, amqp.Publishing{
+		Body: []byte(message),
+	})
+	if err != nil {
+		return err
+	}
 	return nil
 }
