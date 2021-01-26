@@ -7,6 +7,8 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
+// http://go-database-sql.org/errors.html
+
 func main() {
 	db, err := sql.Open("mysql", "root:!azxsw2@tcp(127.0.0.1:3306)/wuji")
 	if err != nil {
