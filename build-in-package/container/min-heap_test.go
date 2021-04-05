@@ -1,8 +1,9 @@
-package main
+package container
 
 import (
 	"container/heap"
 	"fmt"
+	"testing"
 )
 
 // An MinHeap is a min-heap of ints.
@@ -28,7 +29,7 @@ func (h *MinHeap) Pop() interface{} {
 
 // This example inserts several ints into an MinHeap, checks the minimum,
 // and removes them in order of priority.
-func main() {
+func Test_MinHeap(t *testing.T) {
 	h := &MinHeap{2, 1, 5}
 	heap.Init(h)
 	fmt.Println(h)
