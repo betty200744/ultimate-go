@@ -1,10 +1,11 @@
-package main
+package sync
 
 import (
 	"bytes"
 	"io"
 	"os"
 	"sync"
+	"testing"
 	"time"
 )
 
@@ -35,6 +36,6 @@ func Log(w io.Writer, key, val string) {
 	bufPool.Put(b)
 }
 
-func main() {
+func Test_Pool(t *testing.T) {
 	Log(os.Stdout, "path", "/search?q=flowers")
 }

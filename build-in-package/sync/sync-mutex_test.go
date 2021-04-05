@@ -1,8 +1,9 @@
-package main
+package sync
 
 import (
 	"fmt"
 	"sync"
+	"testing"
 )
 
 var (
@@ -10,7 +11,7 @@ var (
 	mutex = &sync.Mutex{} // 读写互斥， 写的时候不让读
 )
 
-func fooooo() {
+func stateMutex() {
 	mutex.Lock()
 	defer mutex.Unlock()
 	go func() {
@@ -19,8 +20,8 @@ func fooooo() {
 	}()
 }
 
-func main() {
-	fooooo()
+func Test_Mutex(t *testing.T) {
+	stateMutex()
 	state[1] = 3
 	fmt.Println(state)
 }
