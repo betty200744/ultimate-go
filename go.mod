@@ -74,32 +74,24 @@ require (
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/samuel/go-zookeeper v0.0.0-20201211165307-7117e9ea2414 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	github.com/smallnest/quick v0.0.0-20200505103731-c8c83f9c76d3 // indirect
-	github.com/smallnest/rpcx v0.0.0-20210120041900-c2830baacdb1
+	github.com/smallnest/rpcx v0.0.0-20210406062008-4e86bcacc2e0
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
 	github.com/stretchr/testify v1.6.1
 	github.com/t-tiger/gorm-bulk-insert v1.3.0
 	github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e
-	github.com/templexxx/cpufeat v0.0.0-20180724012125-cef66df7f161 // indirect
-	github.com/templexxx/xor v0.0.0-20191217153810-f85b25db303b // indirect
-	github.com/tjfoc/gmsm v1.4.0 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible
 	github.com/valyala/fasthttp v1.14.0 // indirect
 	github.com/valyala/fastrand v1.0.0 // indirect
-	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f // indirect
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/xeipuuv/gojsonschema v1.1.0 // indirect
-	github.com/xtaci/kcp-go v5.4.20+incompatible // indirect
 	github.com/xtaci/lossyconn v0.0.0-20200209145036-adba10fffc37 // indirect
 	github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
 	github.com/yudai/pp v2.0.1+incompatible // indirect
-	github.com/zhouhui8915/engine.io-go v0.0.0-20150910083302-02ea08f0971f // indirect
-	github.com/zhouhui8915/go-socket.io-client v0.0.0-20200925034401-83ee73793ba4 // indirect
 	go.elastic.co/apm/module/apmgin v1.8.0
 	go.elastic.co/apm/module/apmgoredisv8 v0.0.0-20200618141751-9f7ef4bcff66
 	go.elastic.co/fastjson v1.1.0 // indirect
