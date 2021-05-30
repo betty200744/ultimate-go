@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	// dial tcp
 	c, _ := net.Dial("tcp", "localhost:8888")
 
 	// client write
