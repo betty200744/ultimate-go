@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	// listen tcp
 	l, err := net.Listen("tcp", ":8888")
 	if err != nil {
 		panic(err)
