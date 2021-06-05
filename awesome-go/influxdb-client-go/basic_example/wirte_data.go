@@ -17,14 +17,16 @@ const (
 )
 
 type HostStat struct {
-	Pid       string `json:"pid"`       // 资源池（虚拟机房）标识
-	Qid       string `json:"qid"`       // 资源池（虚拟机房）队列标识
-	Bside     string `json:"bside"`     // 业务方标识(1-小悟云 2-领沃)
-	Total     int64  `json:"total"`     // 总数
-	Live      int64  `json:"live"`      // 可用数
-	Used      int64  `json:"used"`      // 已使用数
-	UsedRate  int64  `json:"used_rate"` // 已使用数
-	Timestamp int64  `json:"timestamp"`
+	Pid       string    `json:"pid" mapstructure:"pid"`             // 资源池（虚拟机房）标识
+	Qid       string    `json:"qid" mapstructure:"qid"`             // 资源池（虚拟机房）队列标识
+	Bside     string    `json:"bside" mapstructure:"bside"`         // 业务方标识(1-小悟云 2-领沃)
+	Field     string    `json:"_field" mapstructure:"_field"`       // field
+	Value     float64   `json:"_value" mapstructure:"_value"`       // value
+	Total     float64   `json:"total" mapstructure:"total"`         // 总数
+	Live      float64   `json:"live" mapstructure:"live"`           // 可用数
+	Used      float64   `json:"used" mapstructure:"used"`           // 已使用数
+	UsedRate  float64   `json:"used_rate" mapstructure:"used_rate"` // 已使用数
+	Timestamp time.Time `json:"_time" mapstructure:"_time"`
 }
 
 func getClient() influxdb2.Client {
