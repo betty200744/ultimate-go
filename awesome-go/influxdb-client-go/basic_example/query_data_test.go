@@ -97,6 +97,17 @@ func TestQueryBasic(t *testing.T) {
         join(tables: {j1: j1, used: used}, on: ["pid"])
 `,
 		},
+		{
+			name: "basic aggregateWindow 10m",
+			query: `from(bucket:"stat") 
+		|> range(start: -1d)
+		|> filter(fn: (r) => r._measurement == "host_stats")
+        |> group()
+		|> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")
+        |> aggregateWindow(every: 10m, fn: mean, column: "total",createEmpty: true)
+        |> limit(n: 20)
+		|> yield(name: "mean")`,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
