@@ -31,6 +31,9 @@ func TestWriteHostStatsWithLineProtocol(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			WriteHostStatsWithLineProtocol(tt.args.ctx, tt.args.pid, tt.args.qid, tt.args.bside, tt.args.total, tt.args.live, tt.args.used, tt.args.ctime)
+			for i := 0; i < 1000; i++ {
+				WriteHostStatsWithLineProtocol(tt.args.ctx, tt.args.pid, tt.args.qid, tt.args.bside, float64(i), float64(i), float64(i), time.Now().Add(time.Minute*time.Duration(-i)).UnixNano())
+			}
 			fmt.Println("first timestamp is: ", time.Unix(0, tt.args.ctime).Unix())
 			QueryLatestDate()
 		})
