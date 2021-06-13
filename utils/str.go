@@ -14,7 +14,10 @@ func RandInt(min int, max int) int {
 	rand.Seed(time.Now().UTC().UnixNano())
 	return min + rand.Intn(max-min)
 }
-
+func RandInt64(min int, max int) int64 {
+	rand.Seed(time.Now().UTC().UnixNano())
+	return int64(min + rand.Intn(max-min))
+}
 func RandomString(l int) string {
 	var result bytes.Buffer
 	var temp string
