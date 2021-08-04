@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volumes-emptydir-pod
+  namespace: default
+spec:
+  containers:
+    - image: k8s.gcr.io/nginx-slim:0.8
+      name: volumes-emptydir-pod
+      volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: volumes-emptydir
+  volumes:
+    - name: volumes-emptydir
+      emptyDir: { }

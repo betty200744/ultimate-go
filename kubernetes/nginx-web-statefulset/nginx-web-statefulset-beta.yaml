@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nginx-web-statefulset
+  namespace: beta
+  labels:
+    app: nginx-web-statefulset
+spec:
+  serviceName: nginx-web-statefulset
+  selector:
+    matchLabels:
+      app: nginx-web-statefulset
+  template:
+    metadata:
+      name: nginx-web-statefulset
+      labels:
+        app: nginx-web-statefulset
+    spec:
+      containers:
+        - name: nginx-web-statefulset
+          image: k8s.gcr.io/nginx-slim:0.8
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: nginx-web-statefulset
+      # pvc pv-default already create
+      volumes:
+        - name: nginx-web-statefulset
+          persistentVolumeClaim:
+            claimName: pvc-beta
+# create pvc in pod template
+#  volumeClaimTemplates:
+#    - metadata:
+#        name: nginx-web-statefulset
+#        namespace: beta
+#      spec:
+#        storageClassName: local-storage
+#        volumeName: pv-beta
+#        accessModes:
+#          - ReadWriteOnce
+#        resources:
+#          requests:
+#            storage: 1Gi

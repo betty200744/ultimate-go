@@ -1,0 +1,8 @@
+# config.yaml
+server:
+  replicas: 1
+  bootstrapExpect: 1
+
+ui:
+  service:
+    type: NodePort

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-web-statefulset
+  namespace: beta
+  labels:
+    app: nginx-web-statefulset
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      name: http
+      nodePort: 30002
+  selector:
+    app: nginx-web-statefulset
+
+# curl nodeip:30001
+# kubectl exec -i -t dnsutils -- nslookup nginx-web-statefulset.beta
