@@ -1,0 +1,10 @@
+{
+  "datacenter":"dc1",
+  "data_dir":"/Users/betty/project/consul/consul.d",
+  "node_name":"Bettys-MacBook-Pro-4.local",
+  "server":true,
+  "ui":true,
+  "bootstrap_expect":1,
+  "client_addr":"0.0.0.0",
+  "enable_debug":true
+}

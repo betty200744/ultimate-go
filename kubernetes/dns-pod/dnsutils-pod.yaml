@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dnsutils
+  namespace: default
+  labels:
+    environment: dev
+spec:
+  containers:
+    - name: dnsutils
+      image: gcr.io/kubernetes-e2e-test-images/dnsutils:1.2
+      command:
+        - sleep
+        - "3600"
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
+
