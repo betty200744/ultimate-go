@@ -9,7 +9,6 @@ require (
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1047 // indirect
 	github.com/apache/thrift v0.14.1 // indirect
-	github.com/armon/go-metrics v0.3.7 // indirect
 	github.com/astaxie/beego v1.12.2
 	github.com/avast/retry-go v2.6.0+incompatible
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
@@ -41,7 +40,8 @@ require (
 	github.com/gorilla/schema v1.1.0 // indirect
 	github.com/gosidekick/goconfig v1.3.0
 	github.com/grandcat/zeroconf v1.0.0 // indirect
-	github.com/hashicorp/consul/api v1.8.1 // indirect
+	github.com/hashicorp/consul v1.10.1
+	github.com/hashicorp/consul/api v1.9.0
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-hclog v0.16.0 // indirect
@@ -65,6 +65,8 @@ require (
 	github.com/kataras/iris v11.1.1+incompatible
 	github.com/klauspost/cpuid/v2 v2.0.6 // indirect
 	github.com/klauspost/reedsolomon v1.9.12 // indirect
+	github.com/labstack/echo v3.3.10+incompatible
+	github.com/labstack/echo/v4 v4.3.0
 	github.com/lib/pq v1.7.1
 	github.com/lyft/protoc-gen-star v0.5.2
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
@@ -75,7 +77,7 @@ require (
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5
 	github.com/pkg/errors v0.9.1
-	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
+	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475
 	github.com/robfig/cron/v3 v3.0.0
 	github.com/rpcxio/rpcx-examples v1.1.6
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
@@ -109,7 +111,7 @@ require (
 	go.opentelemetry.io/otel v0.20.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.16.0
-	golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b
+	golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a
 	golang.org/x/net v0.0.0-20210423184538-5f58ad60dda6
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
 	golang.org/x/sys v0.0.0-20210426080607-c94f62235c83 // indirect
