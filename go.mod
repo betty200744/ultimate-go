@@ -91,6 +91,7 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/t-tiger/gorm-bulk-insert v1.3.0
 	github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e
+	github.com/uber/go-torch v0.0.0-20181107071353-86f327cc820e // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible
 	github.com/valyala/fasthttp v1.14.0 // indirect
