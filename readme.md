@@ -277,9 +277,9 @@ This repo contains my notes on work with Go and computer systems
 - **Interview**
     - When is `defer` called?
       > It was called according the consuming sequence of stack. That is to say, the first `defer` clause will be invoked as the last.
-    - `defer` and `panic` which is run first
+    - `defer` and `panic` which is run first?
       > First `defer`, then `panic`.
-    - Difference between `new()` and `make()`
+    - Difference between `new()` and `make()`?
       > For `new` function, it returns pointer. It is used when initiate struct. `Make` is mostly used when initiate *slice*, *map* and *channel*.
     - Can `append()` receive pointer as parameter?
       > No.
@@ -291,7 +291,7 @@ This repo contains my notes on work with Go and computer systems
     - `str := "hello", str[1] = 'a'` Is the string gonna modified?
       > No. Because the string is a constant.
     - Can we assign nil to `string`?
-      > No. But we can assign nil to `string*`
+      > No. But we can assign nil to `*string`
     - If `map` and `range` is executed by sequence?
       > No.
     - If two slice object can be compared with `==`?
