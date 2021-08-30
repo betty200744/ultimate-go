@@ -296,3 +296,7 @@ This repo contains my notes on work with Go and computer systems
       > No.
     - If two slice object can be compared with `==`?
       > No.
+    - Is there a difference between new() and “regular” allocation?
+      > No. &Vector{} ， new(Vector) is the same, 
+      > one thing to note: new() is the only way to get a pointer to an unnamed integer or other basic type. 
+      > You can write "p := new(int)" but you can't write "p := &int{0}". 
