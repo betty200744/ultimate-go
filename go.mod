@@ -65,8 +65,8 @@ require (
 	github.com/kataras/iris v11.1.1+incompatible
 	github.com/klauspost/cpuid/v2 v2.0.6 // indirect
 	github.com/klauspost/reedsolomon v1.9.12 // indirect
-	github.com/labstack/echo v3.3.10+incompatible
-	github.com/labstack/echo/v4 v4.3.0
+	github.com/labstack/echo v3.3.10+incompatible // indirect
+	github.com/labstack/echo/v4 v4.3.0 // indirect
 	github.com/lib/pq v1.7.1
 	github.com/lyft/protoc-gen-star v0.5.2
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
@@ -94,6 +94,7 @@ require (
 	github.com/uber/go-torch v0.0.0-20181107071353-86f327cc820e // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible
+	github.com/urfave/cli/v2 v2.3.0
 	github.com/valyala/fasthttp v1.14.0 // indirect
 	github.com/valyala/fastrand v1.0.0 // indirect
 	github.com/vmihailenco/msgpack/v5 v5.3.1 // indirect
