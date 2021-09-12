@@ -2,8 +2,8 @@ package maxheap
 
 import (
 	"fmt"
-	"gobyexample/algorithms/data-structures/heap"
 	"log"
+	"ultimate-go/algorithms/data-structures/heap"
 )
 
 /*

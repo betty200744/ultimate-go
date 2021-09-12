@@ -1,6 +1,6 @@
 package sets
 
-import "gobyexample/algorithms/data-structures/containers"
+import "ultimate-go/algorithms/data-structures/containers"
 
 // // Reference: https://en.wikipedia.org/wiki/Set_%28abstract_data_type%29
 // 数据不可重复， 数据无index

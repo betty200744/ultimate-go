@@ -2,9 +2,9 @@ package demo
 
 import (
 	"github.com/golang/mock/gomock"
-	mock_demo "gobyexample/mock/golang/mock/mock"
 	"os"
 	"testing"
+	mock_demo "ultimate-go/mock/golang/mock/mock"
 )
 
 //go:generate mockgen -source=demo.go -destination ../mock/demo_mock.go

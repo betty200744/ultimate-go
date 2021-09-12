@@ -7,8 +7,8 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 
-	"gobyexample/awesome-go/mapstructure"
-	"gobyexample/build-in-package/crypto/encrypter_decrypter_cipher"
+	"ultimate-go/awesome-go/mapstructure"
+	"ultimate-go/build-in-package/crypto/encrypter_decrypter_cipher"
 )
 
 var (

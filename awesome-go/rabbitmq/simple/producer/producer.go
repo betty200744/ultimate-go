@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"gobyexample/awesome-go/rabbitmq"
-	"gobyexample/utils"
+	"ultimate-go/awesome-go/rabbitmq"
+	"ultimate-go/utils"
 )
 
 func main() {

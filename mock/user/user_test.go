@@ -2,9 +2,9 @@ package user
 
 import (
 	"github.com/golang/mock/gomock"
-	mock_user "gobyexample/mock/user/mock"
 	"gopkg.in/go-playground/assert.v1"
 	"testing"
+	mock_user "ultimate-go/mock/user/mock"
 )
 
 func TestIndex(t *testing.T) {

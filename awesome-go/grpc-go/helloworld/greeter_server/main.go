@@ -5,11 +5,11 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "gobyexample/awesome-go/grpc-go/helloworld/helloworld"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"log"
 	"net"
+	pb "ultimate-go/awesome-go/grpc-go/helloworld/helloworld"
 )
 
 const (

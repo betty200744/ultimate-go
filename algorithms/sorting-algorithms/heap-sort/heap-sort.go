@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gobyexample/algorithms/data-structures/heap/maxheap"
+	"ultimate-go/algorithms/data-structures/heap/maxheap"
 )
 
 /*

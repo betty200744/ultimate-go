@@ -2,8 +2,8 @@ package foo
 
 import (
 	"github.com/golang/mock/gomock"
-	mock_foo "gobyexample/mock/foo/mock"
 	"testing"
+	mock_foo "ultimate-go/mock/foo/mock"
 )
 
 func TestFoo(t *testing.T) {

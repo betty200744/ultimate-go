@@ -2,8 +2,8 @@ package hashing_with_chaining
 
 import (
 	"fmt"
-	"gobyexample/algorithms/data-structures/lists/singlylinkedlist"
 	"math"
+	"ultimate-go/algorithms/data-structures/lists/singlylinkedlist"
 )
 
 /*

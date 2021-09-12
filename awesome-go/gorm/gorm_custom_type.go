@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
-	"gobyexample/awesome-go/gorm/pgtype"
+	"ultimate-go/awesome-go/gorm/pgtype"
 )
 
 type ProductCustom struct {
