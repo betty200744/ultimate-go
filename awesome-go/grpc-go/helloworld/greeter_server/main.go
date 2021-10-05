@@ -5,11 +5,14 @@ package main
 import (
 	"context"
 	"fmt"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/metadata"
 	"log"
 	"net"
+
+	"ultimate-go/awesome-go/consul/register"
 	pb "ultimate-go/awesome-go/grpc-go/helloworld/helloworld"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 const (
@@ -38,6 +41,11 @@ func main() {
 	}
 	s := grpc.NewServer(grpc.UnaryInterceptor(serverInterceptor))
 	pb.RegisterGreeterServer(s, &server{})
+	cli, err := register.NewConsulClient("localhost:8500")
+	if err != nil {
+		log.Fatalf("failed to get consul client %v", err)
+	}
+	cli.Register("greeter", 50051)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
