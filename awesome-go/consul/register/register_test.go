@@ -48,6 +48,7 @@ func Test_client_DeRegister(t *testing.T) {
 	port := 8080
 	c.Register(name, port)
 	id := fmt.Sprintf("%s-%s-%d", name, ip, port)
+	fmt.Println(id)
 	type args struct {
 		id string
 	}
@@ -58,7 +59,7 @@ func Test_client_DeRegister(t *testing.T) {
 	}{
 		{
 			name: "DeRegister",
-			args: args{id: id},
+			args: args{id: "greeter-192.168.31.77-50051"},
 		},
 	}
 	for _, tt := range tests {
@@ -89,7 +90,7 @@ func Test_client_Service(t *testing.T) {
 		{
 			name: "Service",
 			args: args{
-				service: "web",
+				service: "greeer",
 			},
 			wantAddrs: []string{addr},
 		},
