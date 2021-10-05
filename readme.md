@@ -265,11 +265,14 @@ This repo contains my notes on work with Go and computer systems
     - [grpc](./awesome-go/grpc-go)
     - [grpc mock](./awesome-go/grpc-go-mock)
     - [zipkin](./awesome-go/zipkin)
+    - [websocket](./awesome-go/gorilla-websocket) |[echo](./build-in-package/websocket) | [chat](./awesome-go/gorilla-websocket/chat)
+    - [consul](./awesome-go/consul) | [register](./awesome-go/consul/register) |[grpc-resolver](./awesome-go/consul/consul-resolver)
 
 - **Docs**
     - [elasticsearch](https://github.com/betty200744/ultimate-js/blob/master/docs/elasticsearch.md)
     - [kafka](https://github.com/betty200744/ultimate-js/blob/master/docs/kafka.md)
     - [rabbitmq](https://github.com/betty200744/ultimate-js/blob/master/docs/rabbitmq.md)
+    - [kubernetes](./kubernetes)
 - **Interview**
     - When is `defer` called?
       > It was called according the consuming sequence of stack. That is to say, the first `defer` clause will be invoked as the last.
