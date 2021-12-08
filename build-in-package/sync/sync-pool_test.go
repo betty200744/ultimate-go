@@ -32,10 +32,14 @@ func Log(w io.Writer, key, val string) {
 	b.WriteString(key)
 	b.WriteByte('=')
 	b.WriteString(val)
-	w.Write(b.Bytes())
+	_, _ = w.Write(b.Bytes())
 	bufPool.Put(b)
 }
 
-func Test_Pool(t *testing.T) {
-	Log(os.Stdout, "path", "/search?q=flowers")
+func TestPool(t *testing.T) {
+	go Log(os.Stdout, "path", "search1 \n")
+	go Log(os.Stdout, "path", "search2 \n")
+	go Log(os.Stdout, "path", "search3 \n")
+	go Log(os.Stdout, "path", "search4 \n")
+	time.Sleep(time.Millisecond)
 }
