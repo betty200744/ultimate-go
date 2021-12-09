@@ -33,3 +33,39 @@ func TimeOutByChannel() {
 		fmt.Println("time out 1")
 	}
 }
+
+func TimeoutByRetry(ttl time.Duration, deadline time.Time, maxRetry int64, fn func(ttl time.Duration) bool) {
+	//ttl := time.Second * 3
+	//deadline := time.Now().Add(time.Second * 7)
+	//var maxRetry int64 = 2
+	var timer *time.Timer
+	for {
+		// timeout
+		if !time.Now().Before(deadline) {
+			fmt.Println("total duration timeout")
+			return
+		}
+		if fn(ttl) {
+			fmt.Println("fn success!")
+			return
+		}
+		// first
+		if timer == nil {
+			timer = time.NewTimer(time.Duration(int64(ttl) / maxRetry))
+		} else {
+			// retry
+			timer.Reset(ttl)
+		}
+		// max retry time
+		if maxRetry > 1 {
+			maxRetry--
+		} else {
+			fmt.Println("max retry end")
+			return
+		}
+		select {
+		case <-timer.C:
+			fmt.Println(time.Now())
+		}
+	}
+}
