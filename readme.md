@@ -25,7 +25,7 @@ This repo contains my notes on work with Go and computer systems
           | [if else](./Language_Specification/statements/if_else.go)
           | [for](./Language_Specification/statements/for.go) | [switch](./Language_Specification/statements/switch.go)
           | [select](./Language_Specification/statements/select.go) | [go](https://golang.org/ref/spec#Go_statements)
-    - **Data Structures**
+    - **Data Structures** [Scaler](https://www.scaler.com/topics/data-structures/)
         - Enum: [Enum](./Language_Specification/enum/enum.go)
         - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](Language_Specification/reference-type/array/arrays.go)
         - Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice](./Language_Specification/reference-type/slice/slices_cheat_sheet.go)
