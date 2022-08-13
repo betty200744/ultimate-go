@@ -109,7 +109,7 @@ This repo contains my notes on work with Go and computer systems
     - Conversion: 
       - [Interface Conversions | Type Assertion](./design-pattern/go-design/conversion/conversion.go)
       - [Runtime Type Assertion](./design-pattern/go-design/runtime_type_assertion/runtime_type_assertion.go)    
-- **Algorithms** [Algorithms](./algorithms/algorithms.md)
+ **Algorithms** [Algorithms](./algorithms/algorithms.md)
    - 8.2 
    - Data Structures
      - [Binary Search Tree](./algorithms/data-structures/tree/binary_search_tree) |  [(wiki)](https://en.wikipedia.org/wiki/Binary_search_tree) | [(mit)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec05.pdf)
@@ -154,7 +154,7 @@ This repo contains my notes on work with Go and computer systems
      - [Shell Sort](algorithms/sorting-algorithms/shell-sort/shell-sort.go)[(mit notes)]() | [(wiki)](http://en.wikipedia.org/wiki/Shellsort)
      - [Selection Sort](algorithms/sorting-algorithms/select_sort/select_sort.go) [(mit notes)]() | [(wiki)](http://en.wikipedia.org/wiki/Selection_sort)
    - Searching algorithms
-     - [Binary Search]() | [(wiki)](http://en.wikipedia.org/wiki/Binary_search_algorithm)
+     - [Binary Search]() | [(wiki)](http://en.wikipedia.org/wiki/Binary_search_algorithm)-
 - **Crypto**
    - **Hashing** [wiki](https://en.wikipedia.org/wiki/Cryptographic_hash_function) | [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-notes/MIT6_046JS15_lec21.pdf)
      - md5, [wiki](https://en.wikipedia.org/wiki/MD5) |  [code](./build-in-package/crypto/hashing/md5/md5.go)

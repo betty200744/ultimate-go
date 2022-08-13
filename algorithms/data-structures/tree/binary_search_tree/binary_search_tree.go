@@ -6,6 +6,7 @@ import "fmt"
 root,
 left,
 right,
+
 Insert, recursive add
 Delete,
 Find,
