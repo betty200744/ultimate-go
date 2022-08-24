@@ -110,7 +110,6 @@ This repo contains my notes on work with Go and computer systems
       - [Interface Conversions | Type Assertion](./design-pattern/go-design/conversion/conversion.go)
       - [Runtime Type Assertion](./design-pattern/go-design/runtime_type_assertion/runtime_type_assertion.go)    
  **Algorithms** [Algorithms](./algorithms/algorithms.md)
-   - 8.2 
    - Data Structures
      - [Binary Search Tree](./algorithms/data-structures/tree/binary_search_tree) |  [(wiki)](https://en.wikipedia.org/wiki/Binary_search_tree) | [(mit)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec05.pdf)
      - [Binary Tree](./algorithms/data-structures/tree/binary_tree) |  [(wiki)](http://en.wikipedia.org/wiki/Binary_tree)
