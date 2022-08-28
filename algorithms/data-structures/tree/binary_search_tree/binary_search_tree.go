@@ -122,15 +122,32 @@ func (t *Node) FindMax() int {
 	}
 	return t.Right.FindMax()
 }
+func CountNode(node *Node) int {
+	if node == nil {
+		return 0
+	}
+	return CountNode(node.Left) + CountNode(node.Right) + 1
+}
+func KthSmallest(root *Node, k int) int {
+	leftCount := CountNode(root.Left)
+	if k == leftCount+1 {
+		return root.Data
+	}
+	if k <= leftCount {
+		return KthSmallest(root.Left, k)
+	} else {
+		return KthSmallest(root.Right, k-leftCount-1)
+	}
+}
 
 // Breadth-first search
 func BreadthFirst(root *Node) {
-	var q []*Node // queue
-	var n *Node   // temporary node
+	var q []*Node
 	q = append(q, root)
-	for len(q) != 0 {
-		n, q = q[0], q[1:]
+	for len(q) > 0 {
+		n := q[0]
 		fmt.Print(n.Data, " ")
+		q = q[1:]
 		if n.Left != nil {
 			q = append(q, n.Left)
 		}
