@@ -33,6 +33,12 @@ func (t *Node) Insert(data int) *Node {
 	}
 	return t
 }
+func (t *Node) isLeaf() bool {
+	if t.Left == nil && t.Right == nil {
+		return true
+	}
+	return false
+}
 
 // Breadth-first search
 func BreadthFirst(root *Node) {
@@ -57,14 +63,13 @@ func CountNode(node *Node) int {
 	}
 	return CountNode(node.Left) + CountNode(node.Right) + 1
 }
+
 func MirrorTree(root *Node) {
-	//if CountNode(root)%2 != 0 {
-	//	panic("error")
-	//}
-	if root.Left == nil && root.Right == nil {
+	if root.isLeaf() {
 		return
 	}
 	root.Left, root.Right = root.Right, root.Left
+	// recurse
 	MirrorTree(root.Left)
 	MirrorTree(root.Right)
 	return
