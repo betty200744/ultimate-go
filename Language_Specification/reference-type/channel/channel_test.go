@@ -39,5 +39,7 @@ func TestChannel(t *testing.T) {
 	Channel3()
 	// wait Channel3 goroutine
 	time.Sleep(time.Second * 1)
-
+}
+func TestChannel4(t *testing.T) {
+	Channel4()
 }
