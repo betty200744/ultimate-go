@@ -6,7 +6,6 @@ import (
 	"github.com/go-redis/redis/v8"
 	apmgoredis "go.elastic.co/apm/module/apmgoredisv8"
 	"os"
-	"time"
 )
 
 func init() {
@@ -33,6 +32,17 @@ func main() {
 		val, _ := rdb.Get(context.Background(), "key").Result()
 		fmt.Println("test get key", val)
 	}
-	time.Sleep(time.Second)
-
+	ctx := context.Background()
+	_ = rdb.Watch(ctx, func(tx *redis.Tx) error {
+		errSet := tx.Set(ctx, "kt1", "value", 0).Err()
+		if errSet != nil {
+			return errSet
+		}
+		res, errGet := tx.Get(ctx, "kt1").Result()
+		if errGet != nil {
+			return errGet
+		}
+		fmt.Println(res)
+		return nil
+	}, "kt1", "kt2")
 }
