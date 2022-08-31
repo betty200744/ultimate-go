@@ -13,6 +13,7 @@ require (
 	github.com/bazelbuild/bazel-gazelle v0.21.1 // indirect
 	github.com/bwmarrin/snowflake v0.3.0
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
+	github.com/coocood/freecache v1.1.1
 	github.com/crgimenes/goconfig v0.0.0-20190307175850-3b829fccb8ce
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/elastic/go-sysinfo v1.3.0 // indirect
