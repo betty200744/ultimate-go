@@ -1,6 +1,8 @@
 package _44_reverseString
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func ReverseString(s []byte) {
 	for i := 0; i < len(s)/2; i++ {
