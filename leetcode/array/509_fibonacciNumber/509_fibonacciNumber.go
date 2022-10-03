@@ -1,14 +1,17 @@
 package _09_fibonacciNumber
 
 func FibonacciNumber(N int) int {
-	if N == 0 {
-		return 0
+	if N <= 1 {
+		return N
 	}
-	if N == 1 {
-		return 1
+	return FibonacciNumber(N-1) + FibonacciNumber(N-2)
+}
+func FibonacciNumberDP(N int) int {
+	f := make([]int, N+1)
+	f[0] = 0
+	f[1] = 1
+	for i := 2; i <= N; i++ {
+		f[i] = f[i-1] + f[i-2]
 	}
-	if N > 1 {
-		return FibonacciNumber(N-1) + FibonacciNumber(N-2)
-	}
-	return 0
+	return f[N]
 }
