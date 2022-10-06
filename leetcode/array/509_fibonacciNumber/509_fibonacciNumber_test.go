@@ -14,11 +14,19 @@ func TestFibonacciNumber(t *testing.T) {
 	assert.Equal(t, 3, res)
 }
 
-func TestFibonacciNumberDP(t *testing.T) {
-	res := FibonacciNumberDP(2)
+func TestFib_DP_Tabulation(t *testing.T) {
+	res := Fib_DP_Tabulation(2)
 	assert.Equal(t, 1, res)
-	res = FibonacciNumberDP(3)
+	res = Fib_DP_Tabulation(3)
 	assert.Equal(t, 2, res)
-	res = FibonacciNumberDP(4)
+	res = Fib_DP_Tabulation(4)
+	assert.Equal(t, 3, res)
+}
+func TestFib_DP_memoized(t *testing.T) {
+	res := Fib_DP_memoized(2)
+	assert.Equal(t, 1, res)
+	res = Fib_DP_memoized(3)
+	assert.Equal(t, 2, res)
+	res = Fib_DP_memoized(4)
 	assert.Equal(t, 3, res)
 }
