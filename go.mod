@@ -10,7 +10,6 @@ require (
 	github.com/astaxie/beego v1.12.2
 	github.com/avast/retry-go v2.6.0+incompatible
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
-	github.com/bazelbuild/bazel-gazelle v0.21.1 // indirect
 	github.com/bwmarrin/snowflake v0.3.0
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/coocood/freecache v1.1.1
@@ -18,7 +17,6 @@ require (
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/elastic/go-sysinfo v1.3.0 // indirect
 	github.com/elastic/go-windows v1.0.1 // indirect
-	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20200529170236-5abacdfa4915 // indirect
 	github.com/gavv/monotime v0.0.0-20190418164738-30dba4353424 // indirect
 	github.com/gin-contrib/pprof v1.3.0
@@ -29,6 +27,7 @@ require (
 	github.com/golang/protobuf v1.4.2
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/gorilla/schema v1.1.0 // indirect
+	github.com/gosidekick/goconfig v1.3.0
 	github.com/imkira/go-interpol v1.1.0 // indirect
 	github.com/iris-contrib/blackfriday v2.0.0+incompatible // indirect
 	github.com/iris-contrib/formBinder v5.0.0+incompatible // indirect
@@ -45,7 +44,6 @@ require (
 	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
-	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/opentracing-contrib/go-gin v0.0.0-20190301172248-2e18f8b9c7d4
 	github.com/opentracing/opentracing-go v1.1.1-0.20190913142402-a7454ce5950e
 	github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5

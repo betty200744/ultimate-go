@@ -1,0 +1,4 @@
+[pg]
+  host = "localhostt"
+  port = 5432
+  db = "pgtestt"
