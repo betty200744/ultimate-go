@@ -163,11 +163,11 @@ This repo contains my notes on work with Go and computer systems
      - hmac, [wiki](https://en.wikipedia.org/wiki/HMAC)  |[code](./build-in-package/crypto/hashing/hmac/hmac.go)
      - bcrypt, [wiki](https://en.wikipedia.org/wiki/Bcrypt)  |[code](./build-in-package/crypto/hashing/hmac/hmac.go)
    - **Encryption or Ciphers** [MIT](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-notes/MIT6_046JS15_lec22.pdf)
-      - aes, [code](./build-in-package/crypto/encryption_cipher/aes/aes.go)
-      - cipher, [code](./build-in-package/crypto/encryption_cipher/cipher/cipher.go)  
-      - des, [code](./build-in-package/crypto/encryption_cipher) 
-      - rc4, [code](./build-in-package/crypto/encryption_cipher)
-      - rsa, [code](./build-in-package/crypto/encryption_cipher)
+      - aes, [code](build-in-package/crypto/encrypter_decrypter_cipher/aes/aes.go)
+      - cipher, [code](build-in-package/crypto/encrypter_decrypter_cipher/cipher/cipher.go)  
+      - des, [code](build-in-package/crypto/encrypter_decrypter_cipher) 
+      - rc4, [code](build-in-package/crypto/encrypter_decrypter_cipher)
+      - rsa, [code](build-in-package/crypto/encrypter_decrypter_cipher)
    - **Encoding**
       - base64, [code](./build-in-package/encoding/base64/base64.go)
 - **databases**
