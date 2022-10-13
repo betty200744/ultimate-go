@@ -12,13 +12,13 @@ func TrimSuffix(s, suffix string) string {
 	return s
 }
 
-func main() {
+func StringEscape() {
 	s := "a string ++"
 	fmt.Println("s: ", s)
 
 	// Trim one trailing '+'.
 	s1 := s
-	if last := len(s1) - 1; last >= 0 && s1[last] == '+' {
+	if last := len(s1) - 1; s1[last] == '+' {
 		s1 = s1[:last]
 	}
 	fmt.Println("s1:", s1)

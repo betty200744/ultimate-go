@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main() {
+func StringReplace() {
 	//order := "UPDATE_TIME__DESC"
 	//order := "ACTIVITIES__DETAIL_TYPE__DESC"
 	order := "BB__ACTIVITIES__DETAIL_TYPE__DESC"
@@ -30,7 +30,4 @@ func main() {
 	fmt.Println("nested path:", nestedPath)
 	fmt.Println("sortField:", sortField)
 	fmt.Println("sort order:", ascending)
-
-	s :=
-		strings.ReplaceAll(s, "\"\"", "|")
 }

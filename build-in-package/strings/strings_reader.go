@@ -17,7 +17,7 @@ func CamelCase(s string) string {
 /*
 
  */
-func main() {
+func StringsReader() {
 	a := "a"
 	b := "b"
 	c := "a b c"

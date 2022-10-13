@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"unicode"
 )
 
@@ -30,8 +29,4 @@ func CamelCaseToUnderscore(str string) string {
 	}
 	output = addSegment(output, segment)
 	return string(output)
-}
-
-func main() {
-	fmt.Println(CamelCaseToUnderscore("createTime"))
 }
