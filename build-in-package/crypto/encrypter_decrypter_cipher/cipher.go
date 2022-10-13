@@ -1,6 +1,7 @@
 package encrypter_decrypter_cipher
 
 import (
+	"bytes"
 	"crypto/aes"
 	"crypto/cipher"
 	"encoding/hex"
@@ -34,6 +35,10 @@ func AESDecrypt(ciphertext []byte) string {
 // https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
 func CBCEncrypt(plaintext []byte) []byte {
 	block, _ := aes.NewCipher(Key)
+	bs := block.BlockSize()
+	padding := bs - len(plaintext)%bs
+	padText := bytes.Repeat([]byte{byte(padding)}, padding)
+	plaintext = append(plaintext, padText...)
 	ciphertext := make([]byte, len(plaintext))
 	modeE := cipher.NewCBCEncrypter(block, IV)
 	modeE.CryptBlocks(ciphertext, plaintext)
@@ -41,10 +46,13 @@ func CBCEncrypt(plaintext []byte) []byte {
 }
 func CBCDecrypt(ciphertext []byte) string {
 	block, _ := aes.NewCipher(Key)
-	plaintext := make([]byte, len(ciphertext))
 	modeD := cipher.NewCBCDecrypter(block, IV)
+	plaintext := make([]byte, len(ciphertext))
 	modeD.CryptBlocks(plaintext, ciphertext)
-	return string(plaintext[:])
+	length := len(plaintext)
+	unpadding := int(plaintext[length-1])
+	plaintext = plaintext[:(length - unpadding)]
+	return string(plaintext)
 }
 
 // ECB, Electronic codebook
