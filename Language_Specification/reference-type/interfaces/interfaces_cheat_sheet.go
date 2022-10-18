@@ -62,7 +62,35 @@ func GetArea(r RectInterface) float64 {
 	return r.area()
 }
 
+// 充值档位
+type ChargeInfo struct {
+	Id            int   `json:"id"`
+	Price         int   `json:"price"`          // 档位金额，单位分
+	DiscountPrice int   `json:"discount_price"` // 支付金额，单位分
+	Duration      int   `json:"duration"`       // 产生时间，单位秒
+	ExtraDuration int   `json:"extra_duration"` // 额外赠送时间，单位秒
+	Status        int   `json:"status"`         // 0：正常； 1：禁用
+	Ctime         int64 `json:"ctime,omitempty"`
+	Mtime         int64 `json:"mtime,omitempty"`
+}
+
+func test() {
+	info := &ChargeInfo{
+		Id:            1,
+		Price:         1,
+		DiscountPrice: 1,
+		Duration:      1,
+		ExtraDuration: 1,
+		Status:        1,
+		Ctime:         1,
+		Mtime:         1,
+	}
+	i := []interface{}{info}
+	fmt.Println(i[0])
+}
+
 func main() {
+	test()
 	r := &Rect{width: 3, height: 3, name: "betty"}
 	fmt.Printf("this is Rect, Type: %T, area:  %v, abc: %v \n, getName: %v \n", r, r.area(), r.abc(), r.getName())
 	GetArea(r)

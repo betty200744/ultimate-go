@@ -9,6 +9,7 @@ import (
 	"mime/multipart"
 	"net/http"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 	"sync"
@@ -62,6 +63,20 @@ func GetImage(url string) (string, error) {
 	if res.Header.Get("Content-Type") == "image/jpeg" {
 		ioutil.WriteFile(filename, data, os.ModePerm)
 	}
+	return filename, nil
+}
+func Download(url string) (string, error) {
+	filename := path.Base(url)
+	res, errRes := http.Get(url)
+	if errRes != nil {
+		return "", errRes
+	}
+	defer res.Body.Close()
+	data, errRead := ioutil.ReadAll(res.Body)
+	if errRead != nil {
+		return "", nil
+	}
+	ioutil.WriteFile(filename, data, os.ModePerm)
 	return filename, nil
 }
 func GetWithHeader(fullQuery string, headerInput map[string]string) (response []byte, err error) {
