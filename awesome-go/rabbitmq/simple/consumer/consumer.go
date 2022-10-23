@@ -13,11 +13,11 @@ func main() {
 		panic(err)
 	}
 	defer ch.Close()
-	q, err := ch.QueueDeclare("simple", true, false, false, false, nil)
-	if err != nil {
-		panic(err)
-	}
-	msgs, err := ch.Consume(q.Name, "", true, false, false, false, nil)
+	/*	q, err := ch.QueueDeclare("simple", true, false, false, false, nil)
+		if err != nil {
+			panic(err)
+		}*/
+	msgs, err := ch.Consume("simple", "", true, false, false, false, nil)
 	if err != nil {
 		fmt.Println(err)
 	}
