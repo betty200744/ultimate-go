@@ -57,6 +57,7 @@ require (
 	github.com/sergi/go-diff v1.0.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/smartystreets/goconvey v1.6.4
+	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
 	github.com/stretchr/testify v1.6.1
 	github.com/t-tiger/gorm-bulk-insert v1.3.0 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
