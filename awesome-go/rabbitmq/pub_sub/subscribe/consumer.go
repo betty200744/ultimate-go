@@ -15,8 +15,8 @@ func main() {
 	if err != nil {
 		return
 	}
-	go mq.Consumer(ch, exchange, "c1", "", "")
-	go mq.Consumer(ch, exchange, "c2", "", "")
+	go mq.Consumer(ch, exchange, "c1", "pub_sub_1", "")
+	go mq.Consumer(ch, exchange, "c2", "pub_sub_1", "")
 	for {
 
 	}
