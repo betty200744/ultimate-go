@@ -1,4 +1,4 @@
-package main
+package atomic
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func LoadUint64() {
 	var ops uint64
 	for i := 0; i < 50; i++ {
 		go func() {
