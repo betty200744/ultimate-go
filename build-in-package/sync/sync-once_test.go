@@ -1,8 +1,9 @@
-package main
+package sync
 
 import (
 	"fmt"
 	"sync"
+	"testing"
 )
 
 var once sync.Once
@@ -12,7 +13,7 @@ func foo() {
 	fmt.Println("foo~~")
 }
 
-func main() {
+func Test_once(t *testing.T) {
 	ch := make(chan int)
 	go func(ch chan int) {
 		for i := 0; i < 5; i++ {
