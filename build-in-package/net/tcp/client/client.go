@@ -1,19 +1,20 @@
 package main
 
 import (
-	"encoding/json"
+	"fmt"
 	"net"
 )
 
 func main() {
-	conn, err := net.Dial("tcp", ":8888")
-	if err != nil {
-		panic(err)
-	}
-	defer conn.Close()
-	a := `client send aaaa`
-	b, _ := json.Marshal(a)
-	for i := 0; i < 5; i++ {
-		conn.Write(b)
-	}
+	c, _ := net.Dial("tcp", "localhost:8888")
+
+	// client write
+	msg := []byte(`c > s : hello`)
+	c.Write(msg)
+	// client read
+	b := make([]byte, 1024)
+	c.Read(b)
+	fmt.Println(string(b[:]))
+	// close
+	c.Close()
 }

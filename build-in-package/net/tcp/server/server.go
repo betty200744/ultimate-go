@@ -6,17 +6,21 @@ import (
 )
 
 func main() {
-	ln, err := net.Listen("tcp", ":8888")
+	l, err := net.Listen("tcp", ":8888")
 	if err != nil {
 		panic(err)
 	}
 	for {
-		conn, err := ln.Accept()
+		conn, err := l.Accept()
 		if err != nil {
-			fmt.Println(err)
+			panic(err)
 		}
-		b := make([]byte, 100)
+		// server read
+		b := make([]byte, 1024)
 		conn.Read(b)
-		fmt.Println(conn.LocalAddr(), conn.RemoteAddr(), string(b[:]))
+		fmt.Println(string(b[:]))
+		msg := fmt.Sprintf(`s -> c : hello %v`, conn.RemoteAddr())
+		fmt.Println(msg)
+		conn.Write([]byte(msg))
 	}
 }
