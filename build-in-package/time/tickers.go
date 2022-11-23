@@ -7,6 +7,7 @@ import (
 
 func TickerTimeout(timeout time.Duration) {
 	ticker := time.NewTicker(timeout)
+	defer ticker.Stop()
 	select {
 	case <-ticker.C:
 		fmt.Println("NewTicker timeout")
