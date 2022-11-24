@@ -1,0 +1,9 @@
+{
+  "service": {
+    "name": "web30006",
+    "tags": [
+      "rails"
+    ],
+    "port": 30006
+  }
+}

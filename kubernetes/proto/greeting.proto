@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "/proto";
+
+// protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative ./helloworld.proto
+package greeting;
+
+service Greeter {
+	rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+	string name = 1;
+}
+
+message HelloReply {
+	string message = 1;
+}

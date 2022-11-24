@@ -1,0 +1,1 @@
+ducker build . greeter_gateway

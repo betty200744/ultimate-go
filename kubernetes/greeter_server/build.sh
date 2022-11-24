@@ -1,0 +1,1 @@
+docker build . t greeter_server
