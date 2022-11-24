@@ -1,9 +1,7 @@
-package main
+package slice
 
 import (
-	"fmt"
 	"reflect"
-	"strings"
 )
 
 func GetItems(vs interface{}) []interface{} {
@@ -66,25 +64,4 @@ func Map(vs interface{}, f func(interface{}) interface{}) []interface{} {
 		vsm[i] = f(v)
 	}
 	return vsm
-}
-
-func main() {
-
-	var strs = []string{"peach", "apple", "pear", "plum"}
-
-	fmt.Println(Index(strs, "pear"))
-
-	fmt.Println(Include(strs, "grape"))
-
-	fmt.Println(Any(strs, func(v interface{}) bool {
-		return strings.HasPrefix(v.(string), "p")
-	}))
-
-	fmt.Println(All(strs, func(v interface{}) bool {
-		return strings.HasPrefix(v.(string), "p")
-	}))
-
-	fmt.Println(Filter(strs, func(v interface{}) bool {
-		return strings.Contains(v.(string), "e")
-	}))
 }
