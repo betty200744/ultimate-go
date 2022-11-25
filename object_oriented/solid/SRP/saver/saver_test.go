@@ -3,13 +3,13 @@ package saver
 import (
 	"testing"
 
-	"gobyexample/solid/SRP"
-	"gobyexample/solid/SRP/client"
+	"gobyexample/object_oriented/solid/SRP"
+	client2 "gobyexample/object_oriented/solid/SRP/client"
 )
 
 func TestSaveToFile(t *testing.T) {
-	c0 := client.NewClient(1, 1)
-	e1 := client.NewEncoder(c0)
+	c0 := client2.NewClient(1, 1)
+	e1 := client2.NewEncoder(c0)
 	type args struct {
 		fileName string
 		data     SRP.Encoder
