@@ -4,7 +4,7 @@
     * go tool pprof web //根据身材的.pprof生成svg后浏览器打开
 * go get -v github.com/uber/go-torch
   * go-torch，本质还是go tool pprof
-* 
+* https://zhuanlan.zhihu.com/p/141640004
 
 ### runtime pprof cpu
 
