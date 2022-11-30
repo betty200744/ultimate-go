@@ -89,6 +89,31 @@ func test() {
 	fmt.Println(i[0])
 }
 
+type FooInterface interface {
+	bar() // method receiver is value then interface is value , method receiver is pointer then interface is pointer
+}
+
+//Won't throw a compile error. Because the bar method belongs to Foo struct.
+type Foo1 struct {
+}
+
+func (f Foo1) bar() {
+	panic("implement me")
+}
+
+//Won't throw a compile error. Because the bar method belongs to Foo struct.
+//Will throw a error. Because the bar method is bind to &Foo. And when compile checks whether Foo confirms to Foo interface, it will only check the required method existence.
+type Foo2 struct {
+}
+
+func (f *Foo2) bar() {
+	panic("implement me")
+}
+
+func funcName(foo FooInterface) {
+	fmt.Println(foo)
+}
+
 func main() {
 	test()
 	r := &Rect{width: 3, height: 3, name: "betty"}
@@ -118,4 +143,7 @@ func main() {
 	i = 1
 	it, _ := i.(int)
 	fmt.Printf("i am int after type assertions:%T, %v \n", it, it)
+
+	funcName(Foo1{})  // Foo1.bar receiver is value , then Foo1 need value
+	funcName(&Foo2{}) // Foo2.bar receiver is pointer, then Foo2 need pointer
 }
