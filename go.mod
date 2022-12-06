@@ -14,6 +14,7 @@ require (
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/coocood/freecache v1.1.1
 	github.com/crgimenes/goconfig v0.0.0-20190307175850-3b829fccb8ce
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/elastic/go-sysinfo v1.3.0 // indirect
 	github.com/elastic/go-windows v1.0.1 // indirect
@@ -37,6 +38,7 @@ require (
 	github.com/jessevdk/go-flags v1.4.0
 	github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a
 	github.com/jinzhu/gorm v1.9.15
+	github.com/jinzhu/now v1.1.1
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/kataras/golog v0.0.18 // indirect
 	github.com/kataras/iris v11.1.1+incompatible
@@ -48,11 +50,13 @@ require (
 	github.com/opentracing/opentracing-go v1.1.1-0.20190913142402-a7454ce5950e
 	github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5
 	github.com/pkg/errors v0.9.1
+	github.com/robfig/cron/v3 v3.0.0
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/sergi/go-diff v1.0.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/stretchr/testify v1.6.1
+	github.com/t-tiger/gorm-bulk-insert v1.3.0 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible
 	github.com/valyala/fasthttp v1.14.0 // indirect
