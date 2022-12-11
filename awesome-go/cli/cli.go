@@ -55,6 +55,8 @@ func RunCmd(cmd string, args []string) {
 	}
 }
 
+var pprof Prof
+
 func main() {
 	app := cli.NewApp()
 	app.Name = "gomod"
@@ -116,31 +118,44 @@ func main() {
 		},
 	}
 	app.Flags = []cli.Flag{
-		&cli.StringFlag{
-			Name:    "port",
-			Aliases: []string{"p"},
+		&cli.IntFlag{
+			Name:        "port",
+			Destination: &pprof.Port,
+			Aliases:     []string{"p"},
+			Value:       8888,
 		},
 		&cli.StringFlag{
-			Name:    "svg",
-			Aliases: []string{"s"},
+			Name:        "svg",
+			Destination: &pprof.Svg,
+			Aliases:     []string{"s"},
+			Value:       "svg",
 		},
 		&cli.StringFlag{
-			Name:    "top",
-			Aliases: []string{"t"},
+			Name:        "top",
+			Value:       "top",
+			Destination: &pprof.Top,
+			Aliases:     []string{"t"},
 		},
 		&cli.StringFlag{
-			Name: "traces",
+			Name:        "traces",
+			Value:       "traces",
+			Destination: &pprof.Traces,
 		},
 		&cli.StringFlag{
-			Name: "tree",
+			Name:        "tree",
+			Value:       "tree",
+			Destination: &pprof.Tree,
 		},
 		&cli.StringFlag{
-			Name:    "web",
-			Aliases: []string{"w"},
+			Name:        "web",
+			Value:       "web",
+			Destination: &pprof.web,
+			Aliases:     []string{"w"},
 		},
 	}
 	err := app.Run(os.Args)
 	if err != nil {
 		panic(err)
 	}
+	log.Info(pprof)
 }
