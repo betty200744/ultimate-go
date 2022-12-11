@@ -4,6 +4,7 @@ import (
 	"flag"
 	"log"
 	"os"
+	"runtime"
 	"runtime/trace"
 	"sync"
 )
@@ -41,7 +42,7 @@ func counter2(wg *sync.WaitGroup) {
 // go run trace.go
 // go tool trace trace.pprof
 func main() {
-	//runtime.GOMAXPROCS(1)
+	runtime.GOMAXPROCS(2)
 	var traceProfile = flag.String("traceprofile", "trace.pprof", "write trace profile to file")
 	flag.Parse()
 
