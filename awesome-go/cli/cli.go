@@ -24,6 +24,14 @@ The commands are:
 	vendor      make vendored copy of dependencies
 	verify      verify dependencies have expected content
 	why         explain why packages or modules are needed
+
+
+    -svg             Outputs a graph in SVG format
+    -top             Outputs top entries in text form
+    -traces          Outputs all profile samples in text form
+    -tree            Outputs a text rendering of call graph
+    -web             Visualize graph through web browser
+
 */
 // go build
 
@@ -50,7 +58,7 @@ func RunCmd(cmd string, args []string) {
 func main() {
 	app := cli.NewApp()
 	app.Name = "gomod"
-	app.Usage = "go mod <command> [arguments]"
+	app.Usage = "go mod <command> <global options> [arguments]"
 	app.Commands = []*cli.Command{
 		{
 			Name:    "download",
@@ -105,6 +113,30 @@ func main() {
 				log.Info("action why")
 				return nil
 			},
+		},
+	}
+	app.Flags = []cli.Flag{
+		&cli.StringFlag{
+			Name:    "port",
+			Aliases: []string{"p"},
+		},
+		&cli.StringFlag{
+			Name:    "svg",
+			Aliases: []string{"s"},
+		},
+		&cli.StringFlag{
+			Name:    "top",
+			Aliases: []string{"t"},
+		},
+		&cli.StringFlag{
+			Name: "traces",
+		},
+		&cli.StringFlag{
+			Name: "tree",
+		},
+		&cli.StringFlag{
+			Name:    "web",
+			Aliases: []string{"w"},
 		},
 	}
 	err := app.Run(os.Args)
