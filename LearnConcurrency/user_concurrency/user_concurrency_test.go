@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"gobyexample/utils"
+	"ultimate-go/utils"
 )
 
 func TestDetailById(t *testing.T) {

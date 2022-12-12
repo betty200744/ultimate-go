@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 
-	"gobyexample/utils"
+	"ultimate-go/utils"
 )
 
 func main() {

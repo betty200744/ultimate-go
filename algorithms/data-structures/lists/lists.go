@@ -1,6 +1,6 @@
 package lists
 
-import "gobyexample/algorithms/data-structures/containers"
+import "ultimate-go/algorithms/data-structures/containers"
 
 // 数据有index, 数据可重复
 type List interface {

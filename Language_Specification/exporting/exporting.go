@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gobyexample/Language_Specification/exporting/codes"
+	"ultimate-go/Language_Specification/exporting/codes"
 )
 
 // -------------------

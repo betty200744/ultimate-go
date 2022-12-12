@@ -2,8 +2,8 @@ package multiplexing
 
 import (
 	"fmt"
-	"gobyexample/LearnConcurrency/communicate_channel/ping_pong"
 	"testing"
+	"ultimate-go/LearnConcurrency/communicate_channel/ping_pong"
 )
 
 func TestFanIn(t *testing.T) {

@@ -2,12 +2,12 @@ package test
 
 import (
 	"fmt"
-	_ "gobyexample/awesome-go/beego/routers"
 	"net/http"
 	"net/http/httptest"
 	"path/filepath"
 	"runtime"
 	"testing"
+	_ "ultimate-go/awesome-go/beego/routers"
 
 	"github.com/astaxie/beego"
 	. "github.com/smartystreets/goconvey/convey"

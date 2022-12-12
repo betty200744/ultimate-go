@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gobyexample/awesome-go/rabbitmq"
+	"ultimate-go/awesome-go/rabbitmq"
 )
 
 func main() {

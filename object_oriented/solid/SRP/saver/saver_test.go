@@ -3,8 +3,8 @@ package saver
 import (
 	"testing"
 
-	"gobyexample/object_oriented/solid/SRP"
-	client2 "gobyexample/object_oriented/solid/SRP/client"
+	"ultimate-go/object_oriented/solid/SRP"
+	client2 "ultimate-go/object_oriented/solid/SRP/client"
 )
 
 func TestSaveToFile(t *testing.T) {

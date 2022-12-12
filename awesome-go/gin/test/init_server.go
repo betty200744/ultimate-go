@@ -3,10 +3,10 @@ package test
 import (
 	"bytes"
 	"github.com/gin-gonic/gin"
-	"gobyexample/awesome-go/bazel/go-tutorial/service"
 	"net/http"
 	"net/http/httptest"
 	"sync"
+	"ultimate-go/awesome-go/bazel/go-tutorial/service"
 )
 
 var (

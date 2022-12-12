@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"gobyexample/diagnostics/profiling/pprof/handler"
 	"log"
 	"net/http"
 	_ "net/http/pprof"
 	"runtime"
+	"ultimate-go/diagnostics/profiling/pprof/handler"
 )
 
 func foo() {
