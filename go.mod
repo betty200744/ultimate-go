@@ -32,7 +32,7 @@ require (
 	github.com/go-redis/redis/v8 v8.8.2
 	github.com/gobuffalo/envy v1.9.0 // indirect
 	github.com/gobuffalo/logger v1.0.4 // indirect
-	github.com/gobuffalo/packr v1.30.1 // indirect
+	github.com/gobuffalo/packr v1.30.1
 	github.com/gobuffalo/packr/v2 v2.8.1 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
