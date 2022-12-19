@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option go_package = "proto/helloworld;helloworld";
+
+package helloworld;
+import "google/api/annotations.proto";
+
+// protoc-gen-go && protoc-gen-go-grpc
+// protoc -I=. --go_out=./protoc-gen-go-grpc --go_opt=paths=source_relative --go-grpc_out=./protoc-gen-go-grpc  --go-grpc_opt=paths=source_relative helloworld/helloworld.proto
+
+// protoc-gen-go && protoc-gen-gofast
+// protoc -I=. --gofast_out=./protoc-gen-gofast --gofast_opt=paths=source_relative --go-grpc_out=./protoc-gen-gofast  --go-grpc_opt=paths=source_relative helloworld/helloworld.proto
+
+// protoc-gen-go && protoc-gen-gogofast
+// protoc -I=. --gogofast_out=./protoc-gen-gogofast --gogofast_opt=paths=source_relative --go-grpc_out=./protoc-gen-gogofast  --go-grpc_opt=paths=source_relative helloworld/helloworld.proto
+
+
+// protoc-gen-go && protoc-gen-gogoslick
+// protoc -I=. --gogoslick_out=./protoc-gen-gogoslick --gogoslick_opt=paths=source_relative --go-grpc_out=./protoc-gen-gogoslick  --go-grpc_opt=paths=source_relative helloworld/helloworld.proto
+
+
+// protoc-gen-go && protoc-gen-gogofaster
+// protoc -I=. --gogofaster_out=./protoc-gen-gogofaster --gogofaster_opt=paths=source_relative --go-grpc_out=./protoc-gen-gogofaster  --go-grpc_opt=paths=source_relative helloworld/helloworld.proto
+
+// http gateway
+// --grpc-httpgw_out=logtostderr=true
+// protoc -I=. --go_out=./protoc-gen-grpc-gateway --go_opt=paths=source_relative --go-grpc_out=./protoc-gen-grpc-gateway  --go-grpc_opt=paths=source_relative  --grpc-gateway_out=./protoc-gen-grpc-gateway --grpc-gateway_opt logtostderr=true  --grpc-gateway_opt paths=source_relative --grpc-gateway_opt generate_unbound_methods=true helloworld/helloworld.proto
+
+//
+
+// The greeting service definition.
+service Greeter {
+	// Sends a greeting
+	rpc SayHello (HelloRequest) returns (HelloReply) {
+		option (google.api.http) = {
+			get: "/hello"
+		};
+	}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+	string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+	string message = 1;
+}
