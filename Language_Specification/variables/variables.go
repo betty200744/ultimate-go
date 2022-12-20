@@ -53,12 +53,12 @@ func main() {
 	// Short Variable Declare
 	aa := 10
 	bb := "hello"
-	cc := 3.145
+	co := 3.145
 	dd := true
 
 	fmt.Printf("aa : %T  , value is : [%v] \n", aa, aa)
 	fmt.Printf("bb : %T  , value is : [%v] \n", bb, bb)
-	fmt.Printf("cc : %T  , value is : [%v] \n", cc, cc)
+	fmt.Printf("co : %T  , value is : [%v] \n", co, co)
 	fmt.Printf("dd : %T  , value is : [%v] \n", dd, dd)
 
 }
