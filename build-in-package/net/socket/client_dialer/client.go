@@ -16,6 +16,7 @@ func main() {
 	}
 	defer conn.Close()
 	conn.Write([]byte(utils.RandomString(8)))
-	res := make([]byte, 0)
+	res := make([]byte, 1024)
+	conn.Read(res)
 	fmt.Println(string(res[:]))
 }
