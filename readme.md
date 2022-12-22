@@ -18,7 +18,7 @@ This repo contains my notes on work with Go and computer systems
           | [Tag-Doc](Language_Specification/reference-type/struct/struct_tags.md)
         - Pointer:
             - [Passing by value | Escape analysis | Stack space ](./Language_Specification/build-in-type/pointers/pointers.go)
-        -
+
       Function: [Initialization | argument | multiple returns | named return ](./Language_Specification/reference-type/function/functions.go)
         - Build-in types: [Built-in types](Language_Specification/build-in-type)
         - statement: [statement](./Language_Specification/statements/statements.md)
@@ -27,15 +27,11 @@ This repo contains my notes on work with Go and computer systems
           | [select](./Language_Specification/statements/select.go) | [go](https://golang.org/ref/spec#Go_statements)
     - **Data Structures**
         - Enum: [Enum](./Language_Specification/enum/enum.go)
-        -
-      Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](Language_Specification/reference-type/array/arrays.go)
-      -
-      Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice](./Language_Specification/reference-type/slice/slices_cheat_sheet.go)
+        - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](Language_Specification/reference-type/array/arrays.go)
+        - Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice](./Language_Specification/reference-type/slice/slices_cheat_sheet.go)
       | [Map | Reduce | Filter | Include | All|Any ](./Language_Specification/reference-type/slice/slice_collection_function.go)
-        -
-      Map: [Initialization | Iteration | Deleting | Finding | Restriction ](./Language_Specification/reference-type/map/maps.go)
-      -
-      Channel: [Declare | Iteration | Exit | send statements |receive operations](./Language_Specification/reference-type/channel/channel_test.go)
+        - Map: [Initialization | Iteration | Deleting | Finding | Restriction ](./Language_Specification/reference-type/map/maps.go)
+        - Channel: [Declare | Iteration | Exit | send statements |receive operations](./Language_Specification/reference-type/channel/channel_test.go)
     - **Decoupling**
         - Method:
             - [Value and Pointer Receiver Call](Language_Specification/reference-type/method/methods_receiver.go)
