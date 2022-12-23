@@ -1,10 +1,19 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
 
 func main() {
-	fmt.Println(os.Args)
+	for {
+		reader := bufio.NewReader(os.Stdin)
+
+		text, err := reader.ReadString('\n')
+		if err != nil {
+			panic(err)
+		}
+		fmt.Printf("Your send: %s\n", text)
+	}
 }
