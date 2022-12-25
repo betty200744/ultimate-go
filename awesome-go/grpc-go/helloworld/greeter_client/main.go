@@ -2,10 +2,15 @@ package main
 
 import (
 	"context"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/metadata"
 	"log"
 	"time"
+
+	"ultimate-go/awesome-go/consul/consul-resolver"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
+	"google.golang.org/grpc/resolver"
+
 	pb "ultimate-go/awesome-go/grpc-go/helloworld/helloworld"
 )
 
@@ -19,7 +24,7 @@ func clientInterceptor(ctx context.Context, method string, req, reply interface{
 
 func main() {
 	// Set up a connection to the server.
-	conn, err := grpc.Dial(address, grpc.WithInsecure(), grpc.WithUnaryInterceptor(clientInterceptor))
+	conn, err := grpc.Dial("consul:///greeter", grpc.WithInsecure(), grpc.WithUnaryInterceptor(clientInterceptor))
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
@@ -47,4 +52,10 @@ func main() {
 		log.Printf("Greeting: %s", r.Message)*/
 	//conn.Close()
 	time.Sleep(time.Second * 20)
+}
+
+func init() {
+	// Register the example ResolverBuilder. This is usually done in a package's
+	// init() function.
+	resolver.Register(&consul_resolver.Builder{})
 }
