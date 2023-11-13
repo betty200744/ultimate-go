@@ -6,10 +6,10 @@ import (
 	"github.com/opentracing-contrib/go-gin/ginhttp"
 	"github.com/opentracing/opentracing-go"
 	"go.elastic.co/apm/module/apmgin"
-	"gobyexample/diagnostics/profiling/pprof/handler"
 	"log"
 	"net/http"
 	_ "net/http/pprof"
+	"ultimate-go/diagnostics/profiling/pprof/handler"
 )
 
 func main() {

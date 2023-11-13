@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"gobyexample/object_oriented/solid/SRP"
+	"ultimate-go/object_oriented/solid/SRP"
 )
 
 func SaveToFile(fileName string, data SRP.Encoder) error {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"gobyexample/Language_Specification/import/foo"
+	"ultimate-go/Language_Specification/import/foo"
 )
 
 func TestBar_Bar(t *testing.T) {

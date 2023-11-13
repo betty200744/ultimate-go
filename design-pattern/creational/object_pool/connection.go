@@ -1,6 +1,6 @@
 package object_pool
 
-import "gobyexample/design-pattern/creational/simple_factory"
+import "ultimate-go/design-pattern/creational/simple_factory"
 
 type IConnection interface {
 	getId() int64

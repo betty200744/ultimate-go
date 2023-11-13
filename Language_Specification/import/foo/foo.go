@@ -3,7 +3,7 @@ package foo
 import (
 	"fmt"
 
-	"gobyexample/Language_Specification/import/barer"
+	"ultimate-go/Language_Specification/import/barer"
 )
 
 type Foo struct {

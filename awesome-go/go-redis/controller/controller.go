@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/go-redis/redis/v8"
-	"gobyexample/awesome-go/go-redis/redisClient"
+	"ultimate-go/awesome-go/go-redis/redisClient"
 )
 
 func ExampleClient(ctx context.Context) {

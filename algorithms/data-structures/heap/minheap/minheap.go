@@ -2,7 +2,7 @@ package minheap
 
 import (
 	"fmt"
-	"gobyexample/algorithms/data-structures/heap"
+	"ultimate-go/algorithms/data-structures/heap"
 )
 
 /*

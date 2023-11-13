@@ -2,11 +2,11 @@ package grpc_go_error_handling
 
 import (
 	"fmt"
-	"gobyexample/design-pattern/go-design/grpc_go_error_handling/status"
 	epb "google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc/codes"
 	"os"
 	"testing"
+	"ultimate-go/design-pattern/go-design/grpc_go_error_handling/status"
 )
 
 func Test_error_handling(t *testing.T) {

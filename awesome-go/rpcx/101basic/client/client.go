@@ -6,7 +6,7 @@ import (
 
 	"github.com/smallnest/rpcx/client"
 
-	"gobyexample/awesome-go/rpcx/arith"
+	"ultimate-go/awesome-go/rpcx/arith"
 )
 
 func main() {

@@ -2,7 +2,7 @@ package service
 
 import (
 	"github.com/gin-gonic/gin"
-	"gobyexample/awesome-go/bazel/go-tutorial/handler/publish"
+	"ultimate-go/awesome-go/bazel/go-tutorial/handler/publish"
 )
 
 func SetUpRouter() *gin.Engine {

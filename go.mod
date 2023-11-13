@@ -1,7 +1,6 @@
-module gobyexample
+module ultimate-go
 
 require (
-	cloud.google.com/go v0.38.0 // indirect
 	github.com/BurntSushi/toml v0.3.1
 	github.com/Joker/jade v1.0.0 // indirect
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect
@@ -31,6 +30,10 @@ require (
 	github.com/go-ping/ping v0.0.0-20210407214646-e4e642a95741 // indirect
 	github.com/go-playground/assert/v2 v2.0.1
 	github.com/go-redis/redis/v8 v8.8.2
+	github.com/gobuffalo/envy v1.9.0 // indirect
+	github.com/gobuffalo/logger v1.0.4 // indirect
+	github.com/gobuffalo/packr v1.30.1 // indirect
+	github.com/gobuffalo/packr/v2 v2.8.1 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/mock v1.5.0
@@ -61,10 +64,12 @@ require (
 	github.com/jinzhu/now v1.1.1
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
+	github.com/karrick/godirwalk v1.16.1 // indirect
 	github.com/kataras/golog v0.0.18 // indirect
 	github.com/kataras/iris v11.1.1+incompatible
 	github.com/klauspost/cpuid/v2 v2.0.6 // indirect
 	github.com/klauspost/reedsolomon v1.9.12 // indirect
+	github.com/konsorten/go-windows-terminal-sequences v1.0.3 // indirect
 	github.com/labstack/echo v3.3.10+incompatible // indirect
 	github.com/labstack/echo/v4 v4.3.0 // indirect
 	github.com/lib/pq v1.7.1
@@ -79,14 +84,17 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475
 	github.com/robfig/cron/v3 v3.0.0
+	github.com/rogpeppe/go-internal v1.8.0 // indirect
 	github.com/rpcxio/rpcx-examples v1.1.6
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/samuel/go-zookeeper v0.0.0-20201211165307-7117e9ea2414 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/smallnest/quick v0.0.0-20210406061658-4bf95e372fbd // indirect
 	github.com/smallnest/rpcx v1.6.2
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/soheilhy/cmux v0.1.5 // indirect
+	github.com/spf13/cobra v1.2.1 // indirect
 	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
 	github.com/stretchr/testify v1.7.0
 	github.com/t-tiger/gorm-bulk-insert v1.3.0
@@ -112,16 +120,17 @@ require (
 	go.opencensus.io v0.23.0 // indirect
 	go.opentelemetry.io/otel v0.20.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
-	go.uber.org/zap v1.16.0
-	golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a
+	go.uber.org/zap v1.17.0
+	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5
 	golang.org/x/net v0.0.0-20210423184538-5f58ad60dda6
-	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
+	golang.org/x/oauth2 v0.0.0-20210402161424-2e8d93401602
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	golang.org/x/sys v0.0.0-20210426080607-c94f62235c83 // indirect
+	golang.org/x/sys v0.0.0-20210910150752-751e447fb3d0 // indirect
+	golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20200624020401-64a14ca9d1ad
-	google.golang.org/grpc v1.33.2
+	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c
+	google.golang.org/grpc v1.38.0
 	google.golang.org/grpc/examples v0.0.0-20200716061055-dd8658f92101
 	gopkg.in/go-playground/assert.v1 v1.2.1
 	gopkg.in/ini.v1 v1.62.0 // indirect

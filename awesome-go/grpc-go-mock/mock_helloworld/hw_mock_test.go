@@ -23,10 +23,10 @@ import (
 	"fmt"
 	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/proto"
-	"gobyexample/awesome-go/grpc-go-mock/helloworld"
-	"gobyexample/awesome-go/grpc-go-mock/mock_helloworld"
 	"gopkg.in/go-playground/assert.v1"
 	"testing"
+	"ultimate-go/awesome-go/grpc-go-mock/helloworld"
+	"ultimate-go/awesome-go/grpc-go-mock/mock_helloworld"
 )
 
 /*type s struct {

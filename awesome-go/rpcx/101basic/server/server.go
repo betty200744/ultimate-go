@@ -4,7 +4,7 @@ import (
 	"github.com/smallnest/rpcx/log"
 	"github.com/smallnest/rpcx/server"
 
-	"gobyexample/awesome-go/rpcx/arith"
+	"ultimate-go/awesome-go/rpcx/arith"
 )
 
 const (

@@ -2,7 +2,7 @@ package facade
 
 import (
 	"fmt"
-	"gobyexample/design-pattern/creational/simple_factory"
+	"ultimate-go/design-pattern/creational/simple_factory"
 )
 
 type walletFacade struct {

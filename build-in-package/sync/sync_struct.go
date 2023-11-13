@@ -6,7 +6,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"gobyexample/utils"
+	"ultimate-go/utils"
 )
 
 type UserInfo struct {

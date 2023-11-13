@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"                                             // import package
-	"gobyexample/Language_Specification/packages/app" // import nested package
+	"ultimate-go/Language_Specification/packages/app" // import nested package
 )
 
 /*

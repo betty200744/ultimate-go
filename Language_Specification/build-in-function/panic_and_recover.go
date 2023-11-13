@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gobyexample/Language_Specification/errors"
+	"ultimate-go/Language_Specification/errors"
 )
 
 // panic, 立刻stops execution the current function, then unwinding the stack, then run deferred functions

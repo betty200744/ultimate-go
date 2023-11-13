@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gobyexample/algorithms/utils"
+
+	"ultimate-go/algorithms/utils"
 )
 
 /*
