@@ -13,10 +13,16 @@ type Address struct {
 }
 
 func main() {
-	type User struct{}
+	type User struct{ Name string }
 	type User1 User   // new type User1
-	type User2 = User // User2 是User类型的别名
-	// Defining Name type, 相同结构不可=
+	type User2 = User // User2 is an alias of User
+	user0 := User{Name: "user0"}
+	user1 := User1{Name: "user1"}
+	user2 := User2{Name: "user2"}
+	fmt.Printf("user0 type: %T, value: %v\n", user0, user0)
+	fmt.Printf("user1 type: %T, value: %v\n", user1, user1)
+	fmt.Printf("user2 type: %T, value: %v\n", user2, user2)
+	// Defining Name type
 	type Shop struct {
 		Id      string `json:"id"`
 		Name    string `json:"name"`
@@ -24,7 +30,7 @@ func main() {
 		Order   []string
 		Address Address `json:"address"`
 	}
-	// Defining Anonymous type， 相同结构可=
+	// Defining Anonymous type
 	shopAnonymous := struct {
 		Id    string `json:"id"`
 		Name  string `json:"name"`
