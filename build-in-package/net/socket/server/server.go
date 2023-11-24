@@ -12,6 +12,6 @@ func main() {
 		rec := make([]byte, 10)
 		conn.Read(rec)
 		fmt.Println(fmt.Sprintf("get client id: %v, msg %v", conn.RemoteAddr().String(), string(rec[:])))
-		conn.Write([]byte(fmt.Sprintf("server recive %v", string(rec[:]))))
+		conn.Write([]byte(fmt.Sprintf("server recive msg:  %v", string(rec[:]))))
 	}
 }
