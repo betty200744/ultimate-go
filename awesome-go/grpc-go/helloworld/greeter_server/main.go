@@ -16,7 +16,7 @@ import (
 )
 
 const (
-	port = ":50051"
+	port = ":50053"
 )
 
 func serverInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (resp interface{}, err error) {
@@ -45,7 +45,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to get consul client %v", err)
 	}
-	cli.Register("greeter", 50051)
+	cli.Register("greeter", 50053)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
