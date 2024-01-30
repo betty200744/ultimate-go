@@ -18,7 +18,7 @@ func main() {
 	l.Read(b)
 	fmt.Println(string(b[:]))
 	// write data
-	l.Write([]byte(fmt.Sprintf(`s -> c: hello`)))
+	l.Write([]byte(`s -> c: hello`))
 	// close
 	l.Close()
 }
